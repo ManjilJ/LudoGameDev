@@ -1,0 +1,170 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*overflow: hidden; /* Prevent scrolling */
+}
+
+.game-container {
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Add this to stack elements vertically on smaller screens */
+}
+
+.board {
+  position: relative;
+  width: 90vw; /* Adjust to fit within the viewport width */
+  max-width: 600px; /* Ensure it doesn't exceed the original size */
+  height: 90vw; /* Maintain a square aspect ratio */
+  max-height: 600px; /* Ensure it doesn't exceed the original size */
+  border: 2px solid black;
+  margin: 0 auto;
+  border-radius: 2%;
+}
+
+.board-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  filter:drop-shadow(8px 8px 8px rgb(200, 205, 170) )
+}
+
+.board-and-dice {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
+}
+
+.cell, .homecell {
+  position: absolute;
+  width: 3.33%; /* Relative width to maintain proportions */
+  height: 3.33%; /* Relative height to maintain proportions */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.player-group {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.player {
+  position: absolute;
+  width:3.16%; /* Relative width to maintain proportions */
+  height:3.16%; /* Relative height to maintain proportions */
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2vw; /* Adjust font size relative to viewport */
+  z-index: 2;
+}
+.player.hovered {
+  z-index: 1000 !important;
+
+}
+.player:hover{
+  z-index: 1000 !important;
+  animation: hue-rotate-animation 1s infinite; /* Apply the animation */
+}
+@keyframes hue-rotate-animation {
+  from {
+    filter: hue-rotate(0deg) drop-shadow(2px 3px 3px rgba(255, 94, 0, 0.5));
+  }
+  to {
+    filter: hue-rotate(10deg) drop-shadow(2px 3px 3px rgba(255, 94, 0,1));
+  }
+}
+
+.player.transition {
+  transition: top .5s ease, left 0.5s ease, transform 0.5s ease; /* Add transform property */
+}
+
+.player.transition.transformed {
+  /* transform: scale(2.2);  */
+  transition: top 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), left 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.yellow {
+  background-color: rgb(255, 255, 0);
+  color: black;
+  border-color: rgb(209, 184, 83);
+  filter:drop-shadow(2px 3px 3px rgb(255, 94, 0));
+}
+
+
+.blue {
+  background-color: blue;
+  color: darkgrey;
+  border-color: rgb(102, 171, 231);
+  filter:drop-shadow(2px 2px 2px rgb(57, 5, 73) )
+}
+
+.green {
+  background-color: rgb(147, 206, 127);
+  border-color: rgb(134, 231, 102);
+  filter:drop-shadow(2px 2px 2px rgb(255, 94, 0))
+}
+
+.red {
+  background-color: red;
+  border-color: rgb(127, 76, 76);
+  filter:drop-shadow(2px 2px 2px rgb(255, 94, 0))
+}
+
+.dice-roll {
+  display: flex;
+  justify-content: center; /* Center dice roll on smaller screens */
+  margin-top: 20px; /* Add some spacing */
+}
+.button_ygbr {
+  width: 60px;
+  height: 40px;
+  border-radius: 15%;
+  z-index: 1;
+  position: absolute;
+  filter:drop-shadow(2px 2px 2px rgb(255, 94, 0));
+
+}
+.button_ygbr:hover {
+  animation: hue-rotate-animation 1s infinite; /* Apply the animation */
+
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+  .button_ygbr {
+    width: 42px; /* 70% of 60px */
+    height: 25px; /* 70% of 36px */
+    font-size: 0.6em; /* Reduce font size by 20% */
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: .2;
+    transform:  scale(1.8);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blink 0.125s step-end 4;
+}

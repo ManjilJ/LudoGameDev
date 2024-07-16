@@ -1,4 +1,3 @@
-# LudoGameDev
 # Ludo Game Project
 
 This project is a partial implementation of a Ludo game using React.

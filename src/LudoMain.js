@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import l_board from "./l_board.png";
+import cellimg from "./cellimg.png";
+import cellimg_homeline from "./cellimg_homeline.png";
 import "./LudoMain.css";
 import { useHotkeys } from "react-hotkeys-hook";
 
@@ -393,14 +395,14 @@ let infoPlayersCopy = JSON.parse(JSON.stringify(infoPlayers));
 
 const Cell = ({ id, position }) => (
   <div className="cell" id={`l_brd_cell_${id}`} style={position}>
-    <img src="cellimg.png" alt={`C ${id}`} id={`l_brd_cell_${id}_img`} />
+    <img src={cellimg} alt={`C ${id}`} id={`l_brd_cell_${id}_img`} />
   </div>
 );
 
 const HomeCell = ({ id, position }) => (
   <div className="homecell" id={`l_brd_cell_home_line${id}`} style={position}>
     <img
-      src="cellimg_homeline.png"
+      src={cellimg_homeline}
       alt={`C ${id}`}
       id={`l_brd_cell_home_line${id}_img`}
     />

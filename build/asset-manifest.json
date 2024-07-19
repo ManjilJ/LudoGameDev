@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/LudoGameDev/static/css/main.8dca0e8e.css",
+    "main.js": "/LudoGameDev/static/js/main.b343a845.js",
+    "static/media/l_board.png": "/LudoGameDev/static/media/l_board.2a300123612088412508.png",
+    "index.html": "/LudoGameDev/index.html",
+    "main.8dca0e8e.css.map": "/LudoGameDev/static/css/main.8dca0e8e.css.map",
+    "main.b343a845.js.map": "/LudoGameDev/static/js/main.b343a845.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8dca0e8e.css",
+    "static/js/main.b343a845.js"
+  ]
+}

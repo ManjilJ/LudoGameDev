@@ -22,12 +22,12 @@ let cellPositions = [
   { top: "42%", left: "29%" },
   { top: "42%", left: "35.5%" },
 
-  { top: "36%", left: "42%" },
-  { top: "29.7%", left: "42%" },
+  { top: "36%", left: "42%" }, 
+  { top: "29.7%", left: "42%" }, 
   { top: "23.2%", left: "42%" },
   { top: "17%", left: "42%" },
-  { top: "10%", left: "42%" },
-  { top: "4%", left: "42%" },
+  { top: "10%", left: "42%" }, 
+  { top: "4%", left: "42%" }, 
 
   { top: "4%", left: "48.3%" },
 
@@ -38,15 +38,14 @@ let cellPositions = [
   { top: "29.7%", left: "54.3%" },
   { top: "36%", left: "54.3%" },
 
-  { top: "42%", left: "61.2%" },
+  { top: "42%", left: "61.2%" }, 
   { top: "42%", left: "67.2%" },
   { top: "42%", left: "73.1%" },
   { top: "42%", left: "79.4%" },
   { top: "42%", left: "85.8%" },
   { top: "42%", left: "92%" },
   { top: "48%", left: "92%" },
-
-  { top: "54.2%", left: "92%" },
+  { top: "54.2%", left: "92%" }, 
   { top: "54.2%", left: "85.8%" },
   { top: "54.2%", left: "79.4%" },
   { top: "54.2%", left: "73.1%" },
@@ -59,6 +58,7 @@ let cellPositions = [
   { top: "79.7%", left: "54.3%" },
   { top: "86%", left: "54.3%" },
   { top: "92.3%", left: "54.3%" },
+
   { top: "92.3%", left: "48.2%" },
 
   { top: "92.3%", left: "42%" },
@@ -75,10 +75,12 @@ let cellPositions = [
   { top: "54.2%", left: "11%" },
   { top: "54.2%", left: "5%" },
 
+
   { top: "48%", left: "5%" },
 ];
 
 cellPos_HomeLine_Yellow = [
+
   { top: "111%", left: "11%" },
   { top: "48%", left: "11%" },
   { top: "48%", left: "17%" },
@@ -89,6 +91,7 @@ cellPos_HomeLine_Yellow = [
 ];
 
 const cellPos_HomeLine_Green = [
+
   { top: "111%", left: "61%" },
   { top: "10%", left: "48.3%" },
   { top: "17%", left: "48.3%" },
@@ -99,6 +102,7 @@ const cellPos_HomeLine_Green = [
 ];
 
 const cellPos_HomeLine_Blue = [
+
   { top: "111%", left: "35%" },
   { top: "86%", left: "48.2%" },
   { top: "79.7%", left: "48.2%" },
@@ -109,6 +113,7 @@ const cellPos_HomeLine_Blue = [
 ];
 
 const cellPos_HomeLine_Red = [
+
   { top: "111%", left: "88%" },
   { top: "48%", left: "85.8%" },
   { top: "48%", left: "79.4%" },
@@ -118,8 +123,10 @@ const cellPos_HomeLine_Red = [
   { top: "48%", left: "54.5%" },
 ];
 
+
 let infoPlayers = {
   yellow: [
+
     {
       color_piece: "yellow",
       label: "0",
@@ -183,6 +190,7 @@ let infoPlayers = {
   ],
 
   blue: [
+
     {
       color_piece: "blue",
       label: "0",
@@ -245,6 +253,7 @@ let infoPlayers = {
     },
   ],
   green: [
+
     {
       color_piece: "green",
       label: "0",
@@ -307,6 +316,7 @@ let infoPlayers = {
     },
   ],
   red: [
+
     {
       color_piece: "red",
       label: "0",
@@ -438,10 +448,12 @@ const processColor = (
   aboveFive,
   parent_IndexYGBR_Piece
 ) => {
-  let IndexYGBR_Piece = parent_IndexYGBR_Piece;
+  let IndexYGBR_Piece =
+    parent_IndexYGBR_Piece;
   while (aboveFive) {
     if (players[color][IndexYGBR_Piece].home_spot > 5) {
-      array[IndexYGBR_Piece - 1] = IndexYGBR_Piece;
+      array[IndexYGBR_Piece - 1] =
+        IndexYGBR_Piece;
       const allNonZero = array.every((element) => element !== 0);
       if (allNonZero) {
         aboveFive = false;
@@ -470,6 +482,7 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
+
 
   useHotkeys("alt+y", () => handleYellowClick(0));
   useHotkeys("alt+g", () => handleGreenClick(0));
@@ -507,7 +520,7 @@ const LudoMain = () => {
     });
   }, [reset]);
 
-  let playerRefs_With_Dummy0 = useRef(null);
+  let playerRefs_With_Dummy0 = useRef(null); 
 
   useEffect(() => {
     const handleDOMContentLoaded = () => {
@@ -527,7 +540,8 @@ const LudoMain = () => {
     };
   }, []);
 
-  useEffect(() => {}, [players]);
+  useEffect(() => {
+  }, [players]);
 
   useEffect(() => {
     playerRefs_With_Dummy0.current = {
@@ -561,26 +575,26 @@ const LudoMain = () => {
       ],
     };
 
-    return () => {};
+    return () => {
+    };
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setBoardRendered(true);
-    }, 2000);
+    }, 2000); 
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); 
   }, []);
 
   const GenRandom = () => {
     setIsAnimating(true);
     let randomNumber;
-    randomNumber = Math.ceil(Math.random() * 6);
-    let txt = document.getElementById("inputId");
-    txt.value = randomNumber;
+     randomNumber = Math.ceil(Math.random() * 6);
+     let txt = document.getElementById("inputId");
+     txt.value = randomNumber;
     return randomNumber;
   };
-
   const handleMouseDown = (color, piece_chosen) => {
     handleClick(color, piece_chosen);
   };
@@ -650,7 +664,8 @@ const LudoMain = () => {
           );
           NotAllHome = run_yellow.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece = run_yellow.IndexYGBR_Piece;
+            IndexYGBR_Piece =
+              run_yellow.IndexYGBR_Piece;
           } else {
             setYellow_All_Home((prev) => true);
             if (
@@ -678,7 +693,8 @@ const LudoMain = () => {
           );
           NotAllHome = run_green.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece = run_green.IndexYGBR_Piece;
+            IndexYGBR_Piece =
+              run_green.IndexYGBR_Piece;
           } else {
             setGreen_All_Home((prev) => true);
             if (
@@ -706,7 +722,8 @@ const LudoMain = () => {
           );
           NotAllHome = run_blue.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece = run_blue.IndexYGBR_Piece;
+            IndexYGBR_Piece =
+              run_blue.IndexYGBR_Piece;
           } else {
             setBlue_All_Home((prev) => true);
             if (
@@ -734,7 +751,8 @@ const LudoMain = () => {
           );
           NotAllHome = run_red.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece = run_red.IndexYGBR_Piece;
+            IndexYGBR_Piece =
+              run_red.IndexYGBR_Piece;
           } else {
             setRed_All_Home((prev) => true);
             if (
@@ -756,7 +774,9 @@ const LudoMain = () => {
     }
     if (NotAllHome) {
       const currentPlayerRef =
-        playerRefs_With_Dummy0.current[color][IndexYGBR_Piece];
+        playerRefs_With_Dummy0.current[color][
+          IndexYGBR_Piece
+        ];
 
       currentPlayerRef.current.classList.add("blinking");
 
@@ -766,7 +786,8 @@ const LudoMain = () => {
         while (count < randomNum) {
           await new Promise((resolve) => setTimeout(resolve, 110)); 
           const updatedPlayers = { ...players };
-          const currentPlayer = updatedPlayers[color][IndexYGBR_Piece];
+          const currentPlayer =
+            updatedPlayers[color][IndexYGBR_Piece];
           let finalPositionAlreadyReached = false;
 
           if (currentPlayer.hot_spot <= 52) {
@@ -790,7 +811,7 @@ const LudoMain = () => {
               finalPositionAlreadyReached = true;
               let newHomeSpot = currentPlayer.home_spot + remainingSteps;
               if (newHomeSpot > 6) {
-                newHomeSpot = 6;
+                newHomeSpot = 6; 
               }
               const homePos = newHomeSpot;
               currentPlayer.top = getHomeLinePosition(color, homePos).top;
@@ -804,13 +825,13 @@ const LudoMain = () => {
           } else {
             let newHomeSpot = currentPlayer.home_spot + 1;
             if (newHomeSpot > 6) {
-              newHomeSpot = 6;
+              newHomeSpot = 6; 
             }
             const homePos = newHomeSpot;
             currentPlayer.top = getHomeLinePosition(color, homePos).top;
             currentPlayer.left = getHomeLinePosition(color, homePos).left;
             currentPlayer.home_spot = homePos;
-            currentPlayer.hot_spot = 60;
+            currentPlayer.hot_spot = 60
             currentPlayer.transition = false;
           }
           setPlayers((prevPlayers) => {
@@ -823,9 +844,9 @@ const LudoMain = () => {
               currentPlayer.hot_spot += randomNum;
             } else {
               if (currentPlayer.home_spot > 6) {
-                currentPlayer.home_spot = 6;
+                currentPlayer.home_spot = 6; 
                 currentPlayer.home_reached = true;
-                currentPlayer.hot_spot = 60;
+                currentPlayer.hot_spot = 60
               }
             }
 
@@ -837,7 +858,8 @@ const LudoMain = () => {
           }
         }
 
-        const s_currentPlayer = players[color][IndexYGBR_Piece];
+        const s_currentPlayer =
+          players[color][IndexYGBR_Piece];
         handleOverlappingPlayers(color, s_currentPlayer);
         handlePieceTaken(color, s_currentPlayer);
         if (tellStat() >= 16) {
@@ -862,6 +884,7 @@ const LudoMain = () => {
             ...prevPlayers,
             ...infoPlayersCopyCopy,
           }));
+
         }
       }, 1000);
     }
@@ -960,7 +983,13 @@ const LudoMain = () => {
               !player.home_reached
             ) {
               console.log(
-                "HotSpot",
+                "Hotspot",
+                player.hot_spot,
+                "homespot",
+                player.home_spot
+              );
+              console.log(
+                "HOTSPOT",
                 player.hot_spot,
                 "ColorPiece:",
                 player.color_piece
@@ -972,7 +1001,8 @@ const LudoMain = () => {
                 hot_spot: 1,
                 home_spot: 0,
                 home_reached: false,
-                transition: true,
+                transition: true, 
+                
               };
             }
             return player;
@@ -1013,8 +1043,8 @@ const LudoMain = () => {
 
     if (overlappingPlayers.length > 0) {
       overlappingPlayers.forEach((player, index) => {
-        const offset_left = index * 2;
-        const offset_top = index * -2;
+        const offset_left = index * 2; 
+        const offset_top = index * -2; 
         const s_currentPlayerRef =
           playerRefs_With_Dummy0.current[color][player.label];
         s_currentPlayerRef.current.classList.add("overlapping");
@@ -1026,7 +1056,7 @@ const LudoMain = () => {
     }
   };
   const handleMouseOver = (event, player) => {
-    setHoveredPlayer(player);
+    setHoveredPlayer(player); 
   };
 
   const handleMouseOut = (event) => {
@@ -1038,36 +1068,32 @@ const LudoMain = () => {
       {players[color].map((player, index) => {
         const isHovered = hoveredPlayer === player;
 
-        return (
-          <div
-            key={index}
-            className={`player ${color} ${isHovered ? "hovered" : ""} ${
-              player.transition ? "transition transformed" : ""
-            }`}
-            ref={playerRefs_With_Dummy0.current[color][index]}
-            style={{ top: player.top, left: player.left }}
-            onMouseDown={(event) =>
-              handleMouseDown(color, parseInt(player.label))
-            }
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            <p>{player.label}</p>
-          </div>
-        );
-      })}
+    return  (
+        <div
+          key={index}
+          className={`player ${color} ${isHovered ? "hovered" : ""} ${
+            player.transition ? "transition transformed" : ""
+          }`}
+          ref={playerRefs_With_Dummy0.current[color][index]}
+          style={{ top: player.top, left: player.left }}
+          onMouseDown={(event) =>
+            handleMouseDown(color, parseInt(player.label))
+          }
+          onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        >
+          <p>{player.label}</p>
+        </div>
+      )})}
     </div>
   ));
-  const handleYellowClick = (piece_chose) =>
-    handleClick("yellow", piece_chose);
-  const handleRedClick = (piece_chose) => handleClick("red", piece_chose);
-  const handleGreenClick = (piece_chose) =>
-    handleClick("green", piece_chose);
-  const handleBlueClick = (piece_chose) =>
-    handleClick("blue", piece_chose);
+  const handleYellowClick = (piece_chose) => handleClick("yellow", piece_chose, true);
+  const handleRedClick = (piece_chose) => handleClick("red", piece_chose, true);
+  const handleGreenClick = (piece_chose) => handleClick("green", piece_chose, true);
+  const handleBlueClick = (piece_chose) => handleClick("blue", piece_chose, true);
 
   useEffect(() => {
-    if (!isChecked) {
+    if(!isChecked) {
       return;
     }
     const timer1 = setTimeout(() => {
@@ -1086,7 +1112,7 @@ const LudoMain = () => {
       switch (somerandom) {
         case 1:
           handleYellowClick(0);
-          break;
+          break; 
         case 2:
           handleRedClick(0);
           break;

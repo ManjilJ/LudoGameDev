@@ -1,8 +1,8 @@
 {
-  "name": "LudoGameDev",
+  "name": "app_01",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://manjilj.github.io/ludogamedev",
+  "homepage": "https://manjilj.github.io/LudoGameDev",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build -b github-pages"
   },
   "eslintConfig": {
     "extends": [

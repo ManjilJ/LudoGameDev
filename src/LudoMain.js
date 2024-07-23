@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import l_board from "./l_board.png";
+import l_board_d from "./l_board_d.png"
 import cellimg from "./cellimg.png";
 import cellimg_homeline from "./cellimg_homeline.png";
 import "./LudoMain.css";
@@ -484,7 +485,9 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-
+  const [boardChange,setBoardChange] = useState(true)
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const imgRef = useRef(null);
 
   useHotkeys("alt+y", () => handleYellowClick(0));
   useHotkeys("alt+g", () => handleGreenClick(0));
@@ -1153,10 +1156,49 @@ const LudoMain = () => {
     }
   };
 
+  useEffect(() => {
+    // Temporarily hide the image
+    if (imgRef.current) {
+      imgRef.current.style.display = 'none';
+    }
+    // Show the image after a short delay
+    const timeoutId = setTimeout(() => {
+      if (imgRef.current) {
+        imgRef.current.style.display = 'block';
+      }
+    }, 100); // Adjust delay as needed
+
+    // Cleanup timeout on component unmount or when boardChange changes
+    return () => clearTimeout(timeoutId);
+  }, [boardChange]);
+
+  const handleClickBoardChange = () => {
+    setBoardChange(prev => !prev);
+    setIsTransitioning(true);
+  };
+
+  useEffect(() => {
+    if (isTransitioning) {
+      // Set isTransitioning to false after the transition duration
+      const timer = setTimeout(() => setIsTransitioning(false), 50); // Duration should match the CSS transition time
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
+  console.log("L Board URL:", l_board);
+  console.log("L Board D URL:", l_board_d);
+  
   const initialUI = (
     <div>
       <div className="board">
-        <img src={l_board} alt="Ludo Board" className="board-image" />
+        {/* Conditionally render image based on boardChange */}
+      <img
+        src={boardChange ? l_board : l_board_d}
+        alt="Ludo Board"
+        className={`board-image ${isTransitioning ? 'hidden' : 'visible'}`}
+        key={boardChange ? 'l_board' : 'l_board_d'}
+      />
+
         {playerElements}
         {cells}
         {Home_cells_Yellow}
@@ -1241,6 +1283,19 @@ const LudoMain = () => {
         Continuous Autoplay
         <input type="checkbox" name="autoplay" defaultChecked={isChecked} />
       </div>
+      <div
+        className="chkbox"
+        style={{ position: "absolute", left: "10px", top: "120px" }}
+      >
+        Board Change
+        <input 
+          type="checkbox" 
+          name="boardChange" 
+          checked={boardChange} 
+          onChange={handleClickBoardChange} 
+        />
+      </div>
+
       <button
         onClick={() => tellStat()}
         className="stat"
@@ -1251,7 +1306,7 @@ const LudoMain = () => {
     </div>
   );
 
-  return <div>{initialUI}</div>;
+  return <div className = "game-container">{initialUI}</div>;
 };
 
 export default LudoMain;

@@ -494,6 +494,22 @@ const LudoMain = () => {
   useHotkeys("alt+b", () => handleBlueClick(0));
   useHotkeys("alt+r", () => handleRedClick(0));
   useHotkeys("alt+s", () => setReset((prev) => !prev));
+  useHotkeys("alt+1", () => handleRedClick(1));
+  useHotkeys("alt+2", () => handleRedClick(2));
+  useHotkeys("alt+3", () => handleRedClick(3));
+  useHotkeys("alt+4", () => handleRedClick(4));
+  useHotkeys("alt+u", () => handleGreenClick(1));
+  useHotkeys("alt+i", () => handleGreenClick(2));
+  useHotkeys("alt+o", () => handleGreenClick(3));
+  useHotkeys("alt+p", () => handleGreenClick(4));
+  useHotkeys("alt+j", () => handleBlueClick(1));
+  useHotkeys("alt+k", () => handleBlueClick(2));
+  useHotkeys("alt+l", () => handleBlueClick(3));
+  useHotkeys("alt+;", () => handleBlueClick(4));
+  useHotkeys("alt+z", () => handleYellowClick(1));
+  useHotkeys("alt+x", () => handleYellowClick(2));
+  useHotkeys("alt+c", () => handleYellowClick(3));
+  useHotkeys("alt+v", () => handleYellowClick(4));
 
   useEffect(() => {
     setYellow_All_Home((prev) => false);

@@ -993,12 +993,6 @@ const LudoMain = () => {
                 "homespot",
                 player.home_spot
               );
-              console.log(
-                "HOTSPOT",
-                player.hot_spot,
-                "ColorPiece:",
-                player.color_piece
-              );
               return {
                 ...player,
                 top: player.default_top,
@@ -1155,20 +1149,17 @@ const LudoMain = () => {
       return pieces_Out_home_spot;
     }
   };
-
+   
   useEffect(() => {
-    // Temporarily hide the image
     if (imgRef.current) {
       imgRef.current.style.display = 'none';
     }
-    // Show the image after a short delay
     const timeoutId = setTimeout(() => {
       if (imgRef.current) {
         imgRef.current.style.display = 'block';
       }
-    }, 100); // Adjust delay as needed
+    }, 100); 
 
-    // Cleanup timeout on component unmount or when boardChange changes
     return () => clearTimeout(timeoutId);
   }, [boardChange]);
 
@@ -1179,19 +1170,15 @@ const LudoMain = () => {
 
   useEffect(() => {
     if (isTransitioning) {
-      // Set isTransitioning to false after the transition duration
-      const timer = setTimeout(() => setIsTransitioning(false), 50); // Duration should match the CSS transition time
+      const timer = setTimeout(() => setIsTransitioning(false), 50); 
       return () => clearTimeout(timer);
     }
   }, [isTransitioning]);
 
-  console.log("L Board URL:", l_board);
-  console.log("L Board D URL:", l_board_d);
-  
+ 
   const initialUI = (
     <div>
       <div className="board">
-        {/* Conditionally render image based on boardChange */}
       <img
         src={boardChange ? l_board : l_board_d}
         alt="Ludo Board"

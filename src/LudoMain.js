@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import l_board from "./l_board.png";
-import l_board_d from "./l_board_d.png"
+import l_board_d from "./l_board_d.png";
 import cellimg from "./cellimg.png";
 import cellimg_homeline from "./cellimg_homeline.png";
 import "./LudoMain.css";
@@ -25,12 +25,12 @@ let cellPositions = [
   { top: "42%", left: "29%" },
   { top: "42%", left: "35.5%" },
 
-  { top: "36%", left: "42%" }, 
-  { top: "29.7%", left: "42%" }, 
+  { top: "36%", left: "42%" },
+  { top: "29.7%", left: "42%" },
   { top: "23.2%", left: "42%" },
   { top: "17%", left: "42%" },
-  { top: "10%", left: "42%" }, 
-  { top: "4%", left: "42%" }, 
+  { top: "10%", left: "42%" },
+  { top: "4%", left: "42%" },
 
   { top: "4%", left: "48.3%" },
 
@@ -41,14 +41,14 @@ let cellPositions = [
   { top: "29.7%", left: "54.3%" },
   { top: "36%", left: "54.3%" },
 
-  { top: "42%", left: "61.2%" }, 
+  { top: "42%", left: "61.2%" },
   { top: "42%", left: "67.2%" },
   { top: "42%", left: "73.1%" },
   { top: "42%", left: "79.4%" },
   { top: "42%", left: "85.8%" },
   { top: "42%", left: "92%" },
   { top: "48%", left: "92%" },
-  { top: "54.2%", left: "92%" }, 
+  { top: "54.2%", left: "92%" },
   { top: "54.2%", left: "85.8%" },
   { top: "54.2%", left: "79.4%" },
   { top: "54.2%", left: "73.1%" },
@@ -78,12 +78,10 @@ let cellPositions = [
   { top: "54.2%", left: "11%" },
   { top: "54.2%", left: "5%" },
 
-
   { top: "48%", left: "5%" },
 ];
 
 cellPos_HomeLine_Yellow = [
-
   { top: "111%", left: "11%" },
   { top: "48%", left: "11%" },
   { top: "48%", left: "17%" },
@@ -94,7 +92,6 @@ cellPos_HomeLine_Yellow = [
 ];
 
 const cellPos_HomeLine_Green = [
-
   { top: "111%", left: "61%" },
   { top: "10%", left: "48.3%" },
   { top: "17%", left: "48.3%" },
@@ -105,7 +102,6 @@ const cellPos_HomeLine_Green = [
 ];
 
 const cellPos_HomeLine_Blue = [
-
   { top: "111%", left: "35%" },
   { top: "86%", left: "48.2%" },
   { top: "79.7%", left: "48.2%" },
@@ -116,7 +112,6 @@ const cellPos_HomeLine_Blue = [
 ];
 
 const cellPos_HomeLine_Red = [
-
   { top: "111%", left: "88%" },
   { top: "48%", left: "85.8%" },
   { top: "48%", left: "79.4%" },
@@ -126,10 +121,8 @@ const cellPos_HomeLine_Red = [
   { top: "48%", left: "54.5%" },
 ];
 
-
 let infoPlayers = {
   yellow: [
-
     {
       color_piece: "yellow",
       label: "0",
@@ -193,7 +186,6 @@ let infoPlayers = {
   ],
 
   blue: [
-
     {
       color_piece: "blue",
       label: "0",
@@ -256,7 +248,6 @@ let infoPlayers = {
     },
   ],
   green: [
-
     {
       color_piece: "green",
       label: "0",
@@ -319,7 +310,6 @@ let infoPlayers = {
     },
   ],
   red: [
-
     {
       color_piece: "red",
       label: "0",
@@ -451,12 +441,10 @@ const processColor = (
   aboveFive,
   parent_IndexYGBR_Piece
 ) => {
-  let IndexYGBR_Piece =
-    parent_IndexYGBR_Piece;
+  let IndexYGBR_Piece = parent_IndexYGBR_Piece;
   while (aboveFive) {
     if (players[color][IndexYGBR_Piece].home_spot > 5) {
-      array[IndexYGBR_Piece - 1] =
-        IndexYGBR_Piece;
+      array[IndexYGBR_Piece - 1] = IndexYGBR_Piece;
       const allNonZero = array.every((element) => element !== 0);
       if (allNonZero) {
         aboveFive = false;
@@ -471,10 +459,12 @@ const processColor = (
   return { aboveFive, IndexYGBR_Piece };
 };
 
+let NotAllHome = false;
+
 const LudoMain = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [players, setPlayers] = useState({});
-  const playerElementsRef = useRef(null); 
+  const playerElementsRef = useRef(null);
   const [boardRendered, setBoardRendered] = useState(false);
   const [dummyState, setDummyState] = useState(true);
   const inputRef = useRef(null);
@@ -485,7 +475,7 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-  const [boardChange,setBoardChange] = useState(true)
+  const [boardChange, setBoardChange] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
 
@@ -512,36 +502,91 @@ const LudoMain = () => {
   useHotkeys("alt+v", () => handleYellowClick(4));
 
   useEffect(() => {
-    setYellow_All_Home((prev) => false);
-    setGreen_All_Home((prev) => false);
-    setBlue_All_Home((prev) => false);
-    setRed_All_Home((prev) => false);
-    array_yellow = [0, 0, 0, 0];
-    AboveFive_yellow = true;
-    array_green = [0, 0, 0, 0];
-    AboveFive_green = true;
-    array_blue = [0, 0, 0, 0];
-    AboveFive_blue = true;
-    array_red = [0, 0, 0, 0];
-    AboveFive_red = true;
+    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    const infoPlayersCopyCopy = JSON.parse(JSON.stringify(infoPlayersCopy));
+    const updatePlayers = async () => {
+      setYellow_All_Home(false);
+      setGreen_All_Home(false);
+      setBlue_All_Home(false);
+      setRed_All_Home(false);
 
-    setPlayers((prevPlayers) => {
-      const updatedPlayers = { ...prevPlayers };
+      array_yellow = [0, 0, 0, 0];
+      AboveFive_yellow = true;
+      array_green = [0, 0, 0, 0];
+      AboveFive_green = true;
+      array_blue = [0, 0, 0, 0];
+      AboveFive_blue = true;
+      array_red = [0, 0, 0, 0];
+      AboveFive_red = true;
+      const infoPlayersCopyCopy = JSON.parse(JSON.stringify(infoPlayersCopy));
 
-      Object.keys(infoPlayersCopyCopy).forEach((color) => {
-        updatedPlayers[color] = infoPlayersCopyCopy[color].map((player) => ({
-          ...player,
-          transition: true,
-        }));
+      let isDifferent = false;
+
+      Object.keys(players).some((color) => {
+        return players[color].some((player) => {
+          if (
+            player.top !== player.default_top ||
+            player.left !== player.default_left
+          ) {
+            isDifferent = true;
+            return true;
+          }
+          return false;
+        });
       });
+      console.log("isDifferent", isDifferent);
+      setPlayers((prevPlayers) => {
+        const updatedPlayers = { ...prevPlayers };
+        Object.keys(infoPlayersCopyCopy).forEach((color) => {
+          updatedPlayers[color] = infoPlayersCopyCopy[color].map((player) => ({
+            ...player,
+            top: player.default_top,
+            left: player.default_left,
+            transition: true,
+          }));
+        });
+        return updatedPlayers;
+      });
+      await sleep(100);
 
-      return updatedPlayers;
-    });
+      if (!isDifferent && NotAllHome) {
+        setPlayers((prevPlayers) => {
+          const updatedPlayers = { ...prevPlayers };
+          Object.keys(infoPlayersCopyCopy).forEach((color) => {
+            updatedPlayers[color] = infoPlayersCopyCopy[color].map(
+              (player) => ({
+                ...player,
+                top: `${Math.ceil(Math.random() * 100)}%`,
+                left: `${Math.ceil(Math.random() * 100)}%`,
+                transition: true,
+              })
+            );
+          });
+          return updatedPlayers;
+        });
+        await sleep(900);
+
+        setPlayers((prevPlayers) => {
+          const updatedPlayers = { ...prevPlayers };
+          Object.keys(infoPlayersCopyCopy).forEach((color) => {
+            updatedPlayers[color] = infoPlayersCopyCopy[color].map(
+              (player) => ({
+                ...player,
+                top: player.default_top,
+                left: player.default_left,
+                transition: true,
+              })
+            );
+          });
+          return updatedPlayers;
+        });
+      }
+    };
+    updatePlayers();
+    NotAllHome = true;
   }, [reset]);
 
-  let playerRefs_With_Dummy0 = useRef(null); 
+  let playerRefs_With_Dummy0 = useRef(null);
 
   useEffect(() => {
     const handleDOMContentLoaded = () => {
@@ -561,8 +606,7 @@ const LudoMain = () => {
     };
   }, []);
 
-  useEffect(() => {
-  }, [players]);
+  useEffect(() => {}, [players]);
 
   useEffect(() => {
     playerRefs_With_Dummy0.current = {
@@ -596,24 +640,23 @@ const LudoMain = () => {
       ],
     };
 
-    return () => {
-    };
+    return () => {};
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setBoardRendered(true);
-    }, 2000); 
+    }, 2000);
 
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   const GenRandom = () => {
     setIsAnimating(true);
     let randomNumber;
-     randomNumber = Math.ceil(Math.random() * 6);
-     let txt = document.getElementById("inputId");
-     txt.value = randomNumber;
+    randomNumber = Math.ceil(Math.random() * 6);
+    let txt = document.getElementById("inputId");
+    txt.value = randomNumber;
     return randomNumber;
   };
   const handleMouseDown = (color, piece_chosen) => {
@@ -632,6 +675,7 @@ const LudoMain = () => {
     let ValidIndex = false;
     if (yellow_All_Home && red_All_Home && green_All_Home && blue_All_Home) {
       ValidIndex = true;
+      // May be redundant below line
       setReset((prev) => !prev);
     }
     while (!ValidIndex) {
@@ -672,7 +716,7 @@ const LudoMain = () => {
         }
       }
     }
-    let NotAllHome = true;
+    NotAllHome = true;
     switch (color) {
       case "yellow":
         if (!yellow_All_Home) {
@@ -685,8 +729,7 @@ const LudoMain = () => {
           );
           NotAllHome = run_yellow.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece =
-              run_yellow.IndexYGBR_Piece;
+            IndexYGBR_Piece = run_yellow.IndexYGBR_Piece;
           } else {
             setYellow_All_Home((prev) => true);
             if (
@@ -696,6 +739,7 @@ const LudoMain = () => {
               blue_All_Home
             ) {
               ValidIndex = true;
+              // May be redundant below line
               setReset((prev) => !prev);
             }
           }
@@ -714,8 +758,7 @@ const LudoMain = () => {
           );
           NotAllHome = run_green.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece =
-              run_green.IndexYGBR_Piece;
+            IndexYGBR_Piece = run_green.IndexYGBR_Piece;
           } else {
             setGreen_All_Home((prev) => true);
             if (
@@ -725,6 +768,7 @@ const LudoMain = () => {
               blue_All_Home
             ) {
               ValidIndex = true;
+              // May be redundant below line
               setReset((prev) => !prev);
             }
           }
@@ -743,8 +787,7 @@ const LudoMain = () => {
           );
           NotAllHome = run_blue.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece =
-              run_blue.IndexYGBR_Piece;
+            IndexYGBR_Piece = run_blue.IndexYGBR_Piece;
           } else {
             setBlue_All_Home((prev) => true);
             if (
@@ -754,6 +797,7 @@ const LudoMain = () => {
               blue_All_Home
             ) {
               ValidIndex = true;
+              // May be redundant below line
               setReset((prev) => !prev);
             }
           }
@@ -772,8 +816,7 @@ const LudoMain = () => {
           );
           NotAllHome = run_red.aboveFive;
           if (NotAllHome) {
-            IndexYGBR_Piece =
-              run_red.IndexYGBR_Piece;
+            IndexYGBR_Piece = run_red.IndexYGBR_Piece;
           } else {
             setRed_All_Home((prev) => true);
             if (
@@ -783,6 +826,7 @@ const LudoMain = () => {
               blue_All_Home
             ) {
               ValidIndex = true;
+              // May be redundant below line
               setReset((prev) => !prev);
             }
           }
@@ -795,9 +839,7 @@ const LudoMain = () => {
     }
     if (NotAllHome) {
       const currentPlayerRef =
-        playerRefs_With_Dummy0.current[color][
-          IndexYGBR_Piece
-        ];
+        playerRefs_With_Dummy0.current[color][IndexYGBR_Piece];
 
       currentPlayerRef.current.classList.add("blinking");
 
@@ -805,10 +847,9 @@ const LudoMain = () => {
         currentPlayerRef.current.classList.remove("blinking");
 
         while (count < randomNum) {
-          await new Promise((resolve) => setTimeout(resolve, 110)); 
+          await new Promise((resolve) => setTimeout(resolve, 110));
           const updatedPlayers = { ...players };
-          const currentPlayer =
-            updatedPlayers[color][IndexYGBR_Piece];
+          const currentPlayer = updatedPlayers[color][IndexYGBR_Piece];
           let finalPositionAlreadyReached = false;
 
           if (currentPlayer.hot_spot <= 52) {
@@ -832,7 +873,7 @@ const LudoMain = () => {
               finalPositionAlreadyReached = true;
               let newHomeSpot = currentPlayer.home_spot + remainingSteps;
               if (newHomeSpot > 6) {
-                newHomeSpot = 6; 
+                newHomeSpot = 6;
               }
               const homePos = newHomeSpot;
               currentPlayer.top = getHomeLinePosition(color, homePos).top;
@@ -846,13 +887,13 @@ const LudoMain = () => {
           } else {
             let newHomeSpot = currentPlayer.home_spot + 1;
             if (newHomeSpot > 6) {
-              newHomeSpot = 6; 
+              newHomeSpot = 6;
             }
             const homePos = newHomeSpot;
             currentPlayer.top = getHomeLinePosition(color, homePos).top;
             currentPlayer.left = getHomeLinePosition(color, homePos).left;
             currentPlayer.home_spot = homePos;
-            currentPlayer.hot_spot = 60
+            currentPlayer.hot_spot = 60;
             currentPlayer.transition = false;
           }
           setPlayers((prevPlayers) => {
@@ -865,9 +906,9 @@ const LudoMain = () => {
               currentPlayer.hot_spot += randomNum;
             } else {
               if (currentPlayer.home_spot > 6) {
-                currentPlayer.home_spot = 6; 
+                currentPlayer.home_spot = 6;
                 currentPlayer.home_reached = true;
-                currentPlayer.hot_spot = 60
+                currentPlayer.hot_spot = 60;
               }
             }
 
@@ -879,8 +920,7 @@ const LudoMain = () => {
           }
         }
 
-        const s_currentPlayer =
-          players[color][IndexYGBR_Piece];
+        const s_currentPlayer = players[color][IndexYGBR_Piece];
         handleOverlappingPlayers(color, s_currentPlayer);
         handlePieceTaken(color, s_currentPlayer);
         if (tellStat() >= 16) {
@@ -900,12 +940,28 @@ const LudoMain = () => {
           AboveFive_blue = true;
           array_red = [0, 0, 0, 0];
           AboveFive_red = true;
-          setReset((prev) => !prev);
-          setPlayers((prevPlayers) => ({
-            ...prevPlayers,
-            ...infoPlayersCopyCopy,
-          }));
+          setPlayers((prevPlayers) => {
+            let updatedPlayers = { ...prevPlayers };
+            if (updatedPlayers.red && updatedPlayers.red.length > 0) {
+              // debugger
+              updatedPlayers.red[1] = {
+                ...updatedPlayers.red[1],
+                top: "71.11%",
+              };
+            }
 
+            return updatedPlayers;
+          });
+          setReset((prev) => !prev);
+          setTimeout(() => {
+            // Log updated players after state update
+          }, 1000);
+          setTimeout(() => {
+            setPlayers((prevPlayers) => {
+              const updatedPlayers = { ...prevPlayers, ...infoPlayersCopyCopy };
+              return updatedPlayers;
+            });
+          }, 2000);
         }
       }, 1000);
     }
@@ -1016,8 +1072,7 @@ const LudoMain = () => {
                 hot_spot: 1,
                 home_spot: 0,
                 home_reached: false,
-                transition: true, 
-                
+                transition: true,
               };
             }
             return player;
@@ -1058,8 +1113,8 @@ const LudoMain = () => {
 
     if (overlappingPlayers.length > 0) {
       overlappingPlayers.forEach((player, index) => {
-        const offset_left = index * 2; 
-        const offset_top = index * -2; 
+        const offset_left = index * 2;
+        const offset_top = index * -2;
         const s_currentPlayerRef =
           playerRefs_With_Dummy0.current[color][player.label];
         s_currentPlayerRef.current.classList.add("overlapping");
@@ -1071,7 +1126,7 @@ const LudoMain = () => {
     }
   };
   const handleMouseOver = (event, player) => {
-    setHoveredPlayer(player); 
+    setHoveredPlayer(player);
   };
 
   const handleMouseOut = (event) => {
@@ -1083,32 +1138,36 @@ const LudoMain = () => {
       {players[color].map((player, index) => {
         const isHovered = hoveredPlayer === player;
 
-    return  (
-        <div
-          key={index}
-          className={`player ${color} ${isHovered ? "hovered" : ""} ${
-            player.transition ? "transition transformed" : ""
-          }`}
-          ref={playerRefs_With_Dummy0.current[color][index]}
-          style={{ top: player.top, left: player.left }}
-          onMouseDown={(event) =>
-            handleMouseDown(color, parseInt(player.label))
-          }
-          onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        >
-          <p>{player.label}</p>
-        </div>
-      )})}
+        return (
+          <div
+            key={index}
+            className={`player ${color} ${isHovered ? "hovered" : ""} ${
+              player.transition ? "transition transformed" : ""
+            }`}
+            ref={playerRefs_With_Dummy0.current[color][index]}
+            style={{ top: player.top, left: player.left }}
+            onMouseDown={(event) =>
+              handleMouseDown(color, parseInt(player.label))
+            }
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
+            <p>{player.label}</p>
+          </div>
+        );
+      })}
     </div>
   ));
-  const handleYellowClick = (piece_chose) => handleClick("yellow", piece_chose, true);
+  const handleYellowClick = (piece_chose) =>
+    handleClick("yellow", piece_chose, true);
   const handleRedClick = (piece_chose) => handleClick("red", piece_chose, true);
-  const handleGreenClick = (piece_chose) => handleClick("green", piece_chose, true);
-  const handleBlueClick = (piece_chose) => handleClick("blue", piece_chose, true);
+  const handleGreenClick = (piece_chose) =>
+    handleClick("green", piece_chose, true);
+  const handleBlueClick = (piece_chose) =>
+    handleClick("blue", piece_chose, true);
 
   useEffect(() => {
-    if(!isChecked) {
+    if (!isChecked) {
       return;
     }
     const timer1 = setTimeout(() => {
@@ -1117,7 +1176,7 @@ const LudoMain = () => {
 
       let inputRandom = Math.floor(Math.random() * 6) + 1;
       if (inputRef.current) {
-        inputRef.current.value = inputRandom.toString(); 
+        inputRef.current.value = inputRandom.toString();
       } else {
         return;
       }
@@ -1127,7 +1186,7 @@ const LudoMain = () => {
       switch (somerandom) {
         case 1:
           handleYellowClick(0);
-          break; 
+          break;
         case 2:
           handleRedClick(0);
           break;
@@ -1165,42 +1224,41 @@ const LudoMain = () => {
       return pieces_Out_home_spot;
     }
   };
-   
+
   useEffect(() => {
     if (imgRef.current) {
-      imgRef.current.style.display = 'none';
+      imgRef.current.style.display = "none";
     }
     const timeoutId = setTimeout(() => {
       if (imgRef.current) {
-        imgRef.current.style.display = 'block';
+        imgRef.current.style.display = "block";
       }
-    }, 100); 
+    }, 100);
 
     return () => clearTimeout(timeoutId);
   }, [boardChange]);
 
   const handleClickBoardChange = () => {
-    setBoardChange(prev => !prev);
+    setBoardChange((prev) => !prev);
     setIsTransitioning(true);
   };
 
   useEffect(() => {
     if (isTransitioning) {
-      const timer = setTimeout(() => setIsTransitioning(false), 50); 
+      const timer = setTimeout(() => setIsTransitioning(false), 50);
       return () => clearTimeout(timer);
     }
   }, [isTransitioning]);
 
- 
   const initialUI = (
     <div>
       <div className="board">
-      <img
-        src={boardChange ? l_board : l_board_d}
-        alt="Ludo Board"
-        className={`board-image ${isTransitioning ? 'hidden' : 'visible'}`}
-        key={boardChange ? 'l_board' : 'l_board_d'}
-      />
+        <img
+          src={boardChange ? l_board : l_board_d}
+          alt="Ludo Board"
+          className={`board-image ${isTransitioning ? "hidden" : "visible"}`}
+          key={boardChange ? "l_board" : "l_board_d"}
+        />
 
         {playerElements}
         {cells}
@@ -1291,14 +1349,13 @@ const LudoMain = () => {
         style={{ position: "absolute", left: "10px", top: "120px" }}
       >
         Board Change
-        <input 
-          type="checkbox" 
-          name="boardChange" 
-          checked={boardChange} 
-          onChange={handleClickBoardChange} 
+        <input
+          type="checkbox"
+          name="boardChange"
+          checked={boardChange}
+          onChange={handleClickBoardChange}
         />
       </div>
-
       <button
         onClick={() => tellStat()}
         className="stat"
@@ -1309,7 +1366,7 @@ const LudoMain = () => {
     </div>
   );
 
-  return <div className = "game-container">{initialUI}</div>;
+  return <div className="game-container">{initialUI}</div>;
 };
 
 export default LudoMain;

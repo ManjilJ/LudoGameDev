@@ -27,6 +27,7 @@ You can find the project repository here: [Ludo Game Repository](https://github.
    - React: `npm install react`
    - React DOM: `npm install react-dom`
    - React Hotkeys Hook: `npm install react-hotkeys-hook`
+   - framer-motion library: `npm install framer-motion`
    - Ensure you have Node.js and npm (Node Package Manager) installed on your system. You can download and install them from [Node.js official website](https://nodejs.org/).
 
 8. **Development Tools**: The development process for this tutorial included the use of various tools and resources, including:

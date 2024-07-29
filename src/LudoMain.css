@@ -17,7 +17,9 @@ html, body {
   background-size: cover; /* Stretches the image to cover the entire area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Ensure the image does not repeat */
-  z-index: 0; /* Ensure the background is behind other elements */}
+  z-index: 0; /* Ensure the background is behind other elements */
+
+}
 
 .board {
   position: relative;
@@ -28,6 +30,7 @@ html, body {
   border: 2px solid black;
   margin: 0 auto;
   border-radius: 2%;
+  filter:drop-shadow(5px 5px 5px rgb(72, 116, 227) );
 }
 
 .board-image {
@@ -41,6 +44,11 @@ html, body {
   transition: opacity 1.2s ease-in-out;
 }
 
+.image-wrapper {
+  display: flex; /*inline-block;
+  /* Ensure the wrapper allows for scaling and rotation */
+  transform-origin: center center;
+}
 .board-image.hidden {
   opacity: 0;
 }

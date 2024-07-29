@@ -5,6 +5,7 @@ import cellimg from "./cellimg.png";
 import cellimg_homeline from "./cellimg_homeline.png";
 import "./LudoMain.css";
 import { useHotkeys } from "react-hotkeys-hook";
+import { motion, useCycle } from "framer-motion";
 
 let array_yellow = [0, 0, 0, 0];
 let AboveFive_yellow = true;
@@ -478,6 +479,27 @@ const LudoMain = () => {
   const [boardChange, setBoardChange] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
+  const [fadeState, setFadeState] = useState({ opacity: 1 });
+  const [animateState, cycleAnimateState] = useCycle(
+    {
+      opacity: 1,
+      scale: 1,
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+      filter: "blur(0px)",
+      rotate: 0,
+    },
+    {
+      opacity: 0.5,
+      scale: 0.5,
+      rotateX: 90,
+      rotateY: 90,
+      rotateZ: 90,
+      filter: "blur(100px)",
+      rotate: 2,
+    }
+  );
 
   useHotkeys("alt+y", () => handleYellowClick(0));
   useHotkeys("alt+g", () => handleGreenClick(0));
@@ -503,6 +525,8 @@ const LudoMain = () => {
 
   useEffect(() => {
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+    const scopesleep = (ms) =>
+      new Promise((resolve) => setTimeout(resolve, ms));
 
     const updatePlayers = async () => {
       setYellow_All_Home(false);
@@ -582,6 +606,16 @@ const LudoMain = () => {
         });
       }
     };
+    cycleAnimateState();
+
+    const scopesleepAndCycle = async () => {
+      cycleAnimateState();
+      await scopesleep(100);
+      cycleAnimateState();
+    };
+    scopesleepAndCycle();
+    cycleAnimateState();
+
     updatePlayers();
     NotAllHome = true;
   }, [reset]);
@@ -1238,7 +1272,12 @@ const LudoMain = () => {
     return () => clearTimeout(timeoutId);
   }, [boardChange]);
 
-  const handleClickBoardChange = () => {
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const handleClickBoardChange = async () => {
+    setFadeState({ opacity: 0 });
+    await sleep(1490);
+    setFadeState({ opacity: 1 });
     setBoardChange((prev) => !prev);
     setIsTransitioning(true);
   };
@@ -1253,12 +1292,31 @@ const LudoMain = () => {
   const initialUI = (
     <div>
       <div className="board">
-        <img
-          src={boardChange ? l_board : l_board_d}
-          alt="Ludo Board"
-          className={`board-image ${isTransitioning ? "hidden" : "visible"}`}
-          key={boardChange ? "l_board" : "l_board_d"}
-        />
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={fadeState}
+          transition={{ opacity: { duration: 1.5, ease: "easeInOut" } }}
+          className="image-wrapper"
+        >
+          <motion.img
+            src={boardChange ? l_board : l_board_d}
+            alt="Ludo Board"
+            initial={false}
+            animate={animateState}
+            transition={{
+              rotateX: { duration: 1.5, ease: "easeInOut" },
+              rotateY: { duration: 1.5, ease: "easeInOut" },
+              rotateZ: { duration: 1.5, ease: "easeInOut" },
+              opacity: { type: "spring", stiffness: 100 },
+              scale: { type: "spring", stiffness: 100 },
+              rotate: { type: "spring", stiffness: 100 },
+              filter: { duration: 0.5, ease: "easeInOut" },
+            }}
+            className={`board-image ${isTransitioning ? "hidden" : "visible"}`}
+            key={boardChange ? "l_board" : "l_board_d"}
+            // style={{ filter: "drop-shadow(8px 8px 8px rgb(200, 205, 170))" }}
+          />
+        </motion.div>
 
         {playerElements}
         {cells}
@@ -1359,9 +1417,13 @@ const LudoMain = () => {
       <button
         onClick={() => tellStat()}
         className="stat"
-        style={{ width: "180px" }}
+        style={{ width: "280px" }}
       >
         Developed by: Manjil.J. July 2024
+        <a href="https://github.com/manjilj/ludogamedev/">
+          {" "}
+          https://github.com/manjilj/ludogamedev
+        </a>
       </button>
     </div>
   );

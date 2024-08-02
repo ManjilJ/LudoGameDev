@@ -479,6 +479,8 @@ const LudoMain = () => {
   const [boardChange, setBoardChange] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
+  const [activateTrail, setActivateTrail] = useState(false);
+  const [trailOn, setTrailOn] = useState(false);
   const [fadeState, setFadeState] = useState({ opacity: 1 });
   const [animateState, cycleAnimateState] = useCycle(
     {
@@ -524,6 +526,7 @@ const LudoMain = () => {
   useHotkeys("alt+v", () => handleYellowClick(4));
 
   useEffect(() => {
+    setTrailOn(false);
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const scopesleep = (ms) =>
       new Promise((resolve) => setTimeout(resolve, ms));
@@ -558,7 +561,6 @@ const LudoMain = () => {
           return false;
         });
       });
-      console.log("isDifferent", isDifferent);
       setPlayers((prevPlayers) => {
         const updatedPlayers = { ...prevPlayers };
         Object.keys(infoPlayersCopyCopy).forEach((color) => {
@@ -698,6 +700,11 @@ const LudoMain = () => {
   };
 
   const handleClick = async (color, piece_chosen) => {
+    if (activateTrail) {
+      setTrailOn(true);
+    } else {
+      setTrailOn(false);
+    }
     let randomNum = GenRandom();
     let count = 0;
     let IndexYGBR_Piece = Math.ceil(Math.random() * 4);
@@ -710,7 +717,7 @@ const LudoMain = () => {
     if (yellow_All_Home && red_All_Home && green_All_Home && blue_All_Home) {
       ValidIndex = true;
       // May be redundant below line
-      setReset((prev) => !prev);
+      // setReset((prev) => !prev);
     }
     while (!ValidIndex) {
       if (IndexYGBR_Piece === 1) {
@@ -774,7 +781,7 @@ const LudoMain = () => {
             ) {
               ValidIndex = true;
               // May be redundant below line
-              setReset((prev) => !prev);
+              // setReset((prev) => !prev);
             }
           }
         } else {
@@ -803,7 +810,7 @@ const LudoMain = () => {
             ) {
               ValidIndex = true;
               // May be redundant below line
-              setReset((prev) => !prev);
+              // setReset((prev) => !prev);
             }
           }
         } else {
@@ -832,7 +839,7 @@ const LudoMain = () => {
             ) {
               ValidIndex = true;
               // May be redundant below line
-              setReset((prev) => !prev);
+              // setReset((prev) => !prev);
             }
           }
         } else {
@@ -977,7 +984,6 @@ const LudoMain = () => {
           setPlayers((prevPlayers) => {
             let updatedPlayers = { ...prevPlayers };
             if (updatedPlayers.red && updatedPlayers.red.length > 0) {
-              // debugger
               updatedPlayers.red[1] = {
                 ...updatedPlayers.red[1],
                 top: "71.11%",
@@ -987,9 +993,7 @@ const LudoMain = () => {
             return updatedPlayers;
           });
           setReset((prev) => !prev);
-          setTimeout(() => {
-            // Log updated players after state update
-          }, 1000);
+          setTimeout(() => {}, 1000);
           setTimeout(() => {
             setPlayers((prevPlayers) => {
               const updatedPlayers = { ...prevPlayers, ...infoPlayersCopyCopy };
@@ -1171,27 +1175,43 @@ const LudoMain = () => {
     <div key={color} className={`player-group`}>
       {players[color].map((player, index) => {
         const isHovered = hoveredPlayer === player;
-
         return (
-          <div
-            key={index}
-            className={`player ${color} ${isHovered ? "hovered" : ""} ${
-              player.transition ? "transition transformed" : ""
-            }`}
-            ref={playerRefs_With_Dummy0.current[color][index]}
-            style={{ top: player.top, left: player.left }}
-            onMouseDown={(event) =>
-              handleMouseDown(color, parseInt(player.label))
-            }
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
-            <p>{player.label}</p>
-          </div>
+          <>
+            <motion.div
+              key={index}
+              className={`player ${color} ${isHovered ? "hovered" : ""} ${
+                player.transition ? "transition transformed" : ""
+              }`}
+              ref={playerRefs_With_Dummy0.current[color][index]}
+              style={{ top: player.top, left: player.left }}
+              onMouseDown={(event) =>
+                handleMouseDown(color, parseInt(player.label))
+              }
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <p>{player.label}</p>
+            </motion.div>
+            {/* Below line redundant for now  */}
+            {[...Array(4)].map((_, i) => (
+              <motion.div
+                key={i}
+                className={`${trailOn ? "trail" : "x"}`}
+                style={{
+                  top: `${player.top}`,
+                  left: `${player.left}`,
+                  // backgroundColor: `${color}`,
+                }}
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0.18, transition: { duration: 1.8 } }} 
+              />
+            ))}{" "}
+          </>
         );
       })}
     </div>
   ));
+
   const handleYellowClick = (piece_chose) =>
     handleClick("yellow", piece_chose, true);
   const handleRedClick = (piece_chose) => handleClick("red", piece_chose, true);
@@ -1238,6 +1258,9 @@ const LudoMain = () => {
 
   const handleCheckBox = () => {
     setIsChecked(!isChecked);
+  };
+  const handleCheckBoxTrail = () => {
+    setActivateTrail(!activateTrail);
   };
 
   const tellStat = () => {
@@ -1397,22 +1420,49 @@ const LudoMain = () => {
       <div
         className="chkbox"
         onClick={handleCheckBox}
-        style={{ position: "absolute", left: "10px", top: "80px" }}
+        style={{
+          color: "rgba(0, 0, 0, 0.2)",
+          position: "absolute",
+          left: "10px",
+          top: "80px",
+        }}
       >
-        Continuous Autoplay
         <input type="checkbox" name="autoplay" defaultChecked={isChecked} />
+        Continuous Autoplay
       </div>
       <div
         className="chkbox"
-        style={{ position: "absolute", left: "10px", top: "120px" }}
+        style={{
+          color: "rgba(0, 0, 0, 0.2)",
+          position: "absolute",
+          left: "10px",
+          top: "120px",
+        }}
       >
-        Board Change
         <input
           type="checkbox"
           name="boardChange"
           checked={boardChange}
           onChange={handleClickBoardChange}
         />
+        Board Change
+      </div>
+      <div
+        className="chkboxT"
+        style={{
+          color: "rgba(0, 0, 0, 0.2)",
+          position: "absolute",
+          left: "10px",
+          top: "150px",
+        }}
+      >
+        <input
+          onChange={handleCheckBoxTrail}
+          type="checkbox"
+          name="trail"
+          defaultChecked={activateTrail}
+        />
+        Trail
       </div>
       <button
         onClick={() => tellStat()}

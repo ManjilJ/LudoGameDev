@@ -156,7 +156,7 @@ html, body {
 }
 
 .red {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 1);
   border-color: rgb(127, 76, 76);
   filter:drop-shadow(2px 2px 2px rgb(255, 94, 0));
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -180,6 +180,17 @@ html, body {
 .button_ygbr:hover {
   animation: hue-rotate-animation 1s infinite; /* Apply the animation */
 
+}
+
+.trail {
+  position: absolute;
+  width: 4.16%;
+  height: 4.16%;
+  border-radius: 40%;
+  background-color: rgba(69, 78, 81, 0.274); /* Semi-transparent color for trailing effect */
+  pointer-events: none; /* Ensure the trailing effect does not interfere with piece interaction */
+  transition: top 0.29s, left 0.29s;
+  filter:blur(2px);
 }
 
 /* Adjustments for smaller screens */

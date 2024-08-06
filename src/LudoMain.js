@@ -482,6 +482,7 @@ const LudoMain = () => {
   const [activateTrail, setActivateTrail] = useState(false);
   const [trailOn, setTrailOn] = useState(false);
   const [fadeState, setFadeState] = useState({ opacity: 1 });
+  const [homeBorderAnimate, setHomeBorderAnimate] = useState(false);
   const [animateState, cycleAnimateState] = useCycle(
     {
       opacity: 1,
@@ -896,7 +897,7 @@ const LudoMain = () => {
           if (currentPlayer.hot_spot <= 52) {
             let newPosition = count + currentPlayer.hot_spot;
             if (currentPlayer.hot_spot > 52) {
-              currentPlayer.hot_spot = 53;
+              currentPlayer.hot_spot = 60;
             }
 
             let remainingSteps = newPosition > 52 ? newPosition - 52 : 0;
@@ -1203,7 +1204,7 @@ const LudoMain = () => {
                   // backgroundColor: `${color}`,
                 }}
                 initial={{ opacity: 1 }}
-                animate={{ opacity: 0.18, transition: { duration: 1.8 } }} 
+                animate={{ opacity: 0.18, transition: { duration: 1.8 } }}
               />
             ))}{" "}
           </>
@@ -1262,6 +1263,17 @@ const LudoMain = () => {
   const handleCheckBoxTrail = () => {
     setActivateTrail(!activateTrail);
   };
+
+  const handleCheckBoxHomeBorderAnimate = () => {
+    setHomeBorderAnimate(!homeBorderAnimate);
+  };
+
+  useEffect(() => {
+    if (homeBorderAnimate) {
+    }
+
+    return console.log("x");
+  }, [homeBorderAnimate]);
 
   const tellStat = () => {
     if (Array.isArray(players)) {
@@ -1339,6 +1351,62 @@ const LudoMain = () => {
             key={boardChange ? "l_board" : "l_board_d"}
             // style={{ filter: "drop-shadow(8px 8px 8px rgb(200, 205, 170))" }}
           />
+          {/* Using framer-motion here as well! */}
+          {homeBorderAnimate ? (
+            <div className="container">
+              <motion.div
+                className="Q-circle topleft"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle topright"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle bottomleft"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle bottomright"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+            </div>
+          ) : (
+            <div className="container">
+              <motion.div
+                className="Q-circle topleft"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle topright"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle bottomleft"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="Q-circle bottomright"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+            </div>
+          )}
         </motion.div>
 
         {playerElements}
@@ -1463,6 +1531,23 @@ const LudoMain = () => {
           defaultChecked={activateTrail}
         />
         Trail
+      </div>
+      <div
+        className="chkboxRing"
+        style={{
+          color: "rgba(0, 0, 0, 0.2)",
+          position: "absolute",
+          left: "10px",
+          top: "170px",
+        }}
+      >
+        <input
+          onChange={handleCheckBoxHomeBorderAnimate}
+          type="checkbox"
+          name="homeBorderAnimate"
+          defaultChecked={homeBorderAnimate}
+        />
+        Home Ring Border
       </div>
       <button
         onClick={() => tellStat()}

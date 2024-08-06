@@ -3,7 +3,6 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /*overflow: hidden; /* Prevent scrolling */
 }
 
 .game-container {
@@ -12,25 +11,50 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Add this to stack elements vertically on smaller screens */
-  background-image: url('./sky.png'); /* Use your image here */
-  background-size: cover; /* Stretches the image to cover the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Ensure the image does not repeat */
-  z-index: 0; /* Ensure the background is behind other elements */
+  flex-direction: column; 
+  background-image: url('./sky.png'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  z-index: 0; 
 
 }
 
 .board {
   position: relative;
-  width: 90vw; /* Adjust to fit within the viewport width */
-  max-width: 600px; /* Ensure it doesn't exceed the original size */
-  height: 90vw; /* Maintain a square aspect ratio */
-  max-height: 600px; /* Ensure it doesn't exceed the original size */
+  width: 90vw; 
+  max-width: 600px; 
+  height: 90vw; 
+  max-height: 600px; 
   border: 2px solid black;
   margin: 0 auto;
   border-radius: 2%;
   filter:drop-shadow(5px 5px 5px rgb(72, 116, 227) );
+}
+.container {
+  position: fixed;
+  width: 5px; 
+  height: 5px; 
+  min-width: 5px; 
+  min-height:5px; 
+  max-width: 5px; 
+  max-height:5px; 
+
+}
+.Q-circle {
+  position: fixed;
+  width: 10%;
+  height: 10%; 
+  border-top-left-radius: 100%; 
+  border: 5px solid;
+  border-bottom: none;
+  border-right: none;
+  border-top-left-radius: 90%;
+  border-inline-width: 13px;  
+  border-inline-end: 35%;
+  top: 39%; 
+  left: 37.9%; 
+  transform-origin: 100% 100%;
 }
 
 .board-image {
@@ -45,8 +69,7 @@ html, body {
 }
 
 .image-wrapper {
-  display: flex; /*inline-block;
-  /* Ensure the wrapper allows for scaling and rotation */
+  display: flex; 
   transform-origin: center center;
 }
 .board-image.hidden {
@@ -61,7 +84,7 @@ html, body {
   justify-content: center;
   align-items: start;
   gap: 20px;
-  flex-wrap: wrap; /* Allow wrapping to handle smaller screens */
+  flex-wrap: wrap; 
 }
 .background-image {
   position: fixed;
@@ -69,16 +92,16 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./sky.png'); /* Use your image here */
-  background-size: cover; /* Stretches the image to cover the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Ensure the image does not repeat */
-  z-index: 0; /* Ensure the background is behind other elements */
+  background-image: url('./sky.png');
+  background-size: cover; /
+  background-position: center; 
+  background-repeat: no-repeat; 
+  z-index: 0; 
 }
 .cell, .homecell {
   position: absolute;
-  width: 3.33%; /* Relative width to maintain proportions */
-  height: 3.33%; /* Relative height to maintain proportions */
+  width: 3.33%; 
+  height: 3.33%; 
   border: none;
   display: flex;
   align-items: center;
@@ -95,14 +118,14 @@ html, body {
 
 .player {
   position: absolute;
-  width:3.16%; /* Relative width to maintain proportions */
-  height:3.16%; /* Relative height to maintain proportions */
+  width:3.16%; 
+  height:3.16%; 
   border: 2px solid rgb(0, 0, 0);
   border-radius: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2vw; /* Adjust font size relative to viewport */
+  font-size: 2vw; 
   z-index: 2;
 }
 .player.hovered {
@@ -111,7 +134,7 @@ html, body {
 }
 .player:hover{
   z-index: 1000 !important;
-  animation: hue-rotate-animation 1s infinite; /* Apply the animation */
+  animation: hue-rotate-animation 1s infinite; 
 }
 @keyframes hue-rotate-animation {
   from {
@@ -123,11 +146,10 @@ html, body {
 }
 
 .player.transition {
-  transition: top .5s ease, left 0.5s ease, transform 0.5s ease; /* Add transform property */
+  transition: top .5s ease, left 0.5s ease, transform 0.5s ease; 
 }
 
 .player.transition.transformed {
-  /* transform: scale(2.2);  */
   transition: top 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), left 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
@@ -164,8 +186,8 @@ html, body {
 
 .dice-roll {
   display: flex;
-  justify-content: center; /* Center dice roll on smaller screens */
-  margin-top: 20px; /* Add some spacing */
+  justify-content: center; 
+  margin-top: 20px; 
 }
 .button_ygbr {
   width: 60px;
@@ -178,7 +200,7 @@ html, body {
 
 }
 .button_ygbr:hover {
-  animation: hue-rotate-animation 1s infinite; /* Apply the animation */
+  animation: hue-rotate-animation 1s infinite; 
 
 }
 
@@ -187,10 +209,86 @@ html, body {
   width: 4.16%;
   height: 4.16%;
   border-radius: 40%;
-  background-color: rgba(69, 78, 81, 0.274); /* Semi-transparent color for trailing effect */
-  pointer-events: none; /* Ensure the trailing effect does not interfere with piece interaction */
+  background-color: rgba(69, 78, 81, 0.274); 
+  pointer-events: none; 
   transition: top 0.29s, left 0.29s;
   filter:blur(2px);
+}
+
+
+
+@keyframes initialAppear {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.Q-circle.topleft {
+  border-color: rgb(128, 128, 207);
+  filter:drop-shadow(8px 8px 8px rgb(55, 82, 255) );
+  transform: rotate(0deg);
+  animation: rotate_b 3.6s linear infinite;
+  opacity: 0;
+}
+
+.Q-circle.topright {
+  border-color: rgb(123, 174, 123);
+  filter:drop-shadow(8px 8px 8px rgb(112, 255, 55) );
+  transform: rotate(90deg); 
+  animation: rotate_g 3.6s linear infinite;
+}
+
+.Q-circle.bottomleft {
+  border-color: rgb(188, 188, 141);
+  filter:drop-shadow(8px 8px 8px rgb(215, 255, 55) );
+  transform: rotate(180deg);
+  animation: rotate_y 3.6s linear infinite;
+}
+
+.Q-circle.bottomright {
+  border-color: rgb(188, 130, 130);
+  filter:drop-shadow(8px 8px 8px rgb(223, 80, 80) );
+  transform: rotate(270deg);
+  animation: rotate_r 3.6s linear infinite;
+}
+
+@keyframes rotate_b {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_g {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(450deg);
+  }
+}
+@keyframes rotate_y {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(540deg);
+  }
+}
+@keyframes rotate_r {
+  0% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(630deg);
+  }
 }
 
 /* Adjustments for smaller screens */

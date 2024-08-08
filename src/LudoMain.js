@@ -483,6 +483,8 @@ const LudoMain = () => {
   const [trailOn, setTrailOn] = useState(false);
   const [fadeState, setFadeState] = useState({ opacity: 1 });
   const [homeBorderAnimate, setHomeBorderAnimate] = useState(false);
+  const [player_3dlook_piece, setPlayer_3dlook_piece] = useState(false);
+  const [lockScroll, setLockScroll] = useState(true);
   const [animateState, cycleAnimateState] = useCycle(
     {
       opacity: 1,
@@ -1180,11 +1182,18 @@ const LudoMain = () => {
           <>
             <motion.div
               key={index}
-              className={`player ${color} ${isHovered ? "hovered" : ""} ${
+              className={`player ${color} ${
+                player_3dlook_piece ? "player-3d-look" : ""
+              } ${isHovered ? "hovered" : ""} ${
                 player.transition ? "transition transformed" : ""
               }`}
               ref={playerRefs_With_Dummy0.current[color][index]}
               style={{ top: player.top, left: player.left }}
+              animate={{
+                borderTop: player_3dlook_piece ? "none" : null,
+                borderLeft: player_3dlook_piece ? "none" : null,
+              }}
+              transition={{ duration: 1.0, ease: "easeInOut" }}
               onMouseDown={(event) =>
                 handleMouseDown(color, parseInt(player.label))
               }
@@ -1268,12 +1277,22 @@ const LudoMain = () => {
     setHomeBorderAnimate(!homeBorderAnimate);
   };
 
-  useEffect(() => {
-    if (homeBorderAnimate) {
-    }
+  const handleCheckBox3dLook_piece = () => {
+    setPlayer_3dlook_piece(!player_3dlook_piece);
+  };
 
-    return console.log("x");
-  }, [homeBorderAnimate]);
+  const handleCheckBoxLockScroll = () => {
+    setLockScroll(!lockScroll);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = lockScroll ? "hidden" : "auto";
+
+    // Clean up by resetting overflow when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [lockScroll]);
 
   const tellStat = () => {
     if (Array.isArray(players)) {
@@ -1486,13 +1505,39 @@ const LudoMain = () => {
         Dice Roll
       </span>
       <div
+        className="chkboxLockScroll"
+        style={{
+          color: "rgba(0, 0, 222, 0.8)",
+          position: "absolute",
+          left: "10px",
+          top: "140px",
+        }}
+      >
+        <input
+          onChange={handleCheckBoxLockScroll}
+          title="For desktop especially, Unlock this and mouse scroll down to set all of your preferences if not accessible due to scroll lock. Alternative is to zoom out, set preferences"
+          type="checkbox"
+          name="LockScroll"
+          defaultChecked={lockScroll}
+        />
+        Scroll Locked
+      </div>
+      <button
+        onClick={() => tellStat()}
+        className="stat"
+        style={{ width: "280px" }}
+      >
+        Developed by: Manjil.J. July 2024
+        <a href="https://github.com/manjilj/ludogamedev/">
+          {" "}
+          https://github.com/manjilj/ludogamedev
+        </a>
+      </button>
+      <div
         className="chkbox"
         onClick={handleCheckBox}
         style={{
-          color: "rgba(0, 0, 0, 0.2)",
-          position: "absolute",
-          left: "10px",
-          top: "80px",
+          color: "rgba(222, 0, 22, 0.8)",
         }}
       >
         <input type="checkbox" name="autoplay" defaultChecked={isChecked} />
@@ -1501,10 +1546,8 @@ const LudoMain = () => {
       <div
         className="chkbox"
         style={{
-          color: "rgba(0, 0, 0, 0.2)",
-          position: "absolute",
-          left: "10px",
-          top: "120px",
+          color: "rgba(227, 244, 244,.8)",
+          fontSize: "1.3rem",
         }}
       >
         <input
@@ -1518,10 +1561,8 @@ const LudoMain = () => {
       <div
         className="chkboxT"
         style={{
-          color: "rgba(0, 0, 0, 0.2)",
-          position: "absolute",
-          left: "10px",
-          top: "150px",
+          color: "rgba(220, 255, 229, 0.80)",
+          fontSize: "1.3rem",
         }}
       >
         <input
@@ -1535,10 +1576,8 @@ const LudoMain = () => {
       <div
         className="chkboxRing"
         style={{
-          color: "rgba(0, 0, 0, 0.2)",
-          position: "absolute",
-          left: "10px",
-          top: "170px",
+          color: "rgba(0, 250, 0, 0.80)",
+          fontSize: "1.3rem",
         }}
       >
         <input
@@ -1549,17 +1588,24 @@ const LudoMain = () => {
         />
         Home Ring Border
       </div>
-      <button
-        onClick={() => tellStat()}
-        className="stat"
-        style={{ width: "280px" }}
+      <div
+        className="chkbox3dlook"
+        style={{
+          color: "rgba(255, 225, 228, 0.8)",
+          fontSize: "1.8rem",
+        }}
       >
-        Developed by: Manjil.J. July 2024
-        <a href="https://github.com/manjilj/ludogamedev/">
-          {" "}
-          https://github.com/manjilj/ludogamedev
-        </a>
-      </button>
+        <input
+          onChange={handleCheckBox3dLook_piece}
+          type="checkbox"
+          name="3dLook"
+          defaultChecked={player_3dlook_piece}
+        />
+        3d piece
+      </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 

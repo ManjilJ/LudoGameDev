@@ -118,16 +118,47 @@ html, body {
 
 .player {
   position: absolute;
-  width:3.16%; 
-  height:3.16%; 
-  border: 2px solid rgb(0, 0, 0);
+  width: 3.16%; 
+  height: 3.16%; 
+  border: 2.5px solid rgb(0, 0, 0);
   border-radius: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2vw; 
-  z-index: 2;
+  font-size: 1.3vw; 
+  z-index: 20;
 }
+
+.player-3d-look {
+  border-top: none;
+  border-left: none;
+}
+
+.player-3d-look::before {
+  position: absolute;
+  content: '';
+  width: 73%; 
+  height: 73%; 
+  border: 2.5px solid rgba(95, 92, 92, 0.363);
+  border-style:       double;
+  border-radius: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3vw; 
+  animation: rotate_piece 1.6s linear infinite;
+  z-index: 20;
+}
+
+@keyframes rotate_piece {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .player.hovered {
   z-index: 1000 !important;
 
@@ -154,9 +185,9 @@ html, body {
 }
 
 .yellow {
-  background-color: rgb(255, 255, 0);
-  color: black;
-  border-color: rgb(209, 184, 83);
+  background-color: rgb(222, 222, 4);
+  color: rgba(231, 255, 11, 0.942);
+  border-color: rgb(239, 255, 116);
   filter:drop-shadow(2px 3px 3px rgb(255, 94, 0));
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
@@ -164,14 +195,15 @@ html, body {
 
 .blue {
   background-color: blue;
-  color: darkgrey;
-  border-color: rgb(102, 171, 231);
+  color: rgb(104, 180, 242);
+  border-color: rgb(86, 143, 194);
   filter:drop-shadow(2px 2px 2px rgb(57, 5, 73) );
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 .green {
-  background-color: rgb(147, 206, 127);
+  background-color: rgb(61, 186, 20);
+  color: rgb(86, 244, 72);
   border-color: rgb(134, 231, 102);
   filter:drop-shadow(2px 2px 2px rgb(255, 94, 0));
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
@@ -179,7 +211,8 @@ html, body {
 
 .red {
   background-color: rgba(255, 0, 0, 1);
-  border-color: rgb(127, 76, 76);
+  color: rgb(255, 122, 124);
+  border-color: rgb(202, 132, 132);
   filter:drop-shadow(2px 2px 2px rgb(255, 94, 0));
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }

@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/LudoGameDev/static/css/main.e97c9952.css",
-    "main.js": "/LudoGameDev/static/js/main.d0540ab8.js",
+    "main.css": "/LudoGameDev/static/css/main.00497071.css",
+    "main.js": "/LudoGameDev/static/js/main.5b39a932.js",
     "static/media/l_board_dark.png": "/LudoGameDev/static/media/l_board_dark.5f4a6b5c98871e7b79f7.png",
     "static/media/l_board_d.png": "/LudoGameDev/static/media/l_board_d.43b2775e4b9dbf37e165.png",
     "static/media/l_board_dark_transp.png": "/LudoGameDev/static/media/l_board_dark_transp.23e51dc5c0ca2606f405.png",
+    "static/media/l_board_lite_transp.png": "/LudoGameDev/static/media/l_board_lite_transp.654440d7f0c9dc21642b.png",
     "static/media/l_board.png": "/LudoGameDev/static/media/l_board.2a300123612088412508.png",
     "static/media/galaxy.png": "/LudoGameDev/static/media/galaxy.b00cad41c818e0b91a87.png",
     "static/media/sky.png": "/LudoGameDev/static/media/sky.de8e42292331c07d34d9.png",
     "index.html": "/LudoGameDev/index.html",
-    "main.e97c9952.css.map": "/LudoGameDev/static/css/main.e97c9952.css.map",
-    "main.d0540ab8.js.map": "/LudoGameDev/static/js/main.d0540ab8.js.map"
+    "main.00497071.css.map": "/LudoGameDev/static/css/main.00497071.css.map",
+    "main.5b39a932.js.map": "/LudoGameDev/static/js/main.5b39a932.js.map"
   },
   "entrypoints": [
-    "static/css/main.e97c9952.css",
-    "static/js/main.d0540ab8.js"
+    "static/css/main.00497071.css",
+    "static/js/main.5b39a932.js"
   ]
 }

@@ -72,15 +72,15 @@ To use this project, follow these steps:
      - Advanced features.
    - This project serves as one of the proposed development guidelines and may not include all features expected in a complete Ludo game. It primarily focuses on demonstrating code utility and logic rather than complete gameplay, aiming to provide a foundational understanding while remaining open for enthusiasts to explore and enhance further. Consider that there are refactoring opportunities that can be undertaken to improve the codebase.
    
-   Note that this partial game itself may be 'playable' in some sense and can be used for experimentation and learning purposes.
+Note that this partial game itself may be 'playable' in some sense and can be used for experimentation and learning purposes.
 
-   6. **Code Misuse**:
-   - Please refrain from using any part or whole of the code in ways that violate ethical standards or infringe on intellectual property rights. Respect the author's work and ensure proper attribution and permission where applicable.   
+**Code Misuse**:
+- Please refrain from using any part or whole of the code in ways that violate ethical standards or infringe on intellectual property rights. Respect the author's work and ensure proper attribution and permission where applicable.   
 
-   7. **Continuous Autoplay**:
-   - If the Continuous Autoplay option is checked, the game play proceeds automatically in a fashion of randomly selecting pieces to move.
+**Continuous Autoplay**:
+- If the Continuous Autoplay option is checked, the game play proceeds automatically in a fashion of randomly selecting pieces to move.
 
-   8. **Indexing Conventions**:
-   - This project uses both 0-based and 1-based indexes. Where 1-based indexes are used, 0 is used as a placeholder and does not affect functionality.
+**Indexing Conventions**:
+- This project uses both 0-based and 1-based indexes. Where 1-based indexes are used, 0 is used as a placeholder and does not affect functionality.
 
 Enjoy!

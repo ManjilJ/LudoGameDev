@@ -21,15 +21,14 @@ import dice4 from './dice4.png';
 import dice5 from './dice5.png';
 import dice6 from './dice6.png';
 
-console.log(dice000); // Should print a path or a base64 encoded string
-
+console.log(dice000); 
 const DiceAnimation = ({ isAnimating, onAnimationEnd, finalImage, currentcolor }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [animationComplete, setAnimationComplete] = useState(false);
   const animationFrameIdRef = useRef(null);
   const startTimeRef = useRef(null);
-  const frameRate = 7; // Number of frames per second
-  const frameDuration = 600 / frameRate; // Duration of each frame in milliseconds
+  const frameRate = 7; 
+  const frameDuration = 600 / frameRate; 
 
   const diceImages = [
     dice000, dice001, dice002, dice003, dice004, dice005,
@@ -51,7 +50,7 @@ const DiceAnimation = ({ isAnimating, onAnimationEnd, finalImage, currentcolor }
     setAnimationComplete(false);
     startTimeRef.current = performance.now();
     const totalImages = diceImages.length;
-    const duration = 500; // Total duration of the animation in milliseconds
+    const duration = 500; 
     const animate = (timestamp) => {
       const elapsed = timestamp - startTimeRef.current;
       const progress = Math.min(elapsed / duration, 1);
@@ -62,7 +61,7 @@ const DiceAnimation = ({ isAnimating, onAnimationEnd, finalImage, currentcolor }
         animationFrameIdRef.current = requestAnimationFrame(animate);
       } else {
         setAnimationComplete(true);
-        setCurrentImage(finalImage); // Adjust index for finalImage array (0-based index)
+        setCurrentImage(finalImage); 
         onAnimationEnd();
       }
     };

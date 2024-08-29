@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import l_board from "./l_board.png";
 import l_board_d from "./l_board_d.png";
+import l_board_dark from "./l_board_dark.png";
+import l_board_dark_transp from "./l_board_dark_transp.png";
+import l_board_lite_transp from "./l_board_lite_transp.png";
 import cellimg from "./cellimg.png";
+import yellow_base from "./yelcircle_b.png";
+import yellow_baseph from "./yelcircle_bph.png";
+import green_base from "./grncircle_b.png";
+import green_baseph from "./grncircle_bph.png";
 import cellimg_homeline from "./cellimg_homeline.png";
+import bg_SkyImage from "./sky.png";
+import bg_GalaxyImage from "./galaxy.png";
 import "./LudoMain.css";
+import DiceAnimation from "./DiceAnimation";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, useCycle } from "framer-motion";
+import FormatTimestamp from "./FormatTimestamp";
 
 let array_yellow = [0, 0, 0, 0];
 let AboveFive_yellow = true;
@@ -18,21 +29,18 @@ let AboveFive_red = true;
 let cellPos_HomeLine_Yellow = [];
 let cellPositions = [
   { top: "99%", left: "99%" },
-
   { top: "42%", left: "5%" },
   { top: "42%", left: "11%" },
   { top: "42%", left: "17%" },
   { top: "42%", left: "23%" },
   { top: "42%", left: "29%" },
   { top: "42%", left: "35.5%" },
-
   { top: "36%", left: "42%" },
   { top: "29.7%", left: "42%" },
   { top: "23.2%", left: "42%" },
   { top: "17%", left: "42%" },
   { top: "10%", left: "42%" },
   { top: "4%", left: "42%" },
-
   { top: "4%", left: "48.3%" },
 
   { top: "4%", left: "54.3%" },
@@ -41,7 +49,6 @@ let cellPositions = [
   { top: "23.2%", left: "54.3%" },
   { top: "29.7%", left: "54.3%" },
   { top: "36%", left: "54.3%" },
-
   { top: "42%", left: "61.2%" },
   { top: "42%", left: "67.2%" },
   { top: "42%", left: "73.1%" },
@@ -54,8 +61,8 @@ let cellPositions = [
   { top: "54.2%", left: "79.4%" },
   { top: "54.2%", left: "73.1%" },
   { top: "54.2%", left: "67.2%" },
-  { top: "54.2%", left: "61.2%" },
 
+  { top: "54.2%", left: "61.2%" },
   { top: "60.2%", left: "54.3%" },
   { top: "67%", left: "54.3%" },
   { top: "73.5%", left: "54.3%" },
@@ -135,6 +142,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 0,
+      top_Circle: "0%",
+      left_Circle: "0%",
     },
     {
       color_piece: "yellow",
@@ -147,18 +157,24 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 6,
+      top_Circle: "42%",
+      left_Circle: "35.5%",
     },
     {
       color_piece: "yellow",
       label: "2",
       top: "12.77%",
       left: "25.59%",
-      default_top: "12.77%",
-      default_left: "25.59%",
+      default_top: "29.7%",
+      default_left: "42%",
       hot_spot: 1,
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 7,
+      top_Circle: "36%",
+      left_Circle: "42%",
     },
     {
       color_piece: "yellow",
@@ -171,6 +187,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 8,
+      top_Circle: "36%",
+      left_Circle: "48.3%",
     },
     {
       color_piece: "yellow",
@@ -183,6 +202,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 8,
+      top_Circle: "29.7%",
+      left_Circle: "48.3%",
     },
   ],
 
@@ -198,6 +220,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 0,
+      top_Circle: "0%",
+      left_Circle: "0%",
     },
     {
       color_piece: "blue",
@@ -210,6 +235,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 20,
+      top_Circle: "36%",
+      left_Circle: "54.3%",
     },
     {
       color_piece: "blue",
@@ -222,6 +250,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 21,
+      top_Circle: "42%",
+      left_Circle: "61.2%",
     },
     {
       color_piece: "blue",
@@ -234,6 +265,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 22,
+      top_Circle: "48%",
+      left_Circle: "61.2%",
     },
     {
       color_piece: "blue",
@@ -246,6 +280,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 22,
+      top_Circle: "48%",
+      left_Circle: "67.2%",
     },
   ],
   green: [
@@ -260,6 +297,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 0,
+      top_Circle: "0%",
+      left_Circle: "0%",
     },
     {
       color_piece: "green",
@@ -272,6 +312,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 28,
+      top_Circle: "60%",
+      left_Circle: "42%",
     },
     {
       color_piece: "green",
@@ -284,6 +327,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 29,
+      top_Circle: "54.2%",
+      left_Circle: "35.5%",
     },
     {
       color_piece: "green",
@@ -296,6 +342,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 30,
+      top_Circle: "48%",
+      left_Circle: "35.5%",
     },
     {
       color_piece: "green",
@@ -308,6 +357,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 31,
+      top_Circle: "67%",
+      left_Circle: "48.2%",
     },
   ],
   red: [
@@ -322,6 +374,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 0,
+      top_Circle: "0%",
+      left_Circle: "0%",
     },
     {
       color_piece: "red",
@@ -334,6 +389,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 34,
+      top_Circle: "54.2%",
+      left_Circle: "61.2%",
     },
     {
       color_piece: "red",
@@ -346,6 +404,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 35,
+      top_Circle: "60.2%",
+      left_Circle: "54.3%",
     },
     {
       color_piece: "red",
@@ -358,6 +419,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 36,
+      top_Circle: "60%",
+      left_Circle: "48.2%",
     },
     {
       color_piece: "red",
@@ -370,6 +434,9 @@ let infoPlayers = {
       home_spot: 0,
       home_reached: false,
       transition: false,
+      top_Circle_hot: 41,
+      top_Circle: "48%",
+      left_Circle: "29%",
     },
   ],
 };
@@ -457,6 +524,7 @@ const processColor = (
       break;
     }
   }
+
   return { aboveFive, IndexYGBR_Piece };
 };
 
@@ -476,7 +544,7 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-  const [boardChange, setBoardChange] = useState(true);
+  const [boardChange, setBoardChange] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
   const [activateTrail, setActivateTrail] = useState(false);
@@ -484,7 +552,10 @@ const LudoMain = () => {
   const [fadeState, setFadeState] = useState({ opacity: 1 });
   const [homeBorderAnimate, setHomeBorderAnimate] = useState(false);
   const [player_3dlook_piece, setPlayer_3dlook_piece] = useState(false);
+  const [finalImage, setFinalImage] = useState(0);
   const [lockScroll, setLockScroll] = useState(true);
+  const [showDice, setShowDice] = useState(true);
+  const [baseOpacityState, setBaseOpacityState] = useState(1);
   const [animateState, cycleAnimateState] = useCycle(
     {
       opacity: 1,
@@ -505,6 +576,18 @@ const LudoMain = () => {
       rotate: 2,
     }
   );
+  const [currentColor, setCurrentColor] = useState("");
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  useHotkeys("alt+q", async () => handlePositionCircle());
+  useHotkeys("alt+t", async () => {
+    for (let n = 1; n < 2; n++) {
+      handleRotateCircle();
+      await sleep(555);
+    }
+  });
 
   useHotkeys("alt+y", () => handleYellowClick(0));
   useHotkeys("alt+g", () => handleGreenClick(0));
@@ -527,12 +610,204 @@ const LudoMain = () => {
   useHotkeys("alt+x", () => handleYellowClick(2));
   useHotkeys("alt+c", () => handleYellowClick(3));
   useHotkeys("alt+v", () => handleYellowClick(4));
+  // console.log("Render LM");
+
+  function handlePositionCircle() {
+    setTrailOn(false);
+    const PiecePositionToRound = async () => {
+      setYellow_All_Home(false);
+      setGreen_All_Home(false);
+      setBlue_All_Home(false);
+      setRed_All_Home(false);
+
+      array_yellow = [0, 0, 0, 0];
+      AboveFive_yellow = true;
+      array_green = [0, 0, 0, 0];
+      AboveFive_green = true;
+      array_blue = [0, 0, 0, 0];
+      AboveFive_blue = true;
+      array_red = [0, 0, 0, 0];
+      AboveFive_red = true;
+      const infoPlayersCopyCopy = JSON.parse(JSON.stringify(infoPlayersCopy));
+
+      let isDifferent = false;
+
+      Object.keys(players).some((color) => {
+        return players[color].some((player) => {
+          if (
+            player.top !== player.default_top ||
+            player.left !== player.default_left
+          ) {
+            isDifferent = true;
+            return true;
+          }
+          return false;
+        });
+      });
+      setPlayers((prevPlayers) => {
+        const updatedPlayers = { ...prevPlayers };
+        Object.keys(infoPlayersCopyCopy).forEach((color) => {
+          updatedPlayers[color] = infoPlayersCopyCopy[color].map((player) => ({
+            ...player,
+            top: player.default_top,
+            left: player.default_left,
+            transition: true,
+          }));
+        });
+        return updatedPlayers;
+      });
+      await sleep(100);
+
+      if (!isDifferent && NotAllHome) {
+        setPlayers((prevPlayers) => {
+          const updatedPlayers = { ...prevPlayers };
+          Object.keys(infoPlayersCopyCopy).forEach((color) => {
+            updatedPlayers[color] = infoPlayersCopyCopy[color].map(
+              (player) => ({
+                ...player,
+                top: player.top_Circle,
+                left: player.left_Circle,
+                transition: true,
+              })
+            );
+          });
+          return updatedPlayers;
+        });
+        await sleep(900);
+
+        setPlayers((prevPlayers) => {
+          const updatedPlayers = { ...prevPlayers };
+          Object.keys(infoPlayersCopyCopy).forEach((color) => {
+            updatedPlayers[color] = infoPlayersCopyCopy[color].map(
+              (player) => ({
+                ...player,
+                top: player.top_Circle,
+                left: player.left_Circle,
+                transition: true,
+              })
+            );
+          });
+          return updatedPlayers;
+        });
+        await sleep(1900);
+
+        setPlayers((prevPlayers) => {
+          const updatedPlayers = { ...prevPlayers };
+
+          const middlePlayers = [];
+          const colorOrder = ["yellow", "blue", "red", "green"];
+
+          colorOrder.forEach((color) => {
+            const playersArray = updatedPlayers[color];
+            middlePlayers.push(
+              ...playersArray.slice(1, playersArray.length - 1)
+            );
+          });
+
+          const ZerothTop_Circle = middlePlayers[0].top_Circle;
+          const ZerothLeft_Circle = middlePlayers[0].left_Circle;
+
+          for (let i = 0; i < middlePlayers.length - 1; i++) {
+            middlePlayers[i].top_Circle = middlePlayers[i + 1].top_Circle;
+            middlePlayers[i].left_Circle = middlePlayers[i + 1].left_Circle;
+          }
+          middlePlayers[middlePlayers.length - 1].top_Circle = ZerothTop_Circle;
+          middlePlayers[middlePlayers.length - 1].left_Circle =
+            ZerothLeft_Circle;
+          let clr = "yellow";
+          for (let i = 1; i <= 12; i += 3) {
+            clr = "yellow";
+            let playersArray = updatedPlayers;
+            switch (true) {
+              case i === 1:
+                clr = "yellow";
+                break;
+              case i === 4:
+                clr = "blue";
+                break;
+              case i === 7:
+                clr = "red";
+                break;
+              case i === 10:
+                clr = "green";
+                break;
+              default:
+                break;
+            }
+            playersArray[clr][1].top = middlePlayers[i - 1].top_Circle;
+            playersArray[clr][1].left = middlePlayers[i - 1].left_Circle;
+            playersArray[clr][2].top = middlePlayers[i + 1 - 1].top_Circle;
+            playersArray[clr][2].left = middlePlayers[i + 1 - 1].left_Circle;
+            playersArray[clr][3].top = middlePlayers[i + 2 - 1].top_Circle;
+            playersArray[clr][3].left = middlePlayers[i + 2 - 1].left_Circle;
+          }
+          return updatedPlayers;
+        });
+        await sleep(900);
+      }
+    };
+
+    PiecePositionToRound();
+    NotAllHome = true;
+  }
+  function handleRotateCircle() {
+    const RotatePieceInRound = async () => {
+      setPlayers((prevPlayers) => {
+        const updatedPlayers = { ...prevPlayers };
+
+        const middlePlayers = [];
+        const colorOrder = ["yellow", "blue", "red", "green"];
+
+        colorOrder.forEach((color) => {
+          const playersArray = updatedPlayers[color];
+          middlePlayers.push(...playersArray.slice(1, playersArray.length - 1));
+        });
+
+        const ZerothTop_Circle = middlePlayers[0].top_Circle;
+        const ZerothLeft_Circle = middlePlayers[0].left_Circle;
+
+        for (let i = 0; i < middlePlayers.length - 1; i++) {
+          middlePlayers[i].top_Circle = middlePlayers[i + 1].top_Circle;
+          middlePlayers[i].left_Circle = middlePlayers[i + 1].left_Circle;
+        }
+        middlePlayers[middlePlayers.length - 1].top_Circle = ZerothTop_Circle;
+        middlePlayers[middlePlayers.length - 1].left_Circle = ZerothLeft_Circle;
+        let clr = "yellow";
+        for (let i = 1; i <= 12; i += 3) {
+          clr = "yellow";
+          let playersArray = updatedPlayers;
+          switch (true) {
+            case i === 1:
+              clr = "yellow";
+              break;
+            case i === 4:
+              clr = "blue";
+              break;
+            case i === 7:
+              clr = "red";
+              break;
+            case i === 10:
+              clr = "green";
+              break;
+            default:
+              break;
+          }
+          playersArray[clr][1].top = middlePlayers[i - 1].top_Circle;
+          playersArray[clr][1].left = middlePlayers[i - 1].left_Circle;
+          playersArray[clr][2].top = middlePlayers[i + 1 - 1].top_Circle;
+          playersArray[clr][2].left = middlePlayers[i + 1 - 1].left_Circle;
+          playersArray[clr][3].top = middlePlayers[i + 2 - 1].top_Circle;
+          playersArray[clr][3].left = middlePlayers[i + 2 - 1].left_Circle;
+        }
+        return updatedPlayers;
+      });
+      await sleep(2900);
+    };
+    RotatePieceInRound();
+  }
 
   useEffect(() => {
     setTrailOn(false);
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    const scopesleep = (ms) =>
-      new Promise((resolve) => setTimeout(resolve, ms));
 
     const updatePlayers = async () => {
       setYellow_All_Home(false);
@@ -613,16 +888,24 @@ const LudoMain = () => {
     };
     cycleAnimateState();
 
-    const scopesleepAndCycle = async () => {
+    setBaseOpacityState(0);
+
+    const Cycle = async () => {
       cycleAnimateState();
-      await scopesleep(100);
+      await sleep(100);
       cycleAnimateState();
     };
-    scopesleepAndCycle();
+    Cycle();
     cycleAnimateState();
 
     updatePlayers();
     NotAllHome = true;
+
+    const timeout = setTimeout(() => {
+      setBaseOpacityState(1);
+    }, 2420);
+
+    return () => clearTimeout(timeout);
   }, [reset]);
 
   let playerRefs_With_Dummy0 = useRef(null);
@@ -691,11 +974,12 @@ const LudoMain = () => {
   }, []);
 
   const GenRandom = () => {
-    setIsAnimating(true);
+    setIsAnimating((prev) => true);
     let randomNumber;
     randomNumber = Math.ceil(Math.random() * 6);
     let txt = document.getElementById("inputId");
     txt.value = randomNumber;
+    setFinalImage(randomNumber);
     return randomNumber;
   };
   const handleMouseDown = (color, piece_chosen) => {
@@ -703,6 +987,31 @@ const LudoMain = () => {
   };
 
   const handleClick = async (color, piece_chosen) => {
+    switch (color) {
+      case "yellow":
+        if (yellow_All_Home) {
+          return;
+        }
+        break;
+      case "green":
+        if (green_All_Home) {
+          return;
+        }
+        break;
+      case "red":
+        if (red_All_Home) {
+          return;
+        }
+        break;
+      case "blue":
+        if (blue_All_Home) {
+          return;
+        }
+        break;
+      default:
+        break;
+    }
+    setCurrentColor(color);
     if (activateTrail) {
       setTrailOn(true);
     } else {
@@ -712,172 +1021,102 @@ const LudoMain = () => {
     let count = 0;
     let IndexYGBR_Piece = Math.ceil(Math.random() * 4);
     if (piece_chosen === "undefined" || piece_chosen === 0) {
-      IndexYGBR_Piece = Math.ceil(Math.random() * 4);
+      // IndexYGBR_Piece = Math.ceil(Math.random() * 4);
     } else {
       IndexYGBR_Piece = piece_chosen;
     }
-    let ValidIndex = false;
     if (yellow_All_Home && red_All_Home && green_All_Home && blue_All_Home) {
-      ValidIndex = true;
-      // May be redundant below line
-      // setReset((prev) => !prev);
+      setReset((prev) => !prev);
     }
-    while (!ValidIndex) {
-      if (IndexYGBR_Piece === 1) {
-        if (yellow_All_Home) {
-          IndexYGBR_Piece = Math.ceil(Math.random() * 4);
-          continue;
+
+    function handleColorProcess(
+      color,
+      colorArray,
+      colorAboveFive,
+      colorAllHome,
+      setColorAllHome
+    ) {
+      if (!colorAllHome) {
+        const result = processColor(
+          players,
+          color,
+          colorArray,
+          colorAboveFive,
+          IndexYGBR_Piece
+        );
+        NotAllHome = result.aboveFive;
+
+        if (NotAllHome) {
+          IndexYGBR_Piece = result.IndexYGBR_Piece;
         } else {
-          ValidIndex = true;
-          break;
-        }
-      }
-      if (IndexYGBR_Piece === 2) {
-        if (green_All_Home) {
-          IndexYGBR_Piece = Math.ceil(Math.random() * 4);
-          continue;
-        } else {
-          ValidIndex = true;
-          break;
-        }
-      }
-      if (IndexYGBR_Piece === 3) {
-        if (blue_All_Home) {
-          IndexYGBR_Piece = Math.ceil(Math.random() * 4);
-          continue;
-        } else {
-          ValidIndex = true;
-          break;
-        }
-      }
-      if (IndexYGBR_Piece === 4) {
-        if (red_All_Home) {
-          IndexYGBR_Piece = Math.ceil(Math.random() * 4);
-          continue;
-        } else {
-          ValidIndex = true;
-          break;
+          setColorAllHome(true);
+
+          if (
+            yellow_All_Home &&
+            red_All_Home &&
+            green_All_Home &&
+            blue_All_Home
+          ) {
+            setReset((prev) => !prev);
+          }
         }
       }
     }
+
     NotAllHome = true;
+
     switch (color) {
       case "yellow":
-        if (!yellow_All_Home) {
-          const run_yellow = processColor(
-            players,
-            color,
-            array_yellow,
-            AboveFive_yellow,
-            IndexYGBR_Piece
-          );
-          NotAllHome = run_yellow.aboveFive;
-          if (NotAllHome) {
-            IndexYGBR_Piece = run_yellow.IndexYGBR_Piece;
-          } else {
-            setYellow_All_Home((prev) => true);
-            if (
-              yellow_All_Home &&
-              red_All_Home &&
-              green_All_Home &&
-              blue_All_Home
-            ) {
-              ValidIndex = true;
-              // May be redundant below line
-              // setReset((prev) => !prev);
-            }
-          }
-        } else {
-          NotAllHome = false;
+        if (yellow_All_Home) { 
+          return;  // Redundant but for time-being...
         }
+        handleColorProcess(
+          "yellow",
+          array_yellow,
+          AboveFive_yellow,
+          yellow_All_Home,
+          setYellow_All_Home
+        );
         break;
       case "green":
-        if (!green_All_Home) {
-          const run_green = processColor(
-            players,
-            color,
-            array_green,
-            AboveFive_green,
-            IndexYGBR_Piece
-          );
-          NotAllHome = run_green.aboveFive;
-          if (NotAllHome) {
-            IndexYGBR_Piece = run_green.IndexYGBR_Piece;
-          } else {
-            setGreen_All_Home((prev) => true);
-            if (
-              yellow_All_Home &&
-              red_All_Home &&
-              green_All_Home &&
-              blue_All_Home
-            ) {
-              ValidIndex = true;
-              // May be redundant below line
-              // setReset((prev) => !prev);
-            }
-          }
-        } else {
-          NotAllHome = false;
+        if (green_All_Home) {
+          return; // Redundant but for time-being...
         }
+        handleColorProcess(
+          "green",
+          array_green,
+          AboveFive_green,
+          green_All_Home,
+          setGreen_All_Home
+        );
         break;
       case "blue":
-        if (!blue_All_Home) {
-          const run_blue = processColor(
-            players,
-            color,
-            array_blue,
-            AboveFive_blue,
-            IndexYGBR_Piece
-          );
-          NotAllHome = run_blue.aboveFive;
-          if (NotAllHome) {
-            IndexYGBR_Piece = run_blue.IndexYGBR_Piece;
-          } else {
-            setBlue_All_Home((prev) => true);
-            if (
-              yellow_All_Home &&
-              red_All_Home &&
-              green_All_Home &&
-              blue_All_Home
-            ) {
-              ValidIndex = true;
-              // May be redundant below line
-              // setReset((prev) => !prev);
-            }
-          }
-        } else {
-          NotAllHome = false;
+        if (blue_All_Home) {
+          return; // Redundant but for time-being...
         }
+
+        handleColorProcess(
+          "blue",
+          array_blue,
+          AboveFive_blue,
+          blue_All_Home,
+          setBlue_All_Home
+        );
         break;
       case "red":
-        if (!red_All_Home) {
-          const run_red = processColor(
-            players,
-            color,
-            array_red,
-            AboveFive_red,
-            IndexYGBR_Piece
-          );
-          NotAllHome = run_red.aboveFive;
-          if (NotAllHome) {
-            IndexYGBR_Piece = run_red.IndexYGBR_Piece;
-          } else {
-            setRed_All_Home((prev) => true);
-            if (
-              yellow_All_Home &&
-              red_All_Home &&
-              green_All_Home &&
-              blue_All_Home
-            ) {
-              ValidIndex = true;
-              // May be redundant below line
-              setReset((prev) => !prev);
-            }
-          }
-        } else {
-          NotAllHome = false;
+        if (red_All_Home) {
+          return; // Redundant but for time-being...
         }
+
+        handleColorProcess(
+          "red",
+          array_red,
+          AboveFive_red,
+          red_All_Home,
+          setRed_All_Home
+        );
         break;
+
       default:
         break;
     }
@@ -891,7 +1130,7 @@ const LudoMain = () => {
         currentPlayerRef.current.classList.remove("blinking");
 
         while (count < randomNum) {
-          await new Promise((resolve) => setTimeout(resolve, 110));
+          await sleep(110);
           const updatedPlayers = { ...players };
           const currentPlayer = updatedPlayers[color][IndexYGBR_Piece];
           let finalPositionAlreadyReached = false;
@@ -1210,10 +1449,10 @@ const LudoMain = () => {
                 style={{
                   top: `${player.top}`,
                   left: `${player.left}`,
-                  // backgroundColor: `${color}`,
+                  backgroundColor: `${color}`,
                 }}
                 initial={{ opacity: 1 }}
-                animate={{ opacity: 0.18, transition: { duration: 1.8 } }}
+                animate={{ opacity: 0.0918, transition: { duration: 1.8 } }}
               />
             ))}{" "}
           </>
@@ -1229,43 +1468,58 @@ const LudoMain = () => {
     handleClick("green", piece_chose, true);
   const handleBlueClick = (piece_chose) =>
     handleClick("blue", piece_chose, true);
-
+ 
   useEffect(() => {
     if (!isChecked) {
-      return;
+        return;
     }
-    const timer1 = setTimeout(() => {
-      setDummyState((prevStete) => !prevStete);
-      const somerandom = Math.floor(Math.random() * 4) + 1;
+    const processColors = () => {
+        while (true) {
+            const randomColor = Math.floor(Math.random() * 4) + 1;
+            switch (randomColor) {
+                case 1:
+                    if (!yellow_All_Home) {
+                        handleYellowClick(0);
+                        return; 
+                    }
+                    break;
+                case 2:
+                    if (!red_All_Home) {
+                        handleRedClick(0);
+                        return;
+                    }
+                    break;
+                case 3:
+                    if (!green_All_Home) {
+                        handleGreenClick(0);
+                        return;
+                    }
+                    break;
+                case 4:
+                    if (!blue_All_Home) {
+                        handleBlueClick(0);
+                        return;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            if (yellow_All_Home && red_All_Home && green_All_Home && blue_All_Home) {
+                console.log("All colors are home");
+                setReset(prev => !prev);
+                return;
+            }
+        }
+    };
 
-      let inputRandom = Math.floor(Math.random() * 6) + 1;
-      if (inputRef.current) {
-        inputRef.current.value = inputRandom.toString();
-      } else {
-        return;
-      }
-      if (!players || Object.keys(players).length === 0) {
-        return;
-      }
-      switch (somerandom) {
-        case 1:
-          handleYellowClick(0);
-          break;
-        case 2:
-          handleRedClick(0);
-          break;
-        case 3:
-          handleGreenClick(0);
-          break;
-        case 4:
-          handleBlueClick(0);
-          break;
-        default:
-          break;
-      }
+    const timer = setTimeout(() => {
+        setDummyState((prevState) => !prevState);
+        processColors();
     }, 2500);
-  }, [dummyState, isChecked]);
 
+    return () => clearTimeout(timer);
+}, [dummyState, isChecked]);
+  
   const handleCheckBox = () => {
     setIsChecked(!isChecked);
   };
@@ -1281,6 +1535,9 @@ const LudoMain = () => {
     setPlayer_3dlook_piece(!player_3dlook_piece);
   };
 
+  const handleCheckboxShowDice = () => {
+    setShowDice(!showDice);
+  };
   const handleCheckBoxLockScroll = () => {
     setLockScroll(!lockScroll);
   };
@@ -1288,7 +1545,6 @@ const LudoMain = () => {
   useEffect(() => {
     document.body.style.overflow = lockScroll ? "hidden" : "auto";
 
-    // Clean up by resetting overflow when the component unmounts
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -1326,14 +1582,15 @@ const LudoMain = () => {
     return () => clearTimeout(timeoutId);
   }, [boardChange]);
 
-  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-  const handleClickBoardChange = async () => {
+  const handleClickBoardChange = async (event) => {
     setFadeState({ opacity: 0 });
     await sleep(1490);
     setFadeState({ opacity: 1 });
-    setBoardChange((prev) => !prev);
+    setBoardChange(parseInt(event.target.value));
     setIsTransitioning(true);
+  };
+  const handleDiceAnimationEnd = () => {
+    setIsAnimating(false);
   };
 
   useEffect(() => {
@@ -1352,8 +1609,52 @@ const LudoMain = () => {
           transition={{ opacity: { duration: 1.5, ease: "easeInOut" } }}
           className="image-wrapper"
         >
+          <img
+            onClick={handlePositionCircle}
+            className={`yellow_base ${
+              boardChange !== 3 ? "ph" : baseOpacityState ? "visible" : "hidden"
+            }`}
+            style={{
+              scale: ".95",
+              zIndex: 4,
+              position: "absolute",
+              top: "4.90%",
+              left: "6.36%",
+            }}
+            src={
+              boardChange === 1 || boardChange === 2
+                ? yellow_baseph
+                : yellow_base
+            }
+            alt="yellow base"
+          />
+          <img
+            onClick={handleRotateCircle}
+            className={`green_base ${
+              boardChange !== 3 ? "ph" : baseOpacityState ? "visible" : "hidden"
+            }`}
+            style={{
+              scale: ".95",
+              zIndex: 4,
+              position: "absolute",
+              top: "7.10%",
+              left: "64.30%",
+            }}
+            src={
+              boardChange === 1 || boardChange === 2 ? green_baseph : green_base
+            }
+            alt="green base"
+          />
           <motion.img
-            src={boardChange ? l_board : l_board_d}
+            src={
+              boardChange === 1
+                ? l_board
+                : boardChange === 2
+                ? l_board_d
+                : boardChange === 3
+                ? l_board_dark
+                : l_board_dark_transp
+            }
             alt="Ludo Board"
             initial={false}
             animate={animateState}
@@ -1367,8 +1668,7 @@ const LudoMain = () => {
               filter: { duration: 0.5, ease: "easeInOut" },
             }}
             className={`board-image ${isTransitioning ? "hidden" : "visible"}`}
-            key={boardChange ? "l_board" : "l_board_d"}
-            // style={{ filter: "drop-shadow(8px 8px 8px rgb(200, 205, 170))" }}
+            key={boardChange}
           />
           {/* Using framer-motion here as well! */}
           {homeBorderAnimate ? (
@@ -1493,6 +1793,7 @@ const LudoMain = () => {
         id="inputId"
         ref={inputRef}
         style={{
+          display: `${showDice ? "none" : ""}`,
           position: "absolute",
           max: "52",
           width: "33px",
@@ -1501,9 +1802,29 @@ const LudoMain = () => {
         }}
         type="number"
       />{" "}
-      <span style={{ position: "absolute", left: "10px", top: "20px  " }}>
+      <span
+        style={{
+          display: `${showDice ? "none" : ""}`,
+          color: "red",
+          position: "absolute",
+          left: "10px",
+          top: "20px  ",
+        }}
+      >
         Dice Roll
       </span>
+      {showDice ? (
+        <div className="containerDice">
+          <div className="diceAnimate">
+            <DiceAnimation
+              isAnimating={isAnimating}
+              onAnimationEnd={handleDiceAnimationEnd}
+              finalImage={finalImage}
+              currentcolor={currentColor}
+            />
+          </div>
+        </div>
+      ) : null}
       <div
         className="chkboxLockScroll"
         style={{
@@ -1550,13 +1871,46 @@ const LudoMain = () => {
           fontSize: "1.3rem",
         }}
       >
-        <input
-          type="checkbox"
-          name="boardChange"
-          checked={boardChange}
-          onChange={handleClickBoardChange}
-        />
-        Board Change
+        <h6>Select a Board below:</h6>
+        <label>
+          <input
+            type="radio"
+            value={1}
+            checked={boardChange === 1}
+            onChange={handleClickBoardChange}
+          />
+          Classic board
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            value={2}
+            checked={boardChange === 2}
+            onChange={handleClickBoardChange}
+          />
+          Board shadowed
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            value={3}
+            checked={boardChange === 3}
+            onChange={handleClickBoardChange}
+          />
+          Board dark mode
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            value={4}
+            checked={boardChange === 4}
+            onChange={handleClickBoardChange}
+          />
+          Transparent Dark (Partly)
+        </label>
       </div>
       <div
         className="chkboxT"
@@ -1603,13 +1957,36 @@ const LudoMain = () => {
         />
         3d piece
       </div>
+      <div
+        className="chkboxShowdice"
+        style={{
+          color: "rgba(155, 225, 128, 0.8)",
+          fontSize: "1.4rem",
+        }}
+      >
+        <input
+          onChange={handleCheckboxShowDice}
+          type="checkbox"
+          name="showdice"
+          defaultChecked={showDice}
+        />
+        Show dice
+      </div>
+      <FormatTimestamp/>
       <br />
       <br />
       <br />
     </div>
   );
-
-  return <div className="game-container">{initialUI}</div>;
+  return (
+    <div
+      className={`game-container ${
+        boardChange === 1 || boardChange === 2 ? "sky" : "galaxy"
+      } stretchSelectClass`}
+    >
+      {initialUI}
+    </div>
+  );
 };
 
 export default LudoMain;

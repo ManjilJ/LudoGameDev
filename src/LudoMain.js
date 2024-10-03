@@ -4,6 +4,17 @@ import l_board_d from "./l_board_d.png";
 import l_board_dark from "./l_board_dark.png";
 import l_board_dark_transp from "./l_board_dark_transp.png";
 import l_board_lite_transp from "./l_board_lite_transp.png";
+// import l_board_decor_1 from "./l_board_decor_1.png";
+// import l_board_decor_2 from "./l_board_decor_2.png";
+// import l_board_decor_3 from "./l_board_decor_3.png";
+import l_board_decor_4 from "./l_board_decor_4.png";
+import l_board_decor_5 from "./l_board_decor_5.png";
+// import l_board_decor_6 from "./l_board_decor_6.png";
+// import l_board_decor_7 from "./l_board_decor_7.png";
+// import l_board_decor_8 from "./l_board_decor_8.png";
+// import l_board_decor_9 from "./l_board_decor_9.png";
+import l_board_decor_10 from "./l_board_decor_10.png";
+import l_board_decor_11 from "./l_board_decor_11.png";
 import cellimg from "./cellimg.png";
 import yellow_base from "./yelcircle_b.png";
 import yellow_baseph from "./yelcircle_bph.png";
@@ -576,6 +587,7 @@ const LudoMain = () => {
       rotate: 2,
     }
   );
+  const [selectionMethod, setSelectionMethod] = useState("radio");
   const [currentColor, setCurrentColor] = useState("");
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -611,6 +623,31 @@ const LudoMain = () => {
   useHotkeys("alt+c", () => handleYellowClick(3));
   useHotkeys("alt+v", () => handleYellowClick(4));
   // console.log("Render LM");
+  const l_board_dropdown =
+    // boardChange === 6
+    // ? l_board_decor_1
+    // : boardChange === 7
+    // ? l_board_decor_2
+    // : boardChange === 8
+    // ? l_board_decor_3
+    // :
+    boardChange === 9
+      ? l_board_decor_4
+      : boardChange === 10
+      ? l_board_decor_5
+      : // : boardChange === 11
+      // ? l_board_decor_6
+      // : boardChange === 12
+      // ? l_board_decor_7
+      // : boardChange === 13
+      // ? l_board_decor_8
+      // : boardChange === 14
+      // ? l_board_decor_9
+      boardChange === 15
+      ? l_board_decor_10
+      : boardChange === 16
+      ? l_board_decor_11
+      : null;
 
   function handlePositionCircle() {
     setTrailOn(false);
@@ -1582,15 +1619,31 @@ const LudoMain = () => {
     return () => clearTimeout(timeoutId);
   }, [boardChange]);
 
-  const handleClickBoardChange = async (event) => {
+  const handleDiceAnimationEnd = () => {
+    setIsAnimating(false);
+  };
+
+  const handleClickBoardChangeRadio = async (event) => {
+    if (event.target.value === "5") {
+      setSelectionMethod("dropdown");
+      return;
+    } else {
+      setSelectionMethod("radio");
+    }
     setFadeState({ opacity: 0 });
     await sleep(1490);
     setFadeState({ opacity: 1 });
     setBoardChange(parseInt(event.target.value));
     setIsTransitioning(true);
   };
-  const handleDiceAnimationEnd = () => {
-    setIsAnimating(false);
+  const handleBoardSelectionDropDown = async (event) => {
+    setBoardChange(parseInt(event.target.value));
+    if (event.target.value === "") {
+      setSelectionMethod("radio");
+    } else {
+      setSelectionMethod("dropdown");
+      setBoardChange(parseInt(event.target.value));
+    }
   };
 
   useEffect(() => {
@@ -1647,13 +1700,17 @@ const LudoMain = () => {
           />
           <motion.img
             src={
-              boardChange === 1
-                ? l_board
-                : boardChange === 2
-                ? l_board_d
-                : boardChange === 3
-                ? l_board_dark
-                : l_board_dark_transp
+              selectionMethod === "radio"
+                ? boardChange === 1
+                  ? l_board
+                  : boardChange === 2
+                  ? l_board_d
+                  : boardChange === 3
+                  ? l_board_dark
+                  : boardChange === 4
+                  ? l_board_dark_transp
+                  : null
+                : l_board_dropdown
             }
             alt="Ludo Board"
             initial={false}
@@ -1877,7 +1934,7 @@ const LudoMain = () => {
             type="radio"
             value={1}
             checked={boardChange === 1}
-            onChange={handleClickBoardChange}
+            onChange={handleClickBoardChangeRadio}
           />
           Classic board
         </label>
@@ -1887,7 +1944,7 @@ const LudoMain = () => {
             type="radio"
             value={2}
             checked={boardChange === 2}
-            onChange={handleClickBoardChange}
+            onChange={handleClickBoardChangeRadio}
           />
           Board shadowed
         </label>
@@ -1897,7 +1954,7 @@ const LudoMain = () => {
             type="radio"
             value={3}
             checked={boardChange === 3}
-            onChange={handleClickBoardChange}
+            onChange={handleClickBoardChangeRadio}
           />
           Board dark mode
         </label>
@@ -1907,10 +1964,42 @@ const LudoMain = () => {
             type="radio"
             value={4}
             checked={boardChange === 4}
-            onChange={handleClickBoardChange}
+            onChange={handleClickBoardChangeRadio}
           />
           Transparent Dark (Partly)
         </label>
+
+        {/* <label>
+          <input
+            type="radio"
+            value={5}
+            checked={boardChange === 5}
+            onChange={handleClickBoardChangeRadio}
+          />
+          Select using drop down
+        </label> */}
+      </div>
+      {/*selectionMethod === "radio" and options*/}
+      <div>
+        <select
+          id="boards"
+          value={boardChange}
+          onChange={handleBoardSelectionDropDown}
+          // disabled={selectionMethod === "radio"} // disable if radio is used
+        >
+          <option value="">Select from Classic+ Board </option>
+          {/* <option value="6">Medieval Board Plain</option>
+              <option value="7">Medieval Board i</option>
+              <option value="8">Medieval Board ii</option> */}
+          <option value="9">Medieval Board iii</option>
+          <option value="10">Medieval Board iv</option>
+          {/* <option value="11">Medieval Board v</option>
+              <option value="12">Medieval Board vi</option>
+              <option value="13">Medieval Board vii</option>
+              <option value="14">Medieval Board viii</option> */}
+          <option value="15">Medieval Board ix</option>
+          <option value="16">Medieval Board x</option>
+        </select>
       </div>
       <div
         className="chkboxT"

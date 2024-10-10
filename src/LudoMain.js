@@ -1464,11 +1464,16 @@ const LudoMain = () => {
     }
 
     const boardPositionMap = {
-      1: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
-      2: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
-      3: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
-      4: { topKey: "l_cat_default_top_04", leftKey: "l_cat_default_left_04" },
-      9: { topKey: "l_cat_default_top_05", leftKey: "l_cat_default_left_05" },
+      1: { topKey: "default_top", leftKey: "default_left" },
+      2: { topKey: "default_top", leftKey: "default_left" },
+      3: { topKey: "default_top", leftKey: "default_left" },
+      4: { topKey: "default_top", leftKey: "default_left" },
+      5: { topKey: "default_top", leftKey: "default_left" },
+      9: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
+      10: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
+      11: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
+      15: { topKey: "l_cat_default_top_04", leftKey: "l_cat_default_left_04" },
+      16: { topKey: "l_cat_default_top_05", leftKey: "l_cat_default_left_05" },
       // Add more mappings for each boardChange value if necessary
     };
 

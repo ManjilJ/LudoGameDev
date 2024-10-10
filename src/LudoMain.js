@@ -1463,6 +1463,15 @@ const LudoMain = () => {
       setReset((prev) => !prev);
     }
 
+    const boardPositionMap = {
+      1: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
+      2: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
+      3: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
+      4: { topKey: "l_cat_default_top_04", leftKey: "l_cat_default_left_04" },
+      9: { topKey: "l_cat_default_top_05", leftKey: "l_cat_default_left_05" },
+      // Add more mappings for each boardChange value if necessary
+    };
+
     function handleColorProcess(
       color,
       colorArray,
@@ -1641,14 +1650,11 @@ const LudoMain = () => {
         handleOverlappingPlayers(color, s_currentPlayer);
         handlePieceTaken(color, s_currentPlayer);
         if (tellStat() >= 16) {
-          const infoPlayersCopyCopy = JSON.parse(
-            JSON.stringify(infoPlayersCopy)
-          );
+          setYellow_All_Home(false);
+          setGreen_All_Home(false);
+          setBlue_All_Home(false);
+          setRed_All_Home(false);
 
-          setYellow_All_Home((prev) => false);
-          setGreen_All_Home((prev) => false);
-          setBlue_All_Home((prev) => false);
-          setRed_All_Home((prev) => false);
           array_yellow = [0, 0, 0, 0];
           AboveFive_yellow = true;
           array_green = [0, 0, 0, 0];
@@ -1657,23 +1663,50 @@ const LudoMain = () => {
           AboveFive_blue = true;
           array_red = [0, 0, 0, 0];
           AboveFive_red = true;
-          console.log("changed to 71%");
+
           setPlayers((prevPlayers) => {
             let updatedPlayers = { ...prevPlayers };
+
             if (updatedPlayers.red && updatedPlayers.red.length > 0) {
               updatedPlayers.red[1] = {
                 ...updatedPlayers.red[1],
-                top: "71.11%",
+                top: "71.11%", // to trigger reset
               };
             }
 
             return updatedPlayers;
           });
+
           setReset((prev) => !prev);
-          setTimeout(() => {}, 1000);
+
           setTimeout(() => {
             setPlayers((prevPlayers) => {
-              const updatedPlayers = { ...prevPlayers, ...infoPlayersCopyCopy };
+              const updatedPlayers = { ...prevPlayers };
+
+              const positionKeys = boardPositionMap[boardChange];
+
+              if (positionKeys) {
+                const { topKey, leftKey } = positionKeys;
+
+                ["red", "green", "blue", "yellow"].forEach((color) => {
+                  if (updatedPlayers[color]) {
+                    updatedPlayers[color] = updatedPlayers[color].map(
+                      (player) => {
+                        // Update only players with hot_spot equal to 1 (unplayed pieces)
+                        if (player.hot_spot === 1) {
+                          return {
+                            ...player,
+                            top: player[topKey] || player.default_top,
+                            left: player[leftKey] || player.default_left,
+                          };
+                        }
+                        return player;
+                      }
+                    );
+                  }
+                });
+              }
+
               return updatedPlayers;
             });
           }, 2000);
@@ -2126,7 +2159,7 @@ const LudoMain = () => {
       });
     });
 
-    setPlayers(updatedPlayers); 
+    setPlayers(updatedPlayers);
   };
 
   const handleDiceAnimationEnd = () => {
@@ -2158,7 +2191,7 @@ const LudoMain = () => {
       setSelectionMethod("dropdown");
       setBoardChange(parseInt(event.target.value));
     }
-        repositionUnplayedPieces(newBoardChange);
+    repositionUnplayedPieces(newBoardChange);
   };
 
   useEffect(() => {

@@ -10,8 +10,8 @@ import l_board_lite_transp from "./l_board_lite_transp.png";
 import l_board_decor_4 from "./l_board_decor_4.png";
 import l_board_decor_5 from "./l_board_decor_5.png";
 import l_board_decor_6 from "./l_board_decor_6.png";
-// import l_board_decor_7 from "./l_board_decor_7.png";
-// import l_board_decor_8 from "./l_board_decor_8.png";
+import l_board_decor_7 from "./l_board_decor_7.png";
+import l_board_decor_8 from "./l_board_decor_8.png";
 // import l_board_decor_9 from "./l_board_decor_9.png";
 import l_board_decor_10 from "./l_board_decor_10.png";
 import l_board_decor_11 from "./l_board_decor_11.png";
@@ -167,6 +167,12 @@ let infoPlayers = {
       l_cat_default_top_05: "113.98%",
       l_cat_default_left_05: "10.79%",
 
+      l_cat_default_top_06: "113.98%",
+      l_cat_default_left_06: "10.79%",
+
+      l_cat_default_top_07: "113.98%",
+      l_cat_default_left_07: "10.79%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -195,6 +201,12 @@ let infoPlayers = {
       l_cat_default_top_05: "13%",
       l_cat_default_left_05: "23%",
 
+      l_cat_default_top_06: "18.2%",
+      l_cat_default_left_06: "17.6%",
+
+      l_cat_default_top_07: "12.3%",
+      l_cat_default_left_07: "11.72%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 6,
@@ -221,6 +233,12 @@ let infoPlayers = {
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "32.2%",
+
+      l_cat_default_top_06: "18.2%",
+      l_cat_default_left_06: "25.6%",
+
+      l_cat_default_top_07: "12.3%",
+      l_cat_default_left_07: "24.7%",
 
       home_reached: false,
       transition: false,
@@ -249,6 +267,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "32%",
       l_cat_default_left_05: "23%",
+      l_cat_default_top_06: "24%",
+      l_cat_default_left_06: "17.6%",
+
+      l_cat_default_top_07: "26.36%",
+      l_cat_default_left_07: "11.72%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -276,6 +299,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "13.7%",
+      l_cat_default_top_06: "24%",
+      l_cat_default_left_06: "25.6%",
+
+      l_cat_default_top_07: "26.36%",
+      l_cat_default_left_07: "24.7%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -306,6 +334,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "113.98%",
       l_cat_default_left_05: "33.79%",
+      l_cat_default_top_06: "113.98%",
+      l_cat_default_left_06: "33.79%",
+
+      l_cat_default_top_07: "113.98%",
+      l_cat_default_left_07: "33.79%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -333,6 +366,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "65.3%",
       l_cat_default_left_05: "23%",
+      l_cat_default_top_06: "71.5%",
+      l_cat_default_left_06: "17.6%",
+
+      l_cat_default_top_07: "71.77%",
+      l_cat_default_left_07: "12.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 20,
@@ -360,6 +398,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "32.2%",
+      l_cat_default_top_06: "71.5%",
+      l_cat_default_left_06: "25.6%",
+
+      l_cat_default_top_07: "71.77%",
+      l_cat_default_left_07: "25%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 21,
@@ -387,6 +430,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "83%",
       l_cat_default_left_05: "23%",
+      l_cat_default_top_06: "77%",
+      l_cat_default_left_06: "17.6%",
+
+      l_cat_default_top_07: "86.37%",
+      l_cat_default_left_07: "12.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 22,
@@ -414,6 +462,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "13.7%",
+      l_cat_default_top_06: "77%",
+      l_cat_default_left_06: "25.6%",
+
+      l_cat_default_top_07: "86.37%",
+      l_cat_default_left_07: "25%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 22,
@@ -443,6 +496,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "113.98%",
       l_cat_default_left_05: "60.79%",
+      l_cat_default_top_06: "113.98%",
+      l_cat_default_left_06: "60.79%",
+
+      l_cat_default_top_07: "113.98%",
+      l_cat_default_left_07: "60.79%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -470,6 +528,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "13%",
       l_cat_default_left_05: "74.2%",
+      l_cat_default_top_06: "18.2%",
+      l_cat_default_left_06: "70.6%",
+
+      l_cat_default_top_07: "12.3%",
+      l_cat_default_left_07: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 28,
@@ -497,6 +560,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "83.4%",
+      l_cat_default_top_06: "18.2%",
+      l_cat_default_left_06: "78%",
+
+      l_cat_default_top_07: "12.3%",
+      l_cat_default_left_07: "84.4%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 29,
@@ -524,6 +592,12 @@ let infoPlayers = {
 
       l_cat_default_top_05: "32%",
       l_cat_default_left_05: "74.2%",
+      l_cat_default_top_06: "24%",
+      l_cat_default_left_06: "70.6%",
+
+      l_cat_default_top_07: "26.36%",
+      l_cat_default_left_07: "71.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 30,
@@ -551,6 +625,12 @@ let infoPlayers = {
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "65.1%",
+      l_cat_default_top_06: "24%",
+      l_cat_default_left_06: "78%",
+
+      l_cat_default_top_07: "26.36%",
+      l_cat_default_left_07: "84.4%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 31,
@@ -580,6 +660,12 @@ let infoPlayers = {
 
       l_cat_default_top_05: "113.98%",
       l_cat_default_left_05: "87.79%",
+      l_cat_default_top_06: "113.98%",
+      l_cat_default_left_06: "87.79%",
+
+      l_cat_default_top_07: "113.98%",
+      l_cat_default_left_07: "87.79%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -607,6 +693,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "65%",
       l_cat_default_left_05: "74.2%",
+      l_cat_default_top_06: "71.5%",
+      l_cat_default_left_06: "70.7%",
+
+      l_cat_default_top_07: "71.77%",
+      l_cat_default_left_07: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 34,
@@ -634,6 +725,12 @@ let infoPlayers = {
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "83.4%",
+      l_cat_default_top_06: "71.5%",
+      l_cat_default_left_06: "77.7%",
+
+      l_cat_default_top_07: "71.77%",
+      l_cat_default_left_07: "84.4%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 35,
@@ -661,6 +758,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "83%",
       l_cat_default_left_05: "74.2%",
+      l_cat_default_top_06: "77%",
+      l_cat_default_left_06: "70.7%",
+
+      l_cat_default_top_07: "86.37%",
+      l_cat_default_left_07: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 36,
@@ -688,6 +790,11 @@ let infoPlayers = {
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "65.1%",
+      l_cat_default_top_06: "77%",
+      l_cat_default_left_06: "78%",
+
+      l_cat_default_top_07: "86.37%",
+      l_cat_default_left_07: "84.4%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 41,
@@ -882,11 +989,11 @@ const LudoMain = () => {
       ? l_board_decor_5
       : boardChange === 11
       ? l_board_decor_6
-      : // boardChange === 12
-      // ? l_board_decor_7
-      // : boardChange === 13
-      // ? l_board_decor_8
-      // : boardChange === 14
+      : boardChange === 12
+      ? l_board_decor_7
+      : boardChange === 13
+      ? l_board_decor_8
+      : // boardChange === 14
       // ? l_board_decor_9
       boardChange === 15
       ? l_board_decor_10
@@ -931,6 +1038,14 @@ const LudoMain = () => {
               adjustedDefaultTop = player.l_cat_default_top_03;
               adjustedDefaultLeft = player.l_cat_default_left_03;
               break;
+            case 12:
+              adjustedDefaultTop = player.l_cat_default_top_06;
+              adjustedDefaultLeft = player.l_cat_default_left_06;
+              break;
+            case 13:
+              adjustedDefaultTop = player.l_cat_default_top_07;
+              adjustedDefaultLeft = player.l_cat_default_left_07;
+              break;
             // Add more cases if necessary
             case 15:
               adjustedDefaultTop = player.l_cat_default_top_04;
@@ -972,6 +1087,12 @@ const LudoMain = () => {
             } else if (boardChange === 11) {
               newTop = player.l_cat_default_top_03;
               newLeft = player.l_cat_default_left_03;
+            } else if (boardChange === 12) {
+              newTop = player.l_cat_default_top_06;
+              newLeft = player.l_cat_default_left_06;
+            } else if (boardChange === 13) {
+              newTop = player.l_cat_default_top_07;
+              newLeft = player.l_cat_default_left_07;
             } else if (boardChange === 15) {
               newTop = player.l_cat_default_top_04;
               newLeft = player.l_cat_default_left_04;
@@ -1183,6 +1304,14 @@ const LudoMain = () => {
               adjustedDefaultTop = player.l_cat_default_top_03;
               adjustedDefaultLeft = player.l_cat_default_left_03;
               break;
+            case 12:
+              adjustedDefaultTop = player.l_cat_default_top_05;
+              adjustedDefaultLeft = player.l_cat_default_left_05;
+              break;
+            case 13:
+              adjustedDefaultTop = player.l_cat_default_top_07;
+              adjustedDefaultLeft = player.l_cat_default_left_07;
+              break;
             case 15:
               adjustedDefaultTop = player.l_cat_default_top_04;
               adjustedDefaultLeft = player.l_cat_default_left_04;
@@ -1227,6 +1356,14 @@ const LudoMain = () => {
               case 11:
                 newTop = player.l_cat_default_top_03;
                 newLeft = player.l_cat_default_left_03;
+                break;
+              case 12:
+                newTop = player.l_cat_default_top_06;
+                newLeft = player.l_cat_default_left_06;
+                break;
+              case 13:
+                newTop = player.l_cat_default_top_07;
+                newLeft = player.l_cat_default_left_07;
                 break;
               case 15:
                 newTop = player.l_cat_default_top_04;
@@ -1292,6 +1429,14 @@ const LudoMain = () => {
                 case 11:
                   newTop = player.l_cat_default_top_03;
                   newLeft = player.l_cat_default_left_03;
+                  break;
+                case 12:
+                  newTop = player.l_cat_default_top_06;
+                  newLeft = player.l_cat_default_left_06;
+                  break;
+                case 13:
+                  newTop = player.l_cat_default_top_07;
+                  newLeft = player.l_cat_default_left_07;
                   break;
                 case 15:
                   newTop = player.l_cat_default_top_04;
@@ -1472,6 +1617,8 @@ const LudoMain = () => {
       9: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
       10: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
       11: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
+      12: { topKey: "l_cat_default_top_06", leftKey: "l_cat_default_left_06" },
+      13: { topKey: "l_cat_default_top_07", leftKey: "l_cat_default_left_07" },
       15: { topKey: "l_cat_default_top_04", leftKey: "l_cat_default_left_04" },
       16: { topKey: "l_cat_default_top_05", leftKey: "l_cat_default_left_05" },
       // Add more mappings for each boardChange value if necessary
@@ -1834,6 +1981,14 @@ const LudoMain = () => {
                   newTop = player.l_cat_default_top_03;
                   newLeft = player.l_cat_default_left_03;
                   break;
+                case 12:
+                  newTop = player.l_cat_default_top_06;
+                  newLeft = player.l_cat_default_left_06;
+                  break;
+                case 13:
+                  newTop = player.l_cat_default_top_07;
+                  newLeft = player.l_cat_default_left_07;
+                  break;
                 case 15:
                   newTop = player.l_cat_default_top_04;
                   newLeft = player.l_cat_default_left_04;
@@ -2146,6 +2301,14 @@ const LudoMain = () => {
             case 11:
               player.top = player.l_cat_default_top_03;
               player.left = player.l_cat_default_left_03;
+              break;
+            case 12:
+              player.top = player.l_cat_default_top_06;
+              player.left = player.l_cat_default_left_06;
+              break;
+            case 13:
+              player.top = player.l_cat_default_top_07;
+              player.left = player.l_cat_default_left_07;
               break;
             case 15:
               player.top = player.l_cat_default_top_04;
@@ -2557,9 +2720,9 @@ const LudoMain = () => {
           <option value="9">Medieval Board iii</option>
           <option value="10">Medieval Board iv</option>
           <option value="11">Stylish Board 1</option>
-          {/*    <option value="12">Medieval Board vi</option>
-              <option value="13">Medieval Board vii</option>
-              <option value="14">Medieval Board viii</option> */}
+          <option value="12">Stylish Board 2</option>
+          <option value="13">Board Style 001</option>
+          {/* <option value="14">Medieval Board viii</option> */}
           <option value="15">Medieval Board ix</option>
           <option value="16">Medieval Board x</option>
         </select>

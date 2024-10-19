@@ -12,7 +12,7 @@ import l_board_decor_5 from "./l_board_decor_5.png";
 import l_board_decor_6 from "./l_board_decor_6.png";
 import l_board_decor_7 from "./l_board_decor_7.png";
 import l_board_decor_8 from "./l_board_decor_8.png";
-// import l_board_decor_9 from "./l_board_decor_9.png";
+import l_board_decor_9 from "./l_board_decor_9.png";
 import l_board_decor_10 from "./l_board_decor_10.png";
 import l_board_decor_11 from "./l_board_decor_11.png";
 import cellimg from "./cellimg.png";
@@ -172,6 +172,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "113.98%",
       l_cat_default_left_07: "10.79%",
+      l_cat_default_top_08: "113.98%",
+      l_cat_default_left_08: "10.79%",
 
       home_reached: false,
       transition: false,
@@ -206,6 +208,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "12.3%",
       l_cat_default_left_07: "11.72%",
+      l_cat_default_top_08: "13.2%",
+      l_cat_default_left_08: "12.97%",
 
       home_reached: false,
       transition: false,
@@ -239,6 +243,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "12.3%",
       l_cat_default_left_07: "24.7%",
+      l_cat_default_top_08: "13.2%",
+      l_cat_default_left_08: "23.8%",
 
       home_reached: false,
       transition: false,
@@ -272,6 +278,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "26.36%",
       l_cat_default_left_07: "11.72%",
+      l_cat_default_top_08: "24%",
+      l_cat_default_left_08: "12.97%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -304,6 +312,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "26.36%",
       l_cat_default_left_07: "24.7%",
+      l_cat_default_top_08: "24%",
+      l_cat_default_left_08: "23.8%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -339,6 +349,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "113.98%",
       l_cat_default_left_07: "33.79%",
+      l_cat_default_top_08: "113.98%",
+      l_cat_default_left_08: "33.79%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -371,6 +383,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "71.77%",
       l_cat_default_left_07: "12.2%",
+      l_cat_default_top_08: "71.47%",
+      l_cat_default_left_08: "12.97%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 20,
@@ -403,6 +417,14 @@ let infoPlayers = {
 
       l_cat_default_top_07: "71.77%",
       l_cat_default_left_07: "25%",
+      l_cat_default_top_08: "71.47%",
+      l_cat_default_left_08: "23.8%",
+
+
+
+
+
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 21,
@@ -435,6 +457,9 @@ let infoPlayers = {
 
       l_cat_default_top_07: "86.37%",
       l_cat_default_left_07: "12.2%",
+      l_cat_default_top_08: "82.37%",
+      l_cat_default_left_08: "12.97%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 22,
@@ -467,6 +492,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "86.37%",
       l_cat_default_left_07: "25%",
+      l_cat_default_top_08: "82.37%",
+      l_cat_default_left_08: "23.8%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 22,
@@ -501,6 +528,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "113.98%",
       l_cat_default_left_07: "60.79%",
+      l_cat_default_top_08: "113.98%",
+      l_cat_default_left_08: "60.79%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -533,6 +562,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "12.3%",
       l_cat_default_left_07: "71.2%",
+      l_cat_default_top_08: "13.2%",
+      l_cat_default_left_08: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 28,
@@ -565,6 +596,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "12.3%",
       l_cat_default_left_07: "84.4%",
+      l_cat_default_top_08: "13.2%",
+      l_cat_default_left_08: "82%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 29,
@@ -597,6 +630,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "26.36%",
       l_cat_default_left_07: "71.2%",
+      l_cat_default_top_08: "24%",
+      l_cat_default_left_08: "71.2%",
 
       home_reached: false,
       transition: false,
@@ -630,6 +665,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "26.36%",
       l_cat_default_left_07: "84.4%",
+      l_cat_default_top_08: "24%",
+      l_cat_default_left_08: "82%",
 
       home_reached: false,
       transition: false,
@@ -665,6 +702,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "113.98%",
       l_cat_default_left_07: "87.79%",
+      l_cat_default_top_08: "113.98%",
+      l_cat_default_left_08: "87.79%",
 
       home_reached: false,
       transition: false,
@@ -698,6 +737,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "71.77%",
       l_cat_default_left_07: "71.2%",
+      l_cat_default_top_08: "71.47%",
+      l_cat_default_left_08: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 34,
@@ -730,7 +771,9 @@ let infoPlayers = {
 
       l_cat_default_top_07: "71.77%",
       l_cat_default_left_07: "84.4%",
-
+      l_cat_default_top_08: "71.47%",
+      l_cat_default_left_08: "82%",
+     
       home_reached: false,
       transition: false,
       top_Circle_hot: 35,
@@ -763,6 +806,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "86.37%",
       l_cat_default_left_07: "71.2%",
+      l_cat_default_top_08: "82.37%",
+      l_cat_default_left_08: "71.2%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 36,
@@ -795,6 +840,8 @@ let infoPlayers = {
 
       l_cat_default_top_07: "86.37%",
       l_cat_default_left_07: "84.4%",
+      l_cat_default_top_08: "82.37%",
+      l_cat_default_left_08: "82%",
       home_reached: false,
       transition: false,
       top_Circle_hot: 41,
@@ -907,7 +954,7 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-  const [boardChange, setBoardChange] = useState(1);
+  const [boardChange, setBoardChange] = useState(14);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
   const [activateTrail, setActivateTrail] = useState(false);
@@ -939,7 +986,7 @@ const LudoMain = () => {
       rotate: 2,
     }
   );
-  const [selectionMethod, setSelectionMethod] = useState("radio");
+  const [selectionMethod, setSelectionMethod] = useState("dropdown");
   const [currentColor, setCurrentColor] = useState("");
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -993,9 +1040,9 @@ const LudoMain = () => {
       ? l_board_decor_7
       : boardChange === 13
       ? l_board_decor_8
-      : // boardChange === 14
-      // ? l_board_decor_9
-      boardChange === 15
+      : boardChange === 14
+      ? l_board_decor_9
+      : boardChange === 15
       ? l_board_decor_10
       : boardChange === 16
       ? l_board_decor_11
@@ -1046,6 +1093,10 @@ const LudoMain = () => {
               adjustedDefaultTop = player.l_cat_default_top_07;
               adjustedDefaultLeft = player.l_cat_default_left_07;
               break;
+            case 14:
+              adjustedDefaultTop = player.l_cat_default_top_08;
+              adjustedDefaultLeft = player.l_cat_default_left_08;
+              break;
             // Add more cases if necessary
             case 15:
               adjustedDefaultTop = player.l_cat_default_top_04;
@@ -1093,6 +1144,9 @@ const LudoMain = () => {
             } else if (boardChange === 13) {
               newTop = player.l_cat_default_top_07;
               newLeft = player.l_cat_default_left_07;
+            } else if (boardChange === 14) {
+              newTop = player.l_cat_default_top_08;
+              newLeft = player.l_cat_default_left_08;
             } else if (boardChange === 15) {
               newTop = player.l_cat_default_top_04;
               newLeft = player.l_cat_default_left_04;
@@ -1312,6 +1366,10 @@ const LudoMain = () => {
               adjustedDefaultTop = player.l_cat_default_top_07;
               adjustedDefaultLeft = player.l_cat_default_left_07;
               break;
+            case 14:
+              adjustedDefaultTop = player.l_cat_default_top_08;
+              adjustedDefaultLeft = player.l_cat_default_left_08;
+              break;
             case 15:
               adjustedDefaultTop = player.l_cat_default_top_04;
               adjustedDefaultLeft = player.l_cat_default_left_04;
@@ -1364,6 +1422,10 @@ const LudoMain = () => {
               case 13:
                 newTop = player.l_cat_default_top_07;
                 newLeft = player.l_cat_default_left_07;
+                break;
+              case 14:
+                newTop = player.l_cat_default_top_08;
+                newLeft = player.l_cat_default_left_08;
                 break;
               case 15:
                 newTop = player.l_cat_default_top_04;
@@ -1437,6 +1499,10 @@ const LudoMain = () => {
                 case 13:
                   newTop = player.l_cat_default_top_07;
                   newLeft = player.l_cat_default_left_07;
+                  break;
+                case 14:
+                  newTop = player.l_cat_default_top_08;
+                  newLeft = player.l_cat_default_left_08;
                   break;
                 case 15:
                   newTop = player.l_cat_default_top_04;
@@ -1619,6 +1685,7 @@ const LudoMain = () => {
       11: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
       12: { topKey: "l_cat_default_top_06", leftKey: "l_cat_default_left_06" },
       13: { topKey: "l_cat_default_top_07", leftKey: "l_cat_default_left_07" },
+      14: { topKey: "l_cat_default_top_08", leftKey: "l_cat_default_left_08" },
       15: { topKey: "l_cat_default_top_04", leftKey: "l_cat_default_left_04" },
       16: { topKey: "l_cat_default_top_05", leftKey: "l_cat_default_left_05" },
       // Add more mappings for each boardChange value if necessary
@@ -1989,6 +2056,10 @@ const LudoMain = () => {
                   newTop = player.l_cat_default_top_07;
                   newLeft = player.l_cat_default_left_07;
                   break;
+                case 14:
+                  newTop = player.l_cat_default_top_08;
+                  newLeft = player.l_cat_default_left_08;
+                  break;
                 case 15:
                   newTop = player.l_cat_default_top_04;
                   newLeft = player.l_cat_default_left_04;
@@ -2309,6 +2380,10 @@ const LudoMain = () => {
             case 13:
               player.top = player.l_cat_default_top_07;
               player.left = player.l_cat_default_left_07;
+              break;
+            case 14:
+              player.top = player.l_cat_default_top_08;
+              player.left = player.l_cat_default_left_08;
               break;
             case 15:
               player.top = player.l_cat_default_top_04;
@@ -2722,7 +2797,7 @@ const LudoMain = () => {
           <option value="11">Stylish Board 1</option>
           <option value="12">Stylish Board 2</option>
           <option value="13">Board Style 001</option>
-          {/* <option value="14">Medieval Board viii</option> */}
+          <option value="14">Board Style 002</option>
           <option value="15">Medieval Board ix</option>
           <option value="16">Medieval Board x</option>
         </select>

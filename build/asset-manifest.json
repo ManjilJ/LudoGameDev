@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/LudoGameDev/static/css/main.00497071.css",
+    "main.js": "/LudoGameDev/static/js/main.64346d30.js",
+    "static/media/l_board_decor_10.png": "/LudoGameDev/static/media/l_board_decor_10.a8279603bbc05787fdf7.png",
+    "static/media/l_board_decor_11.png": "/LudoGameDev/static/media/l_board_decor_11.823e4c03cdbde8c7d4f7.png",
+    "static/media/l_board_decor_7.png": "/LudoGameDev/static/media/l_board_decor_7.89022f19fee333913aac.png",
+    "static/media/l_board_decor_4.png": "/LudoGameDev/static/media/l_board_decor_4.6b5110a0a7dc674e9969.png",
+    "static/media/l_board_decor_6.png": "/LudoGameDev/static/media/l_board_decor_6.9514860c1b833268a9df.png",
+    "static/media/l_board_decor_8.png": "/LudoGameDev/static/media/l_board_decor_8.36f8646c805bee6e3800.png",
+    "static/media/l_board_decor_5.png": "/LudoGameDev/static/media/l_board_decor_5.0be4ce0d8e588a22d8c0.png",
+    "static/media/l_board_dark.png": "/LudoGameDev/static/media/l_board_dark.5f4a6b5c98871e7b79f7.png",
+    "static/media/l_board_d.png": "/LudoGameDev/static/media/l_board_d.43b2775e4b9dbf37e165.png",
+    "static/media/l_board_dark_transp.png": "/LudoGameDev/static/media/l_board_dark_transp.23e51dc5c0ca2606f405.png",
+    "static/media/l_board_lite_transp.png": "/LudoGameDev/static/media/l_board_lite_transp.654440d7f0c9dc21642b.png",
+    "static/media/l_board.png": "/LudoGameDev/static/media/l_board.2a300123612088412508.png",
+    "static/media/galaxy.png": "/LudoGameDev/static/media/galaxy.b00cad41c818e0b91a87.png",
+    "static/media/sky.png": "/LudoGameDev/static/media/sky.de8e42292331c07d34d9.png",
+    "index.html": "/LudoGameDev/index.html",
+    "main.00497071.css.map": "/LudoGameDev/static/css/main.00497071.css.map",
+    "main.64346d30.js.map": "/LudoGameDev/static/js/main.64346d30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00497071.css",
+    "static/js/main.64346d30.js"
+  ]
+}

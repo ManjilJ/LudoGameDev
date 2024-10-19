@@ -954,7 +954,7 @@ const LudoMain = () => {
   const [reset, setReset] = useState(false);
   const [hoveredPlayer, setHoveredPlayer] = useState(null);
   const [isChecked, setIsChecked] = useState(false);
-  const [boardChange, setBoardChange] = useState(14);
+  const [boardChange, setBoardChange] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const imgRef = useRef(null);
   const [activateTrail, setActivateTrail] = useState(false);
@@ -986,7 +986,7 @@ const LudoMain = () => {
       rotate: 2,
     }
   );
-  const [selectionMethod, setSelectionMethod] = useState("dropdown");
+  const [selectionMethod, setSelectionMethod] = useState("radio");
   const [currentColor, setCurrentColor] = useState("");
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));

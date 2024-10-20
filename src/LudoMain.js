@@ -6,7 +6,7 @@ import l_board_dark_transp from "./l_board_dark_transp.png";
 import l_board_lite_transp from "./l_board_lite_transp.png";
 // import l_board_decor_1 from "./l_board_decor_1.png";
 // import l_board_decor_2 from "./l_board_decor_2.png";
-// import l_board_decor_3 from "./l_board_decor_3.png";
+import l_board_decor_3 from "./l_board_decor_3.png";
 import l_board_decor_4 from "./l_board_decor_4.png";
 import l_board_decor_5 from "./l_board_decor_5.png";
 import l_board_decor_6 from "./l_board_decor_6.png";
@@ -174,6 +174,8 @@ let infoPlayers = {
       l_cat_default_left_07: "10.79%",
       l_cat_default_top_08: "113.98%",
       l_cat_default_left_08: "10.79%",
+      l_cat_default_top_09: "113.98%",
+      l_cat_default_left_09: "10.79%",
 
       home_reached: false,
       transition: false,
@@ -197,8 +199,8 @@ let infoPlayers = {
       l_cat_default_top_03: "18%",
       l_cat_default_left_03: "17.2%",
 
-      l_cat_default_top_04: "18%",
-      l_cat_default_left_04: "17.2%",
+      l_cat_default_top_04: "13%",
+      l_cat_default_left_04: "14.2%",
 
       l_cat_default_top_05: "13%",
       l_cat_default_left_05: "23%",
@@ -210,6 +212,8 @@ let infoPlayers = {
       l_cat_default_left_07: "11.72%",
       l_cat_default_top_08: "13.2%",
       l_cat_default_left_08: "12.97%",
+      l_cat_default_top_09: "14%",
+      l_cat_default_left_09: "24.2%",
 
       home_reached: false,
       transition: false,
@@ -232,7 +236,7 @@ let infoPlayers = {
       l_cat_default_left_02: "21.59%",
       l_cat_default_top_03: "18%",
       l_cat_default_left_03: "27.2%",
-      l_cat_default_top_04: "18%",
+      l_cat_default_top_04: "13%",
       l_cat_default_left_04: "27.2%",
 
       l_cat_default_top_05: "22.35%",
@@ -245,6 +249,8 @@ let infoPlayers = {
       l_cat_default_left_07: "24.7%",
       l_cat_default_top_08: "13.2%",
       l_cat_default_left_08: "23.8%",
+      l_cat_default_top_09: "24%",
+      l_cat_default_left_09: "33.2%",
 
       home_reached: false,
       transition: false,
@@ -268,8 +274,8 @@ let infoPlayers = {
       l_cat_default_left_02: "7.79%",
       l_cat_default_top_03: "28%",
       l_cat_default_left_03: "17.2%",
-      l_cat_default_top_04: "28%",
-      l_cat_default_left_04: "17.2%",
+      l_cat_default_top_04: "26.5%",
+      l_cat_default_left_04: "14.2%",
 
       l_cat_default_top_05: "32%",
       l_cat_default_left_05: "23%",
@@ -280,6 +286,9 @@ let infoPlayers = {
       l_cat_default_left_07: "11.72%",
       l_cat_default_top_08: "24%",
       l_cat_default_left_08: "12.97%",
+      l_cat_default_top_09: "33%",
+      l_cat_default_left_09: "24.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -302,7 +311,7 @@ let infoPlayers = {
       l_cat_default_left_02: "21.59%",
       l_cat_default_top_03: "28%",
       l_cat_default_left_03: "27.2%",
-      l_cat_default_top_04: "28%",
+      l_cat_default_top_04: "26.5%",
       l_cat_default_left_04: "27.2%",
 
       l_cat_default_top_05: "22.35%",
@@ -314,6 +323,9 @@ let infoPlayers = {
       l_cat_default_left_07: "24.7%",
       l_cat_default_top_08: "24%",
       l_cat_default_left_08: "23.8%",
+      l_cat_default_top_09: "24%",
+      l_cat_default_left_09: "16.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 8,
@@ -351,6 +363,9 @@ let infoPlayers = {
       l_cat_default_left_07: "33.79%",
       l_cat_default_top_08: "113.98%",
       l_cat_default_left_08: "33.79%",
+      l_cat_default_top_09: "113.98%",
+      l_cat_default_left_09: "33.79%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -373,8 +388,8 @@ let infoPlayers = {
       l_cat_default_left_02: "7.98%",
       l_cat_default_top_03: "68%",
       l_cat_default_left_03: "17.2%",
-      l_cat_default_top_04: "68%",
-      l_cat_default_left_04: "17.2%",
+      l_cat_default_top_04: "68.6%",
+      l_cat_default_left_04: "14%",
 
       l_cat_default_top_05: "65.3%",
       l_cat_default_left_05: "23%",
@@ -385,6 +400,9 @@ let infoPlayers = {
       l_cat_default_left_07: "12.2%",
       l_cat_default_top_08: "71.47%",
       l_cat_default_left_08: "12.97%",
+      l_cat_default_top_09: "61.2%",
+      l_cat_default_left_09: "24.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 20,
@@ -407,7 +425,7 @@ let infoPlayers = {
       l_cat_default_left_02: "23.19%",
       l_cat_default_top_03: "68%",
       l_cat_default_left_03: "27.2%",
-      l_cat_default_top_04: "68%",
+      l_cat_default_top_04: "68.6%",
       l_cat_default_left_04: "27.2%",
 
       l_cat_default_top_05: "74%",
@@ -420,10 +438,8 @@ let infoPlayers = {
       l_cat_default_top_08: "71.47%",
       l_cat_default_left_08: "23.8%",
 
-
-
-
-
+      l_cat_default_top_09: "72%",
+      l_cat_default_left_09: "33.2%",
 
       home_reached: false,
       transition: false,
@@ -447,8 +463,8 @@ let infoPlayers = {
       l_cat_default_left_02: "7.98%",
       l_cat_default_top_03: "78%",
       l_cat_default_left_03: "17.2%",
-      l_cat_default_top_04: "78%",
-      l_cat_default_left_04: "17.2%",
+      l_cat_default_top_04: "82.1%",
+      l_cat_default_left_04: "14%",
 
       l_cat_default_top_05: "83%",
       l_cat_default_left_05: "23%",
@@ -459,6 +475,9 @@ let infoPlayers = {
       l_cat_default_left_07: "12.2%",
       l_cat_default_top_08: "82.37%",
       l_cat_default_left_08: "12.97%",
+
+      l_cat_default_top_09: "81.6%",
+      l_cat_default_left_09: "24.7%",
 
       home_reached: false,
       transition: false,
@@ -482,7 +501,7 @@ let infoPlayers = {
       l_cat_default_left_02: "23.01%",
       l_cat_default_top_03: "78%",
       l_cat_default_left_03: "27.2%",
-      l_cat_default_top_04: "78%",
+      l_cat_default_top_04: "82.1%",
       l_cat_default_left_04: "27.2%",
 
       l_cat_default_top_05: "74%",
@@ -494,6 +513,9 @@ let infoPlayers = {
       l_cat_default_left_07: "25%",
       l_cat_default_top_08: "82.37%",
       l_cat_default_left_08: "23.8%",
+      l_cat_default_top_09: "72%",
+      l_cat_default_left_09: "16.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 22,
@@ -530,6 +552,9 @@ let infoPlayers = {
       l_cat_default_left_07: "60.79%",
       l_cat_default_top_08: "113.98%",
       l_cat_default_left_08: "60.79%",
+      l_cat_default_top_09: "113.98%",
+      l_cat_default_left_09: "60.79%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -552,8 +577,8 @@ let infoPlayers = {
       l_cat_default_left_02: "71.79%",
       l_cat_default_top_03: "18%",
       l_cat_default_left_03: "68.2%",
-      l_cat_default_top_04: "18%",
-      l_cat_default_left_04: "68.2%",
+      l_cat_default_top_04: "13%",
+      l_cat_default_left_04: "69.2%",
 
       l_cat_default_top_05: "13%",
       l_cat_default_left_05: "74.2%",
@@ -564,6 +589,9 @@ let infoPlayers = {
       l_cat_default_left_07: "71.2%",
       l_cat_default_top_08: "13.2%",
       l_cat_default_left_08: "71.2%",
+      l_cat_default_top_09: "14%",
+      l_cat_default_left_09: "72.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 28,
@@ -586,8 +614,8 @@ let infoPlayers = {
       l_cat_default_left_02: "85.89%",
       l_cat_default_top_03: "18%",
       l_cat_default_left_03: "78%",
-      l_cat_default_top_04: "18%",
-      l_cat_default_left_04: "78%",
+      l_cat_default_top_04: "13%",
+      l_cat_default_left_04: "82.3%",
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "83.4%",
@@ -598,6 +626,9 @@ let infoPlayers = {
       l_cat_default_left_07: "84.4%",
       l_cat_default_top_08: "13.2%",
       l_cat_default_left_08: "82%",
+      l_cat_default_top_09: "24%",
+      l_cat_default_left_09: "81%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 29,
@@ -620,8 +651,8 @@ let infoPlayers = {
       l_cat_default_left_02: "72.38%",
       l_cat_default_top_03: "28%",
       l_cat_default_left_03: "68.2%",
-      l_cat_default_top_04: "28%",
-      l_cat_default_left_04: "68.2%",
+      l_cat_default_top_04: "26.5%",
+      l_cat_default_left_04: "69.2%",
 
       l_cat_default_top_05: "32%",
       l_cat_default_left_05: "74.2%",
@@ -632,6 +663,9 @@ let infoPlayers = {
       l_cat_default_left_07: "71.2%",
       l_cat_default_top_08: "24%",
       l_cat_default_left_08: "71.2%",
+
+      l_cat_default_top_09: "33%",
+      l_cat_default_left_09: "72.2%",
 
       home_reached: false,
       transition: false,
@@ -655,8 +689,8 @@ let infoPlayers = {
       l_cat_default_left_02: "85.89%",
       l_cat_default_top_03: "28%",
       l_cat_default_left_03: "78%",
-      l_cat_default_top_04: "28%",
-      l_cat_default_left_04: "78%",
+      l_cat_default_top_04: "26.5%",
+      l_cat_default_left_04: "82.3%",
 
       l_cat_default_top_05: "22.35%",
       l_cat_default_left_05: "65.1%",
@@ -667,6 +701,9 @@ let infoPlayers = {
       l_cat_default_left_07: "84.4%",
       l_cat_default_top_08: "24%",
       l_cat_default_left_08: "82%",
+
+      l_cat_default_top_09: "24%",
+      l_cat_default_left_09: "63.5%",
 
       home_reached: false,
       transition: false,
@@ -705,6 +742,9 @@ let infoPlayers = {
       l_cat_default_top_08: "113.98%",
       l_cat_default_left_08: "87.79%",
 
+      l_cat_default_top_09: "113.98%",
+      l_cat_default_left_09: "87.79%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 0,
@@ -727,7 +767,7 @@ let infoPlayers = {
       l_cat_default_left_02: "70.79%",
       l_cat_default_top_03: "68%",
       l_cat_default_left_03: "68.2%",
-      l_cat_default_top_04: "68%",
+      l_cat_default_top_04: "68.6%",
       l_cat_default_left_04: "68.2%",
 
       l_cat_default_top_05: "65%",
@@ -739,6 +779,9 @@ let infoPlayers = {
       l_cat_default_left_07: "71.2%",
       l_cat_default_top_08: "71.47%",
       l_cat_default_left_08: "71.2%",
+      l_cat_default_top_09: "61.2%",
+      l_cat_default_left_09: "72.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 34,
@@ -761,8 +804,8 @@ let infoPlayers = {
       l_cat_default_left_02: "85.89%",
       l_cat_default_top_03: "68%",
       l_cat_default_left_03: "78%",
-      l_cat_default_top_04: "68%",
-      l_cat_default_left_04: "78%",
+      l_cat_default_top_04: "68.6%",
+      l_cat_default_left_04: "82.3%",
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "83.4%",
@@ -773,7 +816,10 @@ let infoPlayers = {
       l_cat_default_left_07: "84.4%",
       l_cat_default_top_08: "71.47%",
       l_cat_default_left_08: "82%",
-     
+
+      l_cat_default_top_09: "72%",
+      l_cat_default_left_09: "81%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 35,
@@ -796,7 +842,7 @@ let infoPlayers = {
       l_cat_default_left_02: "70.79%",
       l_cat_default_top_03: "78%",
       l_cat_default_left_03: "68.2%",
-      l_cat_default_top_04: "78%",
+      l_cat_default_top_04: "82.1%",
       l_cat_default_left_04: "68.2%",
 
       l_cat_default_top_05: "83%",
@@ -808,6 +854,9 @@ let infoPlayers = {
       l_cat_default_left_07: "71.2%",
       l_cat_default_top_08: "82.37%",
       l_cat_default_left_08: "71.2%",
+      l_cat_default_top_09: "81.6%",
+      l_cat_default_left_09: "72.2%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 36,
@@ -830,8 +879,8 @@ let infoPlayers = {
       l_cat_default_left_02: "85.89%",
       l_cat_default_top_03: "78%",
       l_cat_default_left_03: "78%",
-      l_cat_default_top_04: "78%",
-      l_cat_default_left_04: "78%",
+      l_cat_default_top_04: "82.1%",
+      l_cat_default_left_04: "82.3%",
 
       l_cat_default_top_05: "74%",
       l_cat_default_left_05: "65.1%",
@@ -842,6 +891,9 @@ let infoPlayers = {
       l_cat_default_left_07: "84.4%",
       l_cat_default_top_08: "82.37%",
       l_cat_default_left_08: "82%",
+      l_cat_default_top_09: "72%",
+      l_cat_default_left_09: "63.5%",
+
       home_reached: false,
       transition: false,
       top_Circle_hot: 41,
@@ -1027,10 +1079,10 @@ const LudoMain = () => {
     // ? l_board_decor_1
     // : boardChange === 7
     // ? l_board_decor_2
-    // : boardChange === 8
-    // ? l_board_decor_3
-    // :
-    boardChange === 9
+    //:
+    boardChange === 6
+      ? l_board_decor_3
+      : boardChange === 9
       ? l_board_decor_4
       : boardChange === 10
       ? l_board_decor_5
@@ -1073,6 +1125,10 @@ const LudoMain = () => {
           let adjustedDefaultTop, adjustedDefaultLeft;
 
           switch (boardChange) {
+            case 6:
+              adjustedDefaultTop = player.l_cat_default_top_09;
+              adjustedDefaultLeft = player.l_cat_default_left_09;
+              break;
             case 9:
               adjustedDefaultTop = player.l_cat_default_top_01;
               adjustedDefaultLeft = player.l_cat_default_left_01;
@@ -1132,6 +1188,9 @@ const LudoMain = () => {
             if (boardChange === 9) {
               newTop = player.l_cat_default_top_01;
               newLeft = player.l_cat_default_left_01;
+            } else if (boardChange === 6) {
+              newTop = player.l_cat_default_top_09;
+              newLeft = player.l_cat_default_left_09;
             } else if (boardChange === 10) {
               newTop = player.l_cat_default_top_02;
               newLeft = player.l_cat_default_left_02;
@@ -1346,6 +1405,10 @@ const LudoMain = () => {
           let adjustedDefaultTop, adjustedDefaultLeft;
 
           switch (boardChange) {
+            case 6:
+              adjustedDefaultTop = player.l_cat_default_top_09;
+              adjustedDefaultLeft = player.l_cat_default_left_09;
+              break;
             case 9:
               adjustedDefaultTop = player.l_cat_default_top_01;
               adjustedDefaultLeft = player.l_cat_default_left_01;
@@ -1403,6 +1466,10 @@ const LudoMain = () => {
             let newTop, newLeft;
 
             switch (boardChange) {
+              case 6:
+                newTop = player.l_cat_default_top_09;
+                newLeft = player.l_cat_default_left_09;
+                break;
               case 9:
                 newTop = player.l_cat_default_top_01;
                 newLeft = player.l_cat_default_left_01;
@@ -1480,6 +1547,10 @@ const LudoMain = () => {
               let newTop, newLeft;
 
               switch (boardChange) {
+                case 6:
+                  newTop = player.l_cat_default_top_09;
+                  newLeft = player.l_cat_default_left_09;
+                  break;
                 case 9:
                   newTop = player.l_cat_default_top_01;
                   newLeft = player.l_cat_default_left_01;
@@ -1680,6 +1751,7 @@ const LudoMain = () => {
       3: { topKey: "default_top", leftKey: "default_left" },
       4: { topKey: "default_top", leftKey: "default_left" },
       5: { topKey: "default_top", leftKey: "default_left" },
+      6: { topKey: "l_cat_default_top_09", leftKey: "l_cat_default_left_09" },
       9: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
       10: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
       11: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
@@ -2036,6 +2108,10 @@ const LudoMain = () => {
 
               let newTop, newLeft;
               switch (boardChange) {
+                case 6:
+                  newTop = player.l_cat_default_top_09;
+                  newLeft = player.l_cat_default_left_09;
+                  break;
                 case 9:
                   newTop = player.l_cat_default_top_01;
                   newLeft = player.l_cat_default_left_01;
@@ -2148,21 +2224,8 @@ const LudoMain = () => {
         const isHovered = hoveredPlayer === player;
 
         let adjustedTop, adjustedLeft;
-        switch (boardChange) {
-          case 119:
-            adjustedTop = player.l_cat_default_top_01;
-            adjustedLeft = player.l_cat_default_left_01;
-            break;
-          case 1110:
-            adjustedTop = player.l_cat_default_top_02;
-            adjustedLeft = player.l_cat_default_left_02;
-            break;
-          default:
-            adjustedTop = player.top;
-            adjustedLeft = player.left;
-            break;
-        }
-
+        adjustedTop = player.top;
+        adjustedLeft = player.left;
         return (
           <>
             <motion.div
@@ -2361,6 +2424,10 @@ const LudoMain = () => {
               player.left = player.default_left;
               break;
 
+            case 6:
+              player.top = player.l_cat_default_top_09;
+              player.left = player.l_cat_default_left_09;
+              break;
             case 9:
               player.top = player.l_cat_default_top_01;
               player.left = player.l_cat_default_left_01;
@@ -2791,15 +2858,16 @@ const LudoMain = () => {
           <option value="">Select from Classic+ Board </option>
           {/* <option value="6">Medieval Board Plain</option>
               <option value="7">Medieval Board i</option>
-              <option value="8">Medieval Board ii</option> */}
-          <option value="9">Medieval Board iii</option>
-          <option value="10">Medieval Board iv</option>
-          <option value="11">Stylish Board 1</option>
-          <option value="12">Stylish Board 2</option>
-          <option value="13">Board Style 001</option>
-          <option value="14">Board Style 002</option>
-          <option value="15">Medieval Board ix</option>
-          <option value="16">Medieval Board x</option>
+              */}
+          <option value="6">Velvet Royale Board</option>
+          <option value="9">Meditative Matrix Board</option>
+          <option value="10">Protective Play Board</option>
+          <option value="11">Neon Nexus Board</option>
+          <option value="12">Zen Focus Board</option>
+          <option value="13">Galactic Grid Board</option>
+          <option value="14">Neat Harmony Board</option>
+          <option value="15">Galactic Aim Board</option>
+          <option value="16">Medieval Flower Board</option>
         </select>
       </div>
       <div

@@ -5,7 +5,7 @@ import l_board_dark from "./l_board_dark.png";
 import l_board_dark_transp from "./l_board_dark_transp.png";
 import l_board_lite_transp from "./l_board_lite_transp.png";
 // import l_board_decor_1 from "./l_board_decor_1.png";
-// import l_board_decor_2 from "./l_board_decor_2.png";
+import l_board_decor_2 from "./l_board_decor_2.png";
 import l_board_decor_3 from "./l_board_decor_3.png";
 import l_board_decor_4 from "./l_board_decor_4.png";
 import l_board_decor_5 from "./l_board_decor_5.png";
@@ -176,6 +176,8 @@ let infoPlayers = {
       l_cat_default_left_08: "10.79%",
       l_cat_default_top_09: "113.98%",
       l_cat_default_left_09: "10.79%",
+      l_cat_default_top_101: "113.98%",
+      l_cat_default_left_101: "10.79%",
 
       home_reached: false,
       transition: false,
@@ -214,6 +216,8 @@ let infoPlayers = {
       l_cat_default_left_08: "12.97%",
       l_cat_default_top_09: "14%",
       l_cat_default_left_09: "24.2%",
+      l_cat_default_top_101: "14.7%",
+      l_cat_default_left_101: "14.72%",
 
       home_reached: false,
       transition: false,
@@ -251,6 +255,8 @@ let infoPlayers = {
       l_cat_default_left_08: "23.8%",
       l_cat_default_top_09: "24%",
       l_cat_default_left_09: "33.2%",
+      l_cat_default_top_101: "14.7%",
+      l_cat_default_left_101: "26.7%",
 
       home_reached: false,
       transition: false,
@@ -288,6 +294,8 @@ let infoPlayers = {
       l_cat_default_left_08: "12.97%",
       l_cat_default_top_09: "33%",
       l_cat_default_left_09: "24.2%",
+      l_cat_default_top_101: "25.5%",
+      l_cat_default_left_101: "14.72%",
 
       home_reached: false,
       transition: false,
@@ -325,6 +333,8 @@ let infoPlayers = {
       l_cat_default_left_08: "23.8%",
       l_cat_default_top_09: "24%",
       l_cat_default_left_09: "16.2%",
+      l_cat_default_top_101: "25.5%",
+      l_cat_default_left_101: "26.7%",
 
       home_reached: false,
       transition: false,
@@ -365,6 +375,8 @@ let infoPlayers = {
       l_cat_default_left_08: "33.79%",
       l_cat_default_top_09: "113.98%",
       l_cat_default_left_09: "33.79%",
+      l_cat_default_top_101: "113.98%",
+      l_cat_default_left_101: "33.79%",
 
       home_reached: false,
       transition: false,
@@ -402,6 +414,8 @@ let infoPlayers = {
       l_cat_default_left_08: "12.97%",
       l_cat_default_top_09: "61.2%",
       l_cat_default_left_09: "24.2%",
+      l_cat_default_top_101: "68.77%",
+      l_cat_default_left_101: "14.72%",
 
       home_reached: false,
       transition: false,
@@ -440,6 +454,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "72%",
       l_cat_default_left_09: "33.2%",
+      l_cat_default_top_101: "68.77%",
+      l_cat_default_left_101: "26.7%",
 
       home_reached: false,
       transition: false,
@@ -478,6 +494,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "81.6%",
       l_cat_default_left_09: "24.7%",
+      l_cat_default_top_101: "80.37%",
+      l_cat_default_left_101: "14.72%",
 
       home_reached: false,
       transition: false,
@@ -515,6 +533,8 @@ let infoPlayers = {
       l_cat_default_left_08: "23.8%",
       l_cat_default_top_09: "72%",
       l_cat_default_left_09: "16.2%",
+      l_cat_default_top_101: "80.37%",
+      l_cat_default_left_101: "26.7%",
 
       home_reached: false,
       transition: false,
@@ -554,6 +574,8 @@ let infoPlayers = {
       l_cat_default_left_08: "60.79%",
       l_cat_default_top_09: "113.98%",
       l_cat_default_left_09: "60.79%",
+      l_cat_default_top_101: "113.98%",
+      l_cat_default_left_101: "60.79%",
 
       home_reached: false,
       transition: false,
@@ -591,6 +613,8 @@ let infoPlayers = {
       l_cat_default_left_08: "71.2%",
       l_cat_default_top_09: "14%",
       l_cat_default_left_09: "72.2%",
+      l_cat_default_top_101: "14.7%",
+      l_cat_default_left_101: "69.4%",
 
       home_reached: false,
       transition: false,
@@ -628,6 +652,8 @@ let infoPlayers = {
       l_cat_default_left_08: "82%",
       l_cat_default_top_09: "24%",
       l_cat_default_left_09: "81%",
+      l_cat_default_top_101: "14.7%",
+      l_cat_default_left_101: "80.8%",
 
       home_reached: false,
       transition: false,
@@ -666,6 +692,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "33%",
       l_cat_default_left_09: "72.2%",
+      l_cat_default_top_101: "25.5%",
+      l_cat_default_left_101: "69.4%",
 
       home_reached: false,
       transition: false,
@@ -704,6 +732,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "24%",
       l_cat_default_left_09: "63.5%",
+      l_cat_default_top_101: "25.5%",
+      l_cat_default_left_101: "80.8%",
 
       home_reached: false,
       transition: false,
@@ -744,6 +774,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "113.98%",
       l_cat_default_left_09: "87.79%",
+      l_cat_default_top_101: "113.98%",
+      l_cat_default_left_101: "87.79%",
 
       home_reached: false,
       transition: false,
@@ -781,6 +813,8 @@ let infoPlayers = {
       l_cat_default_left_08: "71.2%",
       l_cat_default_top_09: "61.2%",
       l_cat_default_left_09: "72.2%",
+      l_cat_default_top_101: "68.77%",
+      l_cat_default_left_101: "69.4%",
 
       home_reached: false,
       transition: false,
@@ -819,6 +853,8 @@ let infoPlayers = {
 
       l_cat_default_top_09: "72%",
       l_cat_default_left_09: "81%",
+      l_cat_default_top_101: "68.77%",
+      l_cat_default_left_101: "80.8%",
 
       home_reached: false,
       transition: false,
@@ -856,6 +892,8 @@ let infoPlayers = {
       l_cat_default_left_08: "71.2%",
       l_cat_default_top_09: "81.6%",
       l_cat_default_left_09: "72.2%",
+      l_cat_default_top_101: "80.37%",
+      l_cat_default_left_101: "69.4%",
 
       home_reached: false,
       transition: false,
@@ -893,6 +931,8 @@ let infoPlayers = {
       l_cat_default_left_08: "82%",
       l_cat_default_top_09: "72%",
       l_cat_default_left_09: "63.5%",
+      l_cat_default_top_101: "80.37%",
+      l_cat_default_left_101: "80.8%",
 
       home_reached: false,
       transition: false,
@@ -1077,11 +1117,11 @@ const LudoMain = () => {
   const l_board_dropdown =
     // boardChange === 6
     // ? l_board_decor_1
-    // : boardChange === 7
-    // ? l_board_decor_2
     //:
     boardChange === 6
       ? l_board_decor_3
+      : boardChange === 7
+      ? l_board_decor_2
       : boardChange === 9
       ? l_board_decor_4
       : boardChange === 10
@@ -1128,6 +1168,10 @@ const LudoMain = () => {
             case 6:
               adjustedDefaultTop = player.l_cat_default_top_09;
               adjustedDefaultLeft = player.l_cat_default_left_09;
+              break;
+            case 7:
+              adjustedDefaultTop = player.l_cat_default_top_101;
+              adjustedDefaultLeft = player.l_cat_default_left_101;
               break;
             case 9:
               adjustedDefaultTop = player.l_cat_default_top_01;
@@ -1191,6 +1235,9 @@ const LudoMain = () => {
             } else if (boardChange === 6) {
               newTop = player.l_cat_default_top_09;
               newLeft = player.l_cat_default_left_09;
+            } else if (boardChange === 7) {
+              newTop = player.l_cat_default_top_101;
+              newLeft = player.l_cat_default_left_101;
             } else if (boardChange === 10) {
               newTop = player.l_cat_default_top_02;
               newLeft = player.l_cat_default_left_02;
@@ -1409,6 +1456,10 @@ const LudoMain = () => {
               adjustedDefaultTop = player.l_cat_default_top_09;
               adjustedDefaultLeft = player.l_cat_default_left_09;
               break;
+            case 7:
+              adjustedDefaultTop = player.l_cat_default_top_101;
+              adjustedDefaultLeft = player.l_cat_default_left_101;
+              break;
             case 9:
               adjustedDefaultTop = player.l_cat_default_top_01;
               adjustedDefaultLeft = player.l_cat_default_left_01;
@@ -1469,6 +1520,10 @@ const LudoMain = () => {
               case 6:
                 newTop = player.l_cat_default_top_09;
                 newLeft = player.l_cat_default_left_09;
+                break;
+              case 7:
+                newTop = player.l_cat_default_top_101;
+                newLeft = player.l_cat_default_left_101;
                 break;
               case 9:
                 newTop = player.l_cat_default_top_01;
@@ -1550,6 +1605,10 @@ const LudoMain = () => {
                 case 6:
                   newTop = player.l_cat_default_top_09;
                   newLeft = player.l_cat_default_left_09;
+                  break;
+                case 7:
+                  newTop = player.l_cat_default_top_101;
+                  newLeft = player.l_cat_default_left_101;
                   break;
                 case 9:
                   newTop = player.l_cat_default_top_01;
@@ -1752,6 +1811,7 @@ const LudoMain = () => {
       4: { topKey: "default_top", leftKey: "default_left" },
       5: { topKey: "default_top", leftKey: "default_left" },
       6: { topKey: "l_cat_default_top_09", leftKey: "l_cat_default_left_09" },
+      7: { topKey: "l_cat_default_top_101", leftKey: "l_cat_default_left_101" },
       9: { topKey: "l_cat_default_top_01", leftKey: "l_cat_default_left_01" },
       10: { topKey: "l_cat_default_top_02", leftKey: "l_cat_default_left_02" },
       11: { topKey: "l_cat_default_top_03", leftKey: "l_cat_default_left_03" },
@@ -2112,6 +2172,10 @@ const LudoMain = () => {
                   newTop = player.l_cat_default_top_09;
                   newLeft = player.l_cat_default_left_09;
                   break;
+                case 7:
+                  newTop = player.l_cat_default_top_101;
+                  newLeft = player.l_cat_default_left_101;
+                  break;
                 case 9:
                   newTop = player.l_cat_default_top_01;
                   newLeft = player.l_cat_default_left_01;
@@ -2428,6 +2492,10 @@ const LudoMain = () => {
               player.top = player.l_cat_default_top_09;
               player.left = player.l_cat_default_left_09;
               break;
+            case 7:
+              player.top = player.l_cat_default_top_101;
+              player.left = player.l_cat_default_left_101;
+              break;
             case 9:
               player.top = player.l_cat_default_top_01;
               player.left = player.l_cat_default_left_01;
@@ -2502,6 +2570,51 @@ const LudoMain = () => {
       setBoardChange(parseInt(event.target.value));
     }
     repositionUnplayedPieces(newBoardChange);
+  };
+
+  function getRandomElementsInArray(arr, x) {
+    let shuffled = arr.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, x);
+  }
+
+  const handleContinuousAutoPlay = () => {
+    setIsChecked(true);
+    let playersYGRB = document.getElementById("ContinuosPlayerCount");
+
+    let RandomColorsPlaying = getRandomElementsInArray(
+      [1, 2, 3, 4],
+      parseInt(playersYGRB.value)
+    );
+
+    let updatedColors = {
+      yellow: false,
+      green: false,
+      red: false,
+      blue: false,
+    };
+    RandomColorsPlaying.forEach((acolor) => {
+      switch (acolor) {
+        case 1:
+          updatedColors.yellow = true;
+          break;
+        case 2:
+          updatedColors.green = true;
+          break;
+        case 3:
+          updatedColors.red = true;
+          break;
+        case 4:
+          updatedColors.blue = true;
+          break;
+        default:
+          break;
+      }
+    });
+
+    setYellow_All_Home((prev) => !updatedColors.yellow);
+    setGreen_All_Home((prev) => !updatedColors.green);
+    setRed_All_Home((prev) => !updatedColors.red);
+    setBlue_All_Home((prev) => !updatedColors.blue);
   };
 
   useEffect(() => {
@@ -2787,8 +2900,38 @@ const LudoMain = () => {
           color: "rgba(222, 0, 22, 0.8)",
         }}
       >
-        <input type="checkbox" name="autoplay" defaultChecked={isChecked} />
+        <input type="checkbox" name="autoplay" checked={isChecked} />
         Continuous Autoplay
+      </div>
+      <div
+        className="MaxRandomPlayers"
+        style={{
+          color: "rgba(155, 5, 1, 0.8)",
+          fontSize: "1.1rem",
+        }}
+      >
+        Continuous play (initially only with
+        <input
+          id="ContinuosPlayerCount"
+          style={{
+            color: "rgba(255, 125, 1, 0.8)",
+            fontSize: "1.1rem",
+            width: 70,
+            paddingLeft: "11px",
+            paddingRight: "11px",
+            backgroundClip: "content-box",
+            backgroundColor: "aquamarine",
+            border: "none",
+          }}
+          title= "Triggers continous autoplay interactively and immediately. Valid 2 to 4. 'Quick' selection"
+          type="number"
+          name="maxplayers"
+          defaultValue="4"
+          min="2"
+          max="4"
+          onChange={handleContinuousAutoPlay}
+        />
+        random players)
       </div>
       <div
         className="chkbox"
@@ -2860,6 +3003,7 @@ const LudoMain = () => {
               <option value="7">Medieval Board i</option>
               */}
           <option value="6">Velvet Royale Board</option>
+          <option value="7">Aliens' Playfield Board</option>
           <option value="9">Meditative Matrix Board</option>
           <option value="10">Protective Play Board</option>
           <option value="11">Neon Nexus Board</option>
@@ -2939,12 +3083,28 @@ const LudoMain = () => {
   return (
     <div
       className={`game-container ${
-        boardChange === 1 || boardChange === 2 || boardChange === 11
+        boardChange === 1 ||
+        boardChange === 2 ||
+        boardChange === 7 ||
+        boardChange === 11
           ? "sky"
           : "galaxy"
       } stretchSelectClass`}
     >
       {initialUI}
+
+      <div
+        className="game-status"
+        style={{
+          color: "rgba(172, 172, 172, 0.9)",
+          fontSize: "1.1rem",
+        }}
+      >
+        {!yellow_All_Home && <div>In play or paused for: Yellow</div>}
+        {!green_All_Home && <div>In play or paused for: Green</div>}
+        {!red_All_Home && <div>In play or paused for: Red</div>}
+        {!blue_All_Home && <div>In play or paused for: Blue</div>}
+      </div>
     </div>
   );
 };

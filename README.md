@@ -84,3 +84,5 @@ Note that this partial game itself may be 'playable' in some sense and can be us
 - This project uses both 0-based and 1-based indexes. Where 1-based indexes are used, 0 is used as a placeholder and does not affect functionality.
 
 Enjoy!
+
+![](https://komarev.com/ghpvc/?username=ManjilJ&abbreviated=true)

@@ -393,6 +393,7 @@ body {
 
 .diceimg {
   filter: drop-shadow(5px 5px 5px rgb(255, 94, 0));
+  /* transform: scale(.7); */
 }
 
 .dice-roll {
@@ -414,10 +415,12 @@ body {
     /* transform-origin: center center; */
     top:-230px;
     left:162px;
-    transform: scale(.7);
+
   }
   
-
+  .diceimg {
+    transform: scale(.6);
+  }
   .button_ygbr {
     width: 42px; /* 70% of 60px */
     height: 25px; /* 70% of 36px */

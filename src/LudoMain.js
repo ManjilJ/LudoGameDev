@@ -2942,8 +2942,14 @@ const LudoMain = () => {
         Dice Roll
       </span>
       {showDice ? (
-        <div className="containerDice">
-          <div className="diceAnimate" style={{left:"44.66%"}}>
+        <div className="containerDice"  >
+          <div className="diceAnimate"     style={{
+      position: 'absolute',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '80px', // Default width for larger screens
+      height: '80px',
+    }}>
             <DiceAnimation
               isAnimating={isAnimating}
               onAnimationEnd={handleDiceAnimationEnd}

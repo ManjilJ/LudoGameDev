@@ -2943,7 +2943,7 @@ const LudoMain = () => {
       </span>
       {showDice ? (
         <div className="containerDice">
-          <div className="diceAnimate">
+          <div className="diceAnimate" style={{left:"44.66%"}}>
             <DiceAnimation
               isAnimating={isAnimating}
               onAnimationEnd={handleDiceAnimationEnd}

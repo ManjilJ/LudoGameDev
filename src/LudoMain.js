@@ -27,6 +27,7 @@ import DiceAnimation from "./DiceAnimation";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, useCycle } from "framer-motion";
 import FormatTimestamp from "./FormatTimestamp";
+import { Switch, Button, Radio, Select, MenuItem } from "@mui/material";
 
 let array_yellow = [0, 0, 0, 0];
 let AboveFive_yellow = true;
@@ -144,40 +145,40 @@ let infoPlayers = {
     {
       color_piece: "yellow",
       label: "0",
-      top: "113.98%",
+      top: "116.98%",
       left: "10.79%",
       default_top: 20,
       default_left: 4,
       hot_spot: 0,
       home_spot: 0,
 
-      l_cat_default_top_01: "113.98%",
+      l_cat_default_top_01: "116.98%",
       l_cat_default_left_01: "10.79%",
 
-      l_cat_default_top_02: "113.98%",
+      l_cat_default_top_02: "116.98%",
       l_cat_default_left_02: "10.79%",
 
-      l_cat_default_top_03: "113.98%",
+      l_cat_default_top_03: "116.98%",
       l_cat_default_left_03: "10.79%",
 
-      l_cat_default_top_04: "113.98%",
+      l_cat_default_top_04: "116.98%",
       l_cat_default_left_04: "10.79%",
 
-      l_cat_default_top_05: "113.98%",
+      l_cat_default_top_05: "116.98%",
       l_cat_default_left_05: "10.79%",
 
-      l_cat_default_top_06: "113.98%",
+      l_cat_default_top_06: "116.98%",
       l_cat_default_left_06: "10.79%",
 
-      l_cat_default_top_07: "113.98%",
+      l_cat_default_top_07: "116.98%",
       l_cat_default_left_07: "10.79%",
-      l_cat_default_top_08: "113.98%",
+      l_cat_default_top_08: "116.98%",
       l_cat_default_left_08: "10.79%",
-      l_cat_default_top_09: "113.98%",
+      l_cat_default_top_09: "116.98%",
       l_cat_default_left_09: "10.79%",
-      l_cat_default_top_101: "113.98%",
+      l_cat_default_top_101: "116.98%",
       l_cat_default_left_101: "10.79%",
-      l_cat_default_top_102: "113.98%",
+      l_cat_default_top_102: "116.98%",
       l_cat_default_left_102: "10.79%",
 
       home_reached: false,
@@ -357,36 +358,36 @@ let infoPlayers = {
     {
       color_piece: "blue",
       label: "0",
-      top: "113.98%",
+      top: "116.98%",
       left: "33.79%",
-      default_top: "113.98%",
+      default_top: "116.98%",
       default_left: "33.79%",
       hot_spot: 0,
       home_spot: 0,
 
-      l_cat_default_top_01: "113.98%",
+      l_cat_default_top_01: "116.98%",
       l_cat_default_left_01: "33.79%",
-      l_cat_default_top_02: "113.98%",
+      l_cat_default_top_02: "116.98%",
       l_cat_default_left_02: "33.79%",
-      l_cat_default_top_03: "113.98%",
+      l_cat_default_top_03: "116.98%",
       l_cat_default_left_03: "33.79%",
-      l_cat_default_top_04: "113.98%",
+      l_cat_default_top_04: "116.98%",
       l_cat_default_left_04: "33.79%",
 
-      l_cat_default_top_05: "113.98%",
+      l_cat_default_top_05: "116.98%",
       l_cat_default_left_05: "33.79%",
-      l_cat_default_top_06: "113.98%",
+      l_cat_default_top_06: "116.98%",
       l_cat_default_left_06: "33.79%",
 
-      l_cat_default_top_07: "113.98%",
+      l_cat_default_top_07: "116.98%",
       l_cat_default_left_07: "33.79%",
-      l_cat_default_top_08: "113.98%",
+      l_cat_default_top_08: "116.98%",
       l_cat_default_left_08: "33.79%",
-      l_cat_default_top_09: "113.98%",
+      l_cat_default_top_09: "116.98%",
       l_cat_default_left_09: "33.79%",
-      l_cat_default_top_101: "113.98%",
+      l_cat_default_top_101: "116.98%",
       l_cat_default_left_101: "33.79%",
-      l_cat_default_top_102: "113.98%",
+      l_cat_default_top_102: "116.98%",
       l_cat_default_left_102: "33.79%",
 
       home_reached: false,
@@ -566,36 +567,36 @@ let infoPlayers = {
     {
       color_piece: "green",
       label: "0",
-      top: "113.98%",
+      top: "116.98%",
       left: "60.79%",
-      default_top: "113.98%",
+      default_top: "116.98%",
       default_left: "60.79%",
       hot_spot: 0,
       home_spot: 0,
 
-      l_cat_default_top_01: "113.98%",
+      l_cat_default_top_01: "116.98%",
       l_cat_default_left_01: "60.79%",
-      l_cat_default_top_02: "113.98%",
+      l_cat_default_top_02: "116.98%",
       l_cat_default_left_02: "60.79%",
-      l_cat_default_top_03: "113.98%",
+      l_cat_default_top_03: "116.98%",
       l_cat_default_left_03: "60.79%",
-      l_cat_default_top_04: "113.98%",
+      l_cat_default_top_04: "116.98%",
       l_cat_default_left_04: "60.79%",
 
-      l_cat_default_top_05: "113.98%",
+      l_cat_default_top_05: "116.98%",
       l_cat_default_left_05: "60.79%",
-      l_cat_default_top_06: "113.98%",
+      l_cat_default_top_06: "116.98%",
       l_cat_default_left_06: "60.79%",
 
-      l_cat_default_top_07: "113.98%",
+      l_cat_default_top_07: "116.98%",
       l_cat_default_left_07: "60.79%",
-      l_cat_default_top_08: "113.98%",
+      l_cat_default_top_08: "116.98%",
       l_cat_default_left_08: "60.79%",
-      l_cat_default_top_09: "113.98%",
+      l_cat_default_top_09: "116.98%",
       l_cat_default_left_09: "60.79%",
-      l_cat_default_top_101: "113.98%",
+      l_cat_default_top_101: "116.98%",
       l_cat_default_left_101: "60.79%",
-      l_cat_default_top_102: "113.98%",
+      l_cat_default_top_102: "116.98%",
       l_cat_default_left_102: "60.79%",
 
       home_reached: false,
@@ -775,37 +776,37 @@ let infoPlayers = {
     {
       color_piece: "red",
       label: "0",
-      top: "113.98%",
+      top: "116.98%",
       left: "87.79%",
-      default_top: "113.98%",
+      default_top: "116.98%",
       default_left: "87.79%",
       hot_spot: 0,
       home_spot: 0,
 
-      l_cat_default_top_01: "113.98%",
+      l_cat_default_top_01: "116.98%",
       l_cat_default_left_01: "87.79%",
-      l_cat_default_top_02: "113.98%",
+      l_cat_default_top_02: "116.98%",
       l_cat_default_left_02: "87.79%",
-      l_cat_default_top_03: "113.98%",
+      l_cat_default_top_03: "116.98%",
       l_cat_default_left_03: "87.79%",
-      l_cat_default_top_04: "113.98%",
+      l_cat_default_top_04: "116.98%",
       l_cat_default_left_04: "87.79%",
 
-      l_cat_default_top_05: "113.98%",
+      l_cat_default_top_05: "116.98%",
       l_cat_default_left_05: "87.79%",
-      l_cat_default_top_06: "113.98%",
+      l_cat_default_top_06: "116.98%",
       l_cat_default_left_06: "87.79%",
 
-      l_cat_default_top_07: "113.98%",
+      l_cat_default_top_07: "116.98%",
       l_cat_default_left_07: "87.79%",
-      l_cat_default_top_08: "113.98%",
+      l_cat_default_top_08: "116.98%",
       l_cat_default_left_08: "87.79%",
 
-      l_cat_default_top_09: "113.98%",
+      l_cat_default_top_09: "116.98%",
       l_cat_default_left_09: "87.79%",
-      l_cat_default_top_101: "113.98%",
+      l_cat_default_top_101: "116.98%",
       l_cat_default_left_101: "87.79%",
-      l_cat_default_top_102: "113.98%",
+      l_cat_default_top_102: "116.98%",
       l_cat_default_left_102: "87.79%",
 
       home_reached: false,
@@ -2682,6 +2683,21 @@ const LudoMain = () => {
     setBlue_All_Home((prev) => !updatedColors.blue);
   };
 
+  const boardOptions = [
+    { value: "", label: "Select from Classic+ Board" },
+    { value: "6", label: "Velvet Royale Board" },
+    { value: "7", label: "Aliens' Playfield Board" },
+    { value: "9", label: "Meditative Matrix Board" },
+    { value: "10", label: "Protective Play Board" },
+    { value: "11", label: "Neon Nexus Board" },
+    { value: "12", label: "Zen Focus Board" },
+    { value: "13", label: "Galactic Grid Board" },
+    { value: "14", label: "Neat Harmony Board" },
+    { value: "15", label: "Galactic Aim Board" },
+    { value: "16", label: "Medieval Flower Board" },
+    { value: "8", label: "AI Imagined Board" },
+  ];
+
   useEffect(() => {
     if (isTransitioning) {
       const timer = setTimeout(() => setIsTransitioning(false), 50);
@@ -2827,11 +2843,13 @@ const LudoMain = () => {
         {Home_cells_Green}
         {Home_cells_Blue}
         {Home_cells_Red}
-        <button
+        <Button
           onClick={() => handleYellowClick(0)}
           className="button_ygbr"
           name="Yellow"
+          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
           style={{
+            textTransform: "none",
             backgroundColor: "Yellow",
             position: "absolute",
             top: "32%",
@@ -2839,12 +2857,14 @@ const LudoMain = () => {
           }}
         >
           Yellow
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => handleGreenClick(0)}
           className="button_ygbr"
           name="Green"
+          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
           style={{
+            textTransform: "none",
             backgroundColor: "Green",
             position: "absolute",
             top: "32%",
@@ -2852,12 +2872,14 @@ const LudoMain = () => {
           }}
         >
           Green
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => handleRedClick(0)}
           className="button_ygbr"
           name="Red"
+          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
           style={{
+            textTransform: "none",
             color: "azure",
             backgroundColor: "Red",
             position: "absolute",
@@ -2866,12 +2888,14 @@ const LudoMain = () => {
           }}
         >
           Red
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => handleBlueClick(0)}
           className="button_ygbr"
           name="Blue"
+          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
           style={{
+            textTransform: "none",
             color: "darkgrey",
             backgroundColor: "Blue",
             position: "absolute",
@@ -2880,7 +2904,7 @@ const LudoMain = () => {
           }}
         >
           Blue
-        </button>
+        </Button>
       </div>
       <input
         id="inputId"
@@ -2938,14 +2962,19 @@ const LudoMain = () => {
           top: "140px",
         }}
       >
-        <input
+        <Switch
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red", 
+            },
+          }}
           onChange={handleCheckBoxLockScroll}
           title="For desktop especially, Unlock this and mouse scroll down to set all of your preferences if not accessible due to scroll lock. Alternative is to zoom out, set preferences"
           type="checkbox"
           name="LockScroll"
-          defaultChecked={lockScroll}
+          checked={lockScroll}
         />
-        Scroll Locked
+        <span style={{ color: "brown" }}>Scroll Locked</span>
       </div>
       <button
         onClick={() => tellStat()}
@@ -2965,7 +2994,16 @@ const LudoMain = () => {
           color: "rgba(222, 0, 22, 0.8)",
         }}
       >
-        <input type="checkbox" name="autoplay" checked={isChecked} />
+        <Switch
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red", 
+            },
+          }}
+          type="checkbox"
+          name="autoplay"
+          checked={isChecked}
+        />
         Continuous Autoplay
       </div>
       <div
@@ -3007,7 +3045,7 @@ const LudoMain = () => {
       >
         <h6>Select a Board below:</h6>
         <label>
-          <input
+          <Radio
             type="radio"
             value={1}
             checked={boardChange === 1}
@@ -3017,7 +3055,7 @@ const LudoMain = () => {
         </label>
 
         <label>
-          <input
+          <Radio
             type="radio"
             value={2}
             checked={boardChange === 2}
@@ -3027,7 +3065,7 @@ const LudoMain = () => {
         </label>
 
         <label>
-          <input
+          <Radio
             type="radio"
             value={3}
             checked={boardChange === 3}
@@ -3037,7 +3075,7 @@ const LudoMain = () => {
         </label>
 
         <label>
-          <input
+          <Radio
             type="radio"
             value={4}
             checked={boardChange === 4}
@@ -3058,25 +3096,43 @@ const LudoMain = () => {
       </div>
       {/*selectionMethod === "radio" and options*/}
       <div>
-        <select
-          id="boards"
-          value={boardChange}
-          onChange={handleBoardSelectionDropDown}
-        >
-          <option value="">Select from Classic+ Board </option>
-          <option value="6">Velvet Royale Board</option>
-          <option value="7">Aliens' Playfield Board</option>
-          <option value="9">Meditative Matrix Board</option>
-          <option value="10">Protective Play Board</option>
-          <option value="11">Neon Nexus Board</option>
-          <option value="12">Zen Focus Board</option>
-          <option value="13">Galactic Grid Board</option>
-          <option value="14">Neat Harmony Board</option>
-          <option value="15">Galactic Aim Board</option>
-          <option value="16">Medieval Flower Board</option>
-          <option value="8">AI Imagined Board </option>
-        </select>
-      </div>
+      <Select
+  id="boards"
+  value={boardChange}
+  onChange={handleBoardSelectionDropDown}
+  renderValue={(selected) => {
+    const labelMap = {
+      "": "Select from Classic+ Board",
+      "6": "Velvet Royale Board",
+      "7": "Aliens' Playfield Board",
+      "9": "Meditative Matrix Board",
+      "10": "Protective Play Board",
+      "11": "Neon Nexus Board",
+      "12": "Zen Focus Board",
+      "13": "Galactic Grid Board",
+      "14": "Neat Harmony Board",
+      "15": "Galactic Aim Board",
+      "16": "Medieval Flower Board",
+      "8": "AI Imagined Board",
+    };
+
+    return  [1,2,3,4].includes(selected) ? "Select from Classic+ Board": labelMap[selected] ; 
+  }}
+  style={{ backgroundColor: 'lightblue', width: '55%' }}
+>
+  <MenuItem value="">Select from Classic+ Board</MenuItem>
+  <MenuItem value="6">Velvet Royale Board</MenuItem>
+  <MenuItem value="7">Aliens' Playfield Board</MenuItem>
+  <MenuItem value="9">Meditative Matrix Board</MenuItem>
+  <MenuItem value="10">Protective Play Board</MenuItem>
+  <MenuItem value="11">Neon Nexus Board</MenuItem>
+  <MenuItem value="12">Zen Focus Board</MenuItem>
+  <MenuItem value="13">Galactic Grid Board</MenuItem>
+  <MenuItem value="14">Neat Harmony Board</MenuItem>
+  <MenuItem value="15">Galactic Aim Board</MenuItem>
+  <MenuItem value="16">Medieval Flower Board</MenuItem>
+  <MenuItem value="8">AI Imagined Board</MenuItem>
+</Select>      </div>
       <div
         className="chkboxT"
         style={{
@@ -3084,11 +3140,16 @@ const LudoMain = () => {
           fontSize: "1.3rem",
         }}
       >
-        <input
+        <Switch
           onChange={handleCheckBoxTrail}
           type="checkbox"
           name="trail"
           defaultChecked={activateTrail}
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red", 
+            },
+          }}
         />
         Trail
       </div>
@@ -3099,7 +3160,12 @@ const LudoMain = () => {
           fontSize: "1.3rem",
         }}
       >
-        <input
+        <Switch
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red",
+            },
+          }}
           onChange={handleCheckBoxHomeBorderAnimate}
           type="checkbox"
           name="homeBorderAnimate"
@@ -3114,7 +3180,12 @@ const LudoMain = () => {
           fontSize: "1.8rem",
         }}
       >
-        <input
+        <Switch
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red", 
+            },
+          }}
           onChange={handleCheckBox3dLook_piece}
           type="checkbox"
           name="3dLook"
@@ -3129,7 +3200,12 @@ const LudoMain = () => {
           fontSize: "1.4rem",
         }}
       >
-        <input
+        <Switch
+          sx={{
+            "& .MuiSwitch-track": {
+              backgroundColor: "red", 
+            },
+          }}
           onChange={handleCheckboxShowDice}
           type="checkbox"
           name="showdice"

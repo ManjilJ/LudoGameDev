@@ -27,7 +27,14 @@ import DiceAnimation from "./DiceAnimation";
 import { useHotkeys } from "react-hotkeys-hook";
 import { motion, useCycle } from "framer-motion";
 import FormatTimestamp from "./FormatTimestamp";
-import { Switch, Button, Radio, Select, MenuItem } from "@mui/material";
+import {
+  Switch,
+  Button,
+  Radio,
+  Select,
+  MenuItem,
+  ListItemText,
+} from "@mui/material";
 
 let array_yellow = [0, 0, 0, 0];
 let AboveFive_yellow = true;
@@ -2847,7 +2854,7 @@ const LudoMain = () => {
           onClick={() => handleYellowClick(0)}
           className="button_ygbr"
           name="Yellow"
-          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
+          sx={{ padding: 0, minWidth: "auto", minHeight: "auto" }}
           style={{
             textTransform: "none",
             backgroundColor: "Yellow",
@@ -2862,7 +2869,7 @@ const LudoMain = () => {
           onClick={() => handleGreenClick(0)}
           className="button_ygbr"
           name="Green"
-          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
+          sx={{ padding: 0, minWidth: "auto", minHeight: "auto" }}
           style={{
             textTransform: "none",
             backgroundColor: "Green",
@@ -2877,7 +2884,7 @@ const LudoMain = () => {
           onClick={() => handleRedClick(0)}
           className="button_ygbr"
           name="Red"
-          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
+          sx={{ padding: 0, minWidth: "auto", minHeight: "auto" }}
           style={{
             textTransform: "none",
             color: "azure",
@@ -2893,7 +2900,7 @@ const LudoMain = () => {
           onClick={() => handleBlueClick(0)}
           className="button_ygbr"
           name="Blue"
-          sx ={{padding:0, minWidth:'auto', minHeight:'auto'}}
+          sx={{ padding: 0, minWidth: "auto", minHeight: "auto" }}
           style={{
             textTransform: "none",
             color: "darkgrey",
@@ -2942,14 +2949,17 @@ const LudoMain = () => {
         Dice Roll
       </span>
       {showDice ? (
-        <div className="containerDice"  >
-          <div className="diceAnimate"     style={{
-      position: 'absolute',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      width: '80px', // Default width for larger screens
-      height: '80px',
-    }}>
+        <div className="containerDice">
+          <div
+            className="diceAnimate"
+            style={{
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "80px", // Default width for larger screens
+              height: "80px",
+            }}
+          >
             <DiceAnimation
               isAnimating={isAnimating}
               onAnimationEnd={handleDiceAnimationEnd}
@@ -2971,7 +2981,7 @@ const LudoMain = () => {
         <Switch
           sx={{
             "& .MuiSwitch-track": {
-              backgroundColor: "red", 
+              backgroundColor: "red",
             },
           }}
           onChange={handleCheckBoxLockScroll}
@@ -3003,7 +3013,7 @@ const LudoMain = () => {
         <Switch
           sx={{
             "& .MuiSwitch-track": {
-              backgroundColor: "red", 
+              backgroundColor: "red",
             },
           }}
           type="checkbox"
@@ -3102,43 +3112,124 @@ const LudoMain = () => {
       </div>
       {/*selectionMethod === "radio" and options*/}
       <div>
-      <Select
-  id="boards"
-  value={boardChange}
-  onChange={handleBoardSelectionDropDown}
-  renderValue={(selected) => {
-    const labelMap = {
-      "": "Select from Classic+ Board",
-      "6": "Velvet Royale Board",
-      "7": "Aliens' Playfield Board",
-      "9": "Meditative Matrix Board",
-      "10": "Protective Play Board",
-      "11": "Neon Nexus Board",
-      "12": "Zen Focus Board",
-      "13": "Galactic Grid Board",
-      "14": "Neat Harmony Board",
-      "15": "Galactic Aim Board",
-      "16": "Medieval Flower Board",
-      "8": "AI Imagined Board",
-    };
+        <Select
+          id="boards"
+          value={boardChange}
+          onChange={handleBoardSelectionDropDown}
+          renderValue={(selected) => {
+            const labelMap = {
+              "": "Select from Classic+ Board",
+              6: "Velvet Royale Board",
+              7: "Aliens' Playfield Board",
+              9: "Meditative Matrix Board",
+              10: "Protective Play Board",
+              11: "Neon Nexus Board",
+              12: "Zen Focus Board",
+              13: "Galactic Grid Board",
+              14: "Neat Harmony Board",
+              15: "Galactic Aim Board",
+              16: "Medieval Flower Board",
+              8: "AI Imagined Board",
+            };
 
-    return  [1,2,3,4].includes(selected) ? "Select from Classic+ Board": labelMap[selected] ; 
-  }}
-  style={{ backgroundColor: 'lightblue', width: '55%' }}
->
-  <MenuItem value="">Select from Classic+ Board</MenuItem>
-  <MenuItem value="6">Velvet Royale Board</MenuItem>
-  <MenuItem value="7">Aliens' Playfield Board</MenuItem>
-  <MenuItem value="9">Meditative Matrix Board</MenuItem>
-  <MenuItem value="10">Protective Play Board</MenuItem>
-  <MenuItem value="11">Neon Nexus Board</MenuItem>
-  <MenuItem value="12">Zen Focus Board</MenuItem>
-  <MenuItem value="13">Galactic Grid Board</MenuItem>
-  <MenuItem value="14">Neat Harmony Board</MenuItem>
-  <MenuItem value="15">Galactic Aim Board</MenuItem>
-  <MenuItem value="16">Medieval Flower Board</MenuItem>
-  <MenuItem value="8">AI Imagined Board</MenuItem>
-</Select>      </div>
+            return [1, 2, 3, 4].includes(selected)
+              ? "Select from Classic+ Board"
+              : labelMap[selected];
+          }}
+          style={{ backgroundColor: "lightblue", width: "55%" }}
+        >
+          <MenuItem value="">Select from Classic+ Board</MenuItem>
+
+          <MenuItem value="6">
+            <img
+              src={l_board_decor_3}
+              alt="Decor 3"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Velvet Royale Board" />
+          </MenuItem>
+          <MenuItem value="7">
+            <img
+              src={l_board_decor_2}
+              alt="Decor 2"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Aliens' Playfield Board" />
+          </MenuItem>
+          <MenuItem value="9">
+            <img
+              src={l_board_decor_4}
+              alt="Decor 4"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Meditative Matrix Board" />
+          </MenuItem>
+          <MenuItem value="10">
+            <img
+              src={l_board_decor_5}
+              alt="Decor 5"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Protective Play Board" />
+          </MenuItem>
+          <MenuItem value="11">
+            <img
+              src={l_board_decor_6}
+              alt="Decor 6"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Neon Nexus Board" />
+          </MenuItem>
+          <MenuItem value="12">
+            <img
+              src={l_board_decor_7}
+              alt="Decor 7"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Zen Focus Board" />
+          </MenuItem>
+          <MenuItem value="13">
+            <img
+              src={l_board_decor_8}
+              alt="Decor 8"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Galactic Grid Board" />
+          </MenuItem>
+          <MenuItem value="14">
+            <img
+              src={l_board_decor_9}
+              alt="Decor 9"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Neat Harmony Board" />
+          </MenuItem>
+          <MenuItem value="15">
+            <img
+              src={l_board_decor_10}
+              alt="Decor 10"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Galactic Aim Board" />
+          </MenuItem>
+          <MenuItem value="16">
+            <img
+              src={l_board_decor_11}
+              alt="Decor 11"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="Medieval Flower Board" />
+          </MenuItem>
+          <MenuItem value="8">
+            <img
+              src={l_board_decor_1}
+              alt="Decor 1"
+              style={{ width: 24, height: 24, marginRight: 8 }}
+            />
+            <ListItemText primary="AI Imagined Board" />
+          </MenuItem>
+        </Select>{" "}
+      </div>
       <div
         className="chkboxT"
         style={{
@@ -3153,7 +3244,7 @@ const LudoMain = () => {
           defaultChecked={activateTrail}
           sx={{
             "& .MuiSwitch-track": {
-              backgroundColor: "red", 
+              backgroundColor: "red",
             },
           }}
         />
@@ -3189,7 +3280,7 @@ const LudoMain = () => {
         <Switch
           sx={{
             "& .MuiSwitch-track": {
-              backgroundColor: "red", 
+              backgroundColor: "red",
             },
           }}
           onChange={handleCheckBox3dLook_piece}
@@ -3209,7 +3300,7 @@ const LudoMain = () => {
         <Switch
           sx={{
             "& .MuiSwitch-track": {
-              backgroundColor: "red", 
+              backgroundColor: "red",
             },
           }}
           onChange={handleCheckboxShowDice}

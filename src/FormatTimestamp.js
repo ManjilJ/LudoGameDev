@@ -3,11 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 const FormatTimestamp = () => {
   const [displayTime, setDisplayTime] = useState('Elapsed Time: 0d 0h 0m 0s');
   const startTimeRef = useRef(performance.now()); 
-  const intervalIdRef = useRef(null);
+  const animationFrameIdRef = useRef(null);
 
   useEffect(() => {
-    const updateTime = () => {
-      const elapsed = performance.now() - startTimeRef.current;
+    const updateTime = (timestamp) => {
+      const elapsed = timestamp - startTimeRef.current; 
+
       const elapsedMilliseconds = Math.floor(elapsed);
       const seconds = Math.floor(elapsedMilliseconds / 1000);
       const minutes = Math.floor(seconds / 60);
@@ -16,12 +17,13 @@ const FormatTimestamp = () => {
 
       const formattedTime = `Elapsed Time: ${days}d ${hours % 24}h ${minutes % 60}m ${seconds % 60}s`;
       setDisplayTime(formattedTime);
+
+       animationFrameIdRef.current = requestAnimationFrame(updateTime);
     };
-    updateTime();
-    intervalIdRef.current = setInterval(updateTime, 1000);
+    animationFrameIdRef.current = requestAnimationFrame(updateTime);
     return () => {
-      if (intervalIdRef.current) {
-        clearInterval(intervalIdRef.current);
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
       }
     };
   }, []);

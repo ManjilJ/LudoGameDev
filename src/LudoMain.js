@@ -3140,7 +3140,7 @@ const LudoMain = () => {
         >
           <MenuItem value="">Select from Classic+ Board</MenuItem>
 
-          <MenuItem value={6}>
+          <MenuItem value="6">
             <img
               src={l_board_decor_3}
               alt="Decor 3"
@@ -3148,7 +3148,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Velvet Royale Board" />
           </MenuItem>
-          <MenuItem value={7}>
+          <MenuItem value="7">
             <img
               src={l_board_decor_2}
               alt="Decor 2"
@@ -3156,7 +3156,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Aliens' Playfield Board" />
           </MenuItem>
-          <MenuItem value={9}>
+          <MenuItem value="9">
             <img
               src={l_board_decor_4}
               alt="Decor 4"
@@ -3164,7 +3164,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Meditative Matrix Board" />
           </MenuItem>
-          <MenuItem value={10}>
+          <MenuItem value="10">
             <img
               src={l_board_decor_5}
               alt="Decor 5"
@@ -3172,7 +3172,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Protective Play Board" />
           </MenuItem>
-          <MenuItem value={11}>
+          <MenuItem value="11">
             <img
               src={l_board_decor_6}
               alt="Decor 6"
@@ -3180,7 +3180,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Neon Nexus Board" />
           </MenuItem>
-          <MenuItem value={12}>
+          <MenuItem value="12">
             <img
               src={l_board_decor_7}
               alt="Decor 7"
@@ -3188,7 +3188,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Zen Focus Board" />
           </MenuItem>
-          <MenuItem value={13}>
+          <MenuItem value="13">
             <img
               src={l_board_decor_8}
               alt="Decor 8"
@@ -3196,7 +3196,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Galactic Grid Board" />
           </MenuItem>
-          <MenuItem value={14}>
+          <MenuItem value="14">
             <img
               src={l_board_decor_9}
               alt="Decor 9"
@@ -3204,7 +3204,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Neat Harmony Board" />
           </MenuItem>
-          <MenuItem value={15}>
+          <MenuItem value="15">
             <img
               src={l_board_decor_10}
               alt="Decor 10"
@@ -3212,7 +3212,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Galactic Aim Board" />
           </MenuItem>
-          <MenuItem value={16}>
+          <MenuItem value="16">
             <img
               src={l_board_decor_11}
               alt="Decor 11"
@@ -3220,7 +3220,7 @@ const LudoMain = () => {
             />
             <ListItemText primary="Medieval Flower Board" />
           </MenuItem>
-          <MenuItem value={8}>
+          <MenuItem value="8">
             <img
               src={l_board_decor_1}
               alt="Decor 1"

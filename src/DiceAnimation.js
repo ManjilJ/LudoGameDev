@@ -54,7 +54,7 @@ const DiceAnimation = ({ isAnimating, onAnimationEnd, finalImage, currentcolor }
     const animate = (timestamp) => {
       const elapsed = timestamp - startTimeRef.current;
       const progress = Math.min(elapsed / duration, 1);
-      const frameIndex = 1+Math.floor(elapsed / frameDuration) % totalImages;
+      const frameIndex = Math.floor(elapsed / frameDuration) % totalImages;
       setCurrentImage(frameIndex);
       // console.log("DiceAn..js : CurrentImage FrameIndex",currentImage, frameIndex)
       if (progress < 1) {
@@ -72,7 +72,7 @@ const DiceAnimation = ({ isAnimating, onAnimationEnd, finalImage, currentcolor }
         animationFrameIdRef.current = null;
       }
     };
-  }, [isAnimating, finalImage, onAnimationEnd, frameDuration]);
+  }, [isAnimating, finalImage, onAnimationEnd, frameDuration, diceImages.length]);
   return (
     <div className="dice-roll">
       {animationComplete ? (
